@@ -1,0 +1,22 @@
+import Styles from "./header.module.css";
+function Header() {
+  return (
+    <header className={Styles.header}>
+      <div className={Styles.header_container}>
+        <div className={Styles.log_container}>
+          <span className={Styles.logo}>Maraki</span>
+        </div>
+        <nav>
+          <ul className={Styles.nav_lists}>
+            <li className={Styles.nav_list}>Home</li>
+            <li className={Styles.nav_list}>Shop</li>
+            <li className={Styles.nav_list}>About</li>
+            <li className={Styles.nav_list}>Contact</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export default Header;

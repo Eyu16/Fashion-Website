@@ -1,0 +1,50 @@
+.header {
+  font-size: 2.4rem;
+  padding: 2rem 10rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10rem;
+  /* color: var(--second-brand-color); */
+
+  /* background-color: var(--secondary-bg-color); */
+  /* background-color; */
+}
+.header_container {
+  display: flex;
+}
+.nav_lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+}
+.nav_list {
+  cursor: pointer;
+  position: relative;
+}
+.nav_list:hover {
+  color: var(--second-brand-color);
+}
+.nav_list::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px; /* Adjust the thickness of the border */
+  background-color: var(
+    --second-brand-darker
+  ); /* Set the color of the border */
+  transition: width 0.4s ease, left 0.4s ease;
+}
+.nav_list:hover::before {
+  width: 100%;
+  left: 0;
+}
+.log_container {
+  margin-right: auto;
+  cursor: pointer;
+}

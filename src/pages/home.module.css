@@ -1,0 +1,440 @@
+.section_hero {
+  width: 100%;
+  height: 100dvh;
+  /* position: relative; */
+  overflow-y: scroll;
+}
+.section_hero::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+.hero_slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* transition: all 1s ease-in-out; */
+}
+.hero_slider_1 {
+  justify-content: end;
+  align-items: flex-end;
+  padding: 10rem;
+  background-image: url("/img/Hero7(1).jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* position: absolute; */
+
+  /* padding: 5rem 10rem; */
+}
+.hero_slider_2 {
+  justify-content: end;
+  align-items: flex-start;
+  padding: 10rem;
+  background-image: url("/img/Hero9(1).jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* position: absolute; */
+}
+.seconday_heading {
+  font-size: 2rem;
+  color: var(--second-brand-color);
+  font-family: Raleway;
+  letter-spacing: 1px;
+}
+.primary_heading {
+  font-size: 6rem;
+  font-weight: 400;
+}
+.hero_slider_1 h1 {
+  width: 120rem;
+  text-align: end;
+}
+.hero_slider_2 h1 {
+  width: 120rem;
+  color: var(--primary-bg-color);
+}
+.buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+/* Fashion section */
+.fashion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+  /* background: linear-gradient(to bottom right, #e0e0e0, #505050); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* background-image: url("/img/Hero5(1).jpg"); */
+  background: linear-gradient(to bottom right, #e0e0e0, #8f8787);
+
+  /* background-color: rgba(153, 150, 150, 0.8); */
+}
+.fashion_container {
+  position: relative;
+}
+.fashion_container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-image: url("/img/Hero5(1).jpg"); */
+  background: linear-gradient(
+    to bottom right,
+    rgba(224, 224, 224),
+    rgba(80, 80, 80, 0)
+  );
+  /* ;
+  /* z-index: -1; */
+}
+.fashion h1 {
+  font-size: 10rem;
+  text-align: center;
+  padding-bottom: 5rem;
+  font-weight: 400;
+  color: var(--secondary-font-color);
+  /* background: red; */
+  /* z-index: 10; */
+}
+.gallary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100rem;
+  gap: 5rem;
+}
+.gallary figure {
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.gallary figure:nth-of-type(3) {
+  transform: scale(1.2);
+}
+.gallary figure:nth-of-type(3) img:hover {
+  transform: scale(0.95);
+}
+.gallary figure:nth-of-type(2) {
+  transform: scale(1.1) translateY(20%);
+}
+.gallary figure:nth-of-type(2) img:hover {
+  transform: scale(0.95);
+}
+.gallary figure:nth-of-type(1) {
+  transform: scale(0.9) translateX(-30%);
+}
+.gallary figure:nth-of-type(1) img:hover {
+  transform: scale(1.25);
+}
+.gallary figure:nth-of-type(4) {
+  transform: scale(0.8);
+}
+.gallary figure:nth-of-type(4) img:hover {
+  transform: scale(1.25);
+}
+.gallary_img {
+  max-width: 50rem;
+  transition: all 0.5s;
+}
+/* our fashion */
+.our_fashion {
+  /* height: 100dvh; */
+  /* padding-top: 20rem; */
+  padding: 10rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/img/Hero5(1).jpg");
+  /* background-attachment: fixed; */
+}
+.our_fashion_container {
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-bottom: 10rem;
+}
+.our_fashion_box {
+  max-width: 45rem;
+  /* max-height: 60rem; */
+  /* background-color: red; */
+  padding: 2rem;
+  color: var(--primary-bg-darker);
+  background-color: var(--grey-color);
+}
+.our_fashion_figure {
+  width: 100%;
+  max-height: 41.5rem;
+  overflow: hidden;
+}
+.our_fashion_heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--secondary-font-color);
+  background-color: #fff;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  transition: all 0.5s;
+  transform: translateY(-50%);
+}
+.our_fashion_heading h2 {
+  font-size: 3rem;
+}
+.our_fashion_heading h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: left;
+  color: var(--second-brand-darker);
+  /* width: 100%; */
+}
+
+.our_fashion_description {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.our_fashion_img {
+  max-width: 100%;
+}
+.button_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* newst collection */
+.newest_collection {
+  color: var(--secondary-font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+  /* background: linear-gradient(
+    to bottom right,
+    rgba(208, 181, 175, 0.8),
+    rgba(205, 189, 185, 0.8)
+  ); */
+  /* color: rgb(148, 116, 108);
+  color: rgb(250, 218, 210); */
+  /* background: linear-gradient(to bottom right, #807c7c, #7e7575); */
+  background: linear-gradient(to bottom right, #e0e0e0, #917a7a);
+  /* background-image: url("/img/Hero6.jpg"); */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  /* background-attachment: fixed; */
+}
+.collection_container {
+  display: flex;
+  /* gap: 5rem; */
+  align-items: center;
+  justify-content: center;
+  width: 150rem;
+  /* background-color: red; */
+}
+.collection_grid {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto 3fr;
+  max-height: 100%;
+  overflow: hidden;
+  /* background-color: var(--second-brand-color); */
+
+  /* height: ; */
+}
+.collection_heading {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 6rem;
+  letter-spacing: 5px;
+  text-align: center;
+  font-weight: 400;
+  /* text-orientation: upright; */
+}
+
+.filmstrip_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 60rem;
+  height: 100rem;
+  overflow-y: scroll; */
+  /* overflow-y: scroll; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* padding: 20px; */
+  /* background-color: #000; */
+}
+.figure_container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+.figure_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 70rem;
+  overflow-y: scroll;
+}
+.figure_container figure {
+  height: 20rem;
+  /* overflow: hidden; */
+}
+.filmstrip_image_container img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.filmstrip_image_container img:hover {
+  transform: scale(1.05);
+}
+.left,
+.right {
+  background-color: #fff;
+  width: 1rem;
+  height: 1rem;
+}
+.filmstrip {
+  display: flex;
+  /* overflow: hidden;
+  height: 50rem; */
+  /* height: 50rem; */
+  /* overflow: hidden; */
+  /* justify-content: center; */
+  /* width: 100%; */
+  /* align-items: center; */
+  /* position: relative;
+  border: 10px solid black; */
+  /* background-color: white; */
+}
+.dots {
+  /* height: 100%; */
+  /* width: 1rem; */
+  /* display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  overflow: hidden; */
+}
+
+.image_container {
+  /* padding: 10px;
+  display: inline-block; */
+}
+
+.image_container img {
+  /* width: 300px; 
+  height: auto; */
+}
+
+/* Left and right dot columns */
+.dots {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px; */
+}
+.collection_view {
+  /* width: 70rem; */
+  height: 70rem;
+  border-radius: 1rem;
+}
+.collection_view img {
+  /* width: 70rem; */
+  height: 70rem;
+  border-radius: 1rem;
+}
+
+/* shop now overview */
+.shop_overview {
+  /* height: 100dvh; */
+  padding: 5rem 10rem;
+  color: var(--secondary-font-color);
+  /* background-img: rgb(241, 225, 222); */
+  background: linear-gradient(
+    to bottom right,
+    rgb(241, 225, 222),
+    rgb(234, 229, 228)
+  );
+  /* background-image: url("/img/Hero6.jpg");
+  background-size: cover; */
+  /* background-position: center; */
+}
+.shop_heading {
+  color: var(--secondary-font-color);
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+  padding: 5rem;
+}
+.Shoping_second_heading {
+  font-size: 3rem;
+  color: var(--secondary-font-color);
+  font-weight: 400;
+  padding-bottom: 2rem;
+  /* font-family: monospace; */
+}
+.shoping_card figure {
+  max-width: 30rem;
+  max-height: 45rem;
+  overflow: hidden;
+  position: relative;
+  /* font-family: monospace; */
+}
+.shoping_card figure::before {
+  content: "Shop Now";
+  /* width: 5rem; */
+  font-size: 2rem;
+  position: absolute;
+  left: 0%;
+  top: 100%;
+  background-color: var(--second-brand-color);
+  padding: 1rem 2rem;
+  transform: translate(-100%, -100%);
+  transition: all 0.5s;
+  z-index: 10;
+  cursor: pointer;
+
+  /* color: black; */
+}
+.shoping_card figure:hover::before {
+  transform: translate(0%, -100%);
+}
+.shoping_card figure::before:active {
+  transform: scale(0.9) translate(0%, -100%);
+}
+.shoping_card figure img {
+  opacity: 0.9;
+  transition: all 0.5s;
+}
+.shoping_card figure img:hover {
+  opacity: 1;
+  transform: scale(1.25);
+}
+.shoping_card h4 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.shoping_card span {
+  font-size: 1.8rem;
+}
+.shop_for {
+  display: flex;
+  justify-content: space-between;
+}
+.for_her,
+.for_him {
+  padding-bottom: 10rem;
+}

@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+:root {
+  --primary-font-color: #e6e6e6;
+  --secondary-font-color: #1b1b1b;
+  --primary-bg-color: #ececec;
+  --secondary-bg-color: #303030;
+  --secondary-bg-lighter: #a2a2a2;
+  --primary-bg-darker: #070707;
+  --primary-bg-lighter: #fff;
+  --grey-color: #d9dad7;
+  --second-brand-color: #f6c1b4;
+  --second-brand-darker: #d76a4f;
+  --second-brand-bg: #f8cdc3;
+  --second-brand-bg-darker: #624d48;
+
+  /* Your primary color */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: Jost, monospace;
+  color: var(--primary-font-color);
+}
+section {
+  overflow-x: hidden;
+}
+/*
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+div:first-of-type {
+  animation: appear 6s infinite;
+}
+
+div:last-of-type {
+  animation: reveal 6s infinite;
+}
+
+div:last-of-type span {
+  font-size: 33px;
+  color: #808000;
+  animation: slide 6s infinite;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    margin-left: -800px;
+  }
+
+  20% {
+    margin-left: -800px;
+  }
+
+  35% {
+    margin-left: 0px;
+  }
+
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+
+  30% {
+    width: 655px;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    width: 655px;
+  }
+}
+
+*/
+
