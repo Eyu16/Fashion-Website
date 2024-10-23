@@ -289,6 +289,9 @@
 .filmstrip_image_container img {
   width: 20rem;
   height: 20rem;
+  object-fit: cover;
+  object-position: top;
+
   border-radius: 1rem;
   overflow: hidden;
   transition: all 0.3s;
@@ -350,8 +353,9 @@
   border-radius: 1rem;
 }
 .collection_view img {
-  /* width: 70rem; */
+  width: 100rem;
   height: 70rem;
+  object-fit: cover;
   border-radius: 1rem;
 }
 
@@ -412,8 +416,8 @@
 .shoping_card figure:hover::before {
   transform: translate(0%, -100%);
 }
-.shoping_card figure::before:active {
-  transform: scale(0.9) translate(0%, -100%);
+.shoping_card figure:active::before {
+  transform: scale(0.9) translate(-10%, -100%);
 }
 .shoping_card figure img {
   opacity: 0.9;

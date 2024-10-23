@@ -1,6 +1,14 @@
+import { useState } from "react";
 import Button from "../ui/Button";
 import Styles from "./home.module.css";
 function Home() {
+  const [overview, setOverview] = useState("Square4(1).jpg");
+
+  const handleClick = () => {
+    setOverview((overview) =>
+      overview === "Square4(1).jpg" ? "Hero3(1).jpeg" : "Square4(1).jpg"
+    );
+  };
   return (
     <>
       <section className={Styles.section_hero}>
@@ -120,34 +128,34 @@ function Home() {
           <div className={Styles.collection_grid}>
             <div className={Styles.filmstrip_container}>
               <div className={Styles.filmstrip}>
-                <div className={Styles.figure_container}>
+                <div className={Styles.figure_container} onClick={handleClick}>
                   <figure className={Styles.filmstrip_image_container}>
                     <img
-                      src="/img/Square1(1).jpg"
+                      src="/img/Square9(1).jpeg"
                       alt="Stylish person in checkered jacket"
                     />
                   </figure>
                   <figure className={Styles.filmstrip_image_container}>
                     <img
-                      src="/img/Square1(1).jpg"
+                      src="/img/Square6(1).jpeg"
                       alt="Stylish person in checkered jacket"
                     />
                   </figure>
                   <figure className={Styles.filmstrip_image_container}>
                     <img
-                      src="/img/Square1(1).jpg"
+                      src="/img/Portrait11(1).jpeg"
                       alt="Stylish person in checkered jacket"
                     />
                   </figure>
                   <figure className={Styles.filmstrip_image_container}>
                     <img
-                      src="/img/Square1(1).jpg"
+                      src="/img/Square5(1).jpeg"
                       alt="Stylish person in checkered jacket"
                     />
                   </figure>
                   <figure className={Styles.filmstrip_image_container}>
                     <img
-                      src="/img/Square1(1).jpg"
+                      src="/img/Square7(1).jpeg"
                       alt="Stylish person in checkered jacket"
                     />
                   </figure>
@@ -156,7 +164,7 @@ function Home() {
             </div>
             <figure className={Styles.collection_view}>
               <img
-                src="/img/Square4(1).jpg"
+                src={`/img/${overview}`}
                 alt="Stylish person in checkered jacket 2"
               />
             </figure>
