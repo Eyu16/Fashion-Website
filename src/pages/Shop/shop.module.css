@@ -1,0 +1,7 @@
+.shop {
+  padding: 10rem 15rem;
+  /* background: #000; */
+}
+.shop > * {
+  margin-top: 5rem;
+}

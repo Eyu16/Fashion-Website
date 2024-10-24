@@ -359,20 +359,15 @@
   border-radius: 1rem;
 }
 
-/* shop now overview */
+/* shoping */
 .shop_overview {
-  /* height: 100dvh; */
   padding: 5rem 10rem;
   color: var(--secondary-font-color);
-  /* background-img: rgb(241, 225, 222); */
   background: linear-gradient(
     to bottom right,
     rgb(241, 225, 222),
     rgb(234, 229, 228)
   );
-  /* background-image: url("/img/Hero6.jpg");
-  background-size: cover; */
-  /* background-position: center; */
 }
 .shop_heading {
   color: var(--secondary-font-color);
@@ -388,18 +383,15 @@
   color: var(--secondary-font-color);
   font-weight: 400;
   padding-bottom: 2rem;
-  /* font-family: monospace; */
 }
-.shoping_card figure {
+/* .shoping_card figure {
   max-width: 30rem;
   max-height: 45rem;
   overflow: hidden;
   position: relative;
-  /* font-family: monospace; */
 }
 .shoping_card figure::before {
   content: "Shop Now";
-  /* width: 5rem; */
   font-size: 2rem;
   position: absolute;
   left: 0%;
@@ -410,8 +402,6 @@
   transition: all 0.5s;
   z-index: 10;
   cursor: pointer;
-
-  /* color: black; */
 }
 .shoping_card figure:hover::before {
   transform: translate(0%, -100%);
@@ -433,12 +423,12 @@
 }
 .shoping_card span {
   font-size: 1.8rem;
-}
-.shop_for {
+} */
+/* .shop_for {
   display: flex;
   justify-content: space-between;
 }
 .for_her,
 .for_him {
   padding-bottom: 10rem;
-}
+} */

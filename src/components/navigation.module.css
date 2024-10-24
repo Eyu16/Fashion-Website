@@ -1,0 +1,65 @@
+.main_nav {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(40px); /* Creates the frosted glass effect */
+  -webkit-backdrop-filter: blur(40px); /* For Safari support */
+  border-radius: 10px; /* Rounded corners (optional) */
+  padding: 10px 20px; /* Spacing inside the navigation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: black;
+  /* opacity: 1; */
+}
+.nav_lists {
+  color: black;
+
+  /* color: var(--secondary-font-color); */
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.nav_list {
+  cursor: pointer;
+  position: relative;
+}
+.nav_list:hover {
+  color: var(--second-brand-darker);
+}
+.nav_list::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: var(--second-brand-darker);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+.nav_list:hover::before {
+  width: 100%;
+  left: 0;
+}
+/* .cart_container {
+   margin-left: 2rem;
+  background: rgba(255, 255, 255, 0);  
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border-radius: 10px; 
+  padding: 10px 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--second-brand-bg);
+  font-weight: 600; 
+} */
+.cart_container {
+  cursor: pointer;
+}
+.cart {
+  width: 3rem;
+  /* width: 100%; */
+  object-position: center;
+}

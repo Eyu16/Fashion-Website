@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Button from "../ui/Button";
+import Button from "../../components/Button";
 import Styles from "./home.module.css";
+import ShopItems from "../../components/ShopItems";
 function Home() {
   const [overview, setOverview] = useState("Square4(1).jpg");
 
@@ -10,7 +11,7 @@ function Home() {
     );
   };
   return (
-    <>
+    <main>
       <section className={Styles.section_hero}>
         <div className={`${Styles.hero_slider} ${Styles.hero_slider_1}`}>
           <h2 className={Styles.seconday_heading}>
@@ -179,7 +180,7 @@ function Home() {
           <div>
             <h3 className={Styles.Shoping_second_heading}>For her</h3>
           </div>
-          <div className={`${Styles.shop_for} ${Styles.for_her}`}>
+          {/* <div className={`${Styles.shop_for} ${Styles.for_her}`}>
             <div className={Styles.shoping_card}>
               <figure>
                 <img src="/img/Shop1(1).jpg" alt="shop" />
@@ -208,11 +209,29 @@ function Home() {
               <h4>Netela Dress</h4>
               <span>250$</span>
             </div>
-          </div>
+          </div> */}
+          <ShopItems
+            type="for_her"
+            images={[
+              "Shop1(1).jpg",
+              "Shop2(1).jpg",
+              "Shop4(1).jpg",
+              "Shop3(1).jpg",
+            ]}
+          />
           <div>
             <h3 className={Styles.Shoping_second_heading}>For him</h3>
           </div>
-          <div className={`${Styles.shop_for} ${Styles.for_him}`}>
+          <ShopItems
+            type="for_him"
+            images={[
+              "Shop8(1).jpg",
+              "Shop12(1).jpeg",
+              "Shop10(1).jpeg",
+              "Shop11(1).jpeg",
+            ]}
+          />
+          {/* <div className={`${Styles.shop_for} ${Styles.for_him}`}>
             <div className={Styles.shoping_card}>
               <figure>
                 <img src="/img/Shop8(1).jpg" alt="shop" />
@@ -241,10 +260,10 @@ function Home() {
               <h4>Netela Dress</h4>
               <span>250$</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
-    </>
+    </main>
   );
 }
 

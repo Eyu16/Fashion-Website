@@ -2,10 +2,12 @@
   font-size: 2.4rem;
   padding: 2rem 10rem;
   position: fixed;
+  /* position: sticky; */
+  background: transparent;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10rem;
+  z-index: 10;
   /* color: var(--second-brand-color); */
 
   /* background-color: var(--secondary-bg-color); */
@@ -13,8 +15,10 @@
 }
 .header_container {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.nav_lists {
+/* .nav_lists {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,17 +38,30 @@
   bottom: 0;
   left: 50%;
   width: 0;
-  height: 4px; /* Adjust the thickness of the border */
+  height: 4px; 
   background-color: var(
     --second-brand-darker
-  ); /* Set the color of the border */
+  ); 
   transition: width 0.4s ease, left 0.4s ease;
 }
 .nav_list:hover::before {
   width: 100%;
   left: 0;
-}
+} */
 .log_container {
   margin-right: auto;
   cursor: pointer;
+  /* color: var(--secondary-font-color); */
+  font-size: 3rem;
+  font-family: Dancing Script;
+  background: rgba(255, 255, 255, 0); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Creates the frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border-radius: 10px; /* Rounded corners (optional) */
+  padding: 10px 20px; /* Spacing inside the navigation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--second-brand-bg);
+  font-weight: 600;
+  /* color: black; */
+  /* opacity: 1; */
 }
