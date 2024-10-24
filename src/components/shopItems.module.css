@@ -43,12 +43,13 @@
   opacity: 1;
   transform: scale(1.25);
 }
-.shoping_card h4 {
+.shoping_card .product_name {
   font-size: 2rem;
   font-weight: 400;
 }
-.shoping_card span {
+.shoping_card .product_price {
   font-size: 1.8rem;
+  font-weight: 500;
 }
 .shop_for {
   display: flex;
@@ -56,6 +57,40 @@
   flex-wrap: wrap;
   color: var(--secondary-font-color);
 }
+.description_cotainer {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.shoping_card:hover .cart {
+  opacity: 1;
+}
+.cart {
+  transition: all 0.5s;
+  cursor: pointer;
+  opacity: 0;
+}
+.cart:hover {
+  transform: scale(1.1);
+  stroke: var(--second-brand-bg-darker);
+  /* opacity: 1; */
+
+  /* background-color: var(--second-brand-bg-darker); */
+
+  /* cursor: pointer; */
+}
+.cart:active {
+  transform: scale(0.9);
+  /* opacity: 1; */
+}
+/* .cart {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  background-color: red;
+  font-size: 5rem;
+} */
 /* .for_her,
 .for_him {
   padding-bottom: 10rem;
