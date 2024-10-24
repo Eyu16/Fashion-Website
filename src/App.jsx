@@ -3,13 +3,14 @@ import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
 import AppLayout from "./ui/AppLayout";
 import ShopItems from "./components/ShopItems";
+import Product from "./pages/Product/Product";
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Product />,
       },
       {
         path: "/shop",

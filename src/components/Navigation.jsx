@@ -16,9 +16,13 @@ function Navigation({ items, customeStyle, type }) {
           </Link>
         ))}
         {type === "main_nav" && (
-          <li>
+          <li className={Styles.nav_list}>
             <figure className={Styles.cart_container}>
-              <img src="/img/cart.png" className={Styles.cart} alt="cart" />
+              <img
+                src="/img/cart.png"
+                className={`${Styles.cart}`}
+                alt="cart"
+              />
             </figure>
           </li>
         )}

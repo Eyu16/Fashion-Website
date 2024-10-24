@@ -1,0 +1,10 @@
+.product {
+  height: 100dvh;
+  padding: 5rem 10rem;
+  color: var(--secondary-font-color);
+}
+.product_heading {
+  padding-top: 2rem;
+  font-size: 4rem;
+  font-weight: 400;
+}
