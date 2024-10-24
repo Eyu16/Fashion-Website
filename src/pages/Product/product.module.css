@@ -18,6 +18,9 @@
   padding-bottom: 5rem;
   /* justify-content: space-around; */
 }
+.details_text {
+  /* max-width: 50rem; */
+}
 .imgContainer {
   width: 35rem;
   height: 35rem;
@@ -72,6 +75,7 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.5s;
+  width: 17rem;
 }
 .add_cart:hover {
   background-color: var(--secondary-bg-lighter);
