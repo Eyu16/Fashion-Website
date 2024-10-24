@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Styles from "./navigation.module.css";
 function Navigation({ items, customeStyle, type }) {
-  console.log(items);
+  // console.log(items);
   return (
     <nav>
       <ul

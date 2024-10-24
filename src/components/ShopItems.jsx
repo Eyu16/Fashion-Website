@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Styles from "./shopItems.module.css";
 //
 function ShopItems({ type, images }) {
@@ -37,13 +38,16 @@ function ShopItems({ type, images }) {
     <div className={`${Styles.shop_for} ${Styles[type]}`}>
       {images?.map((img, i) => (
         <div className={Styles.shoping_card} key={i}>
-          <figure>
-            <img src={`/img/${img}`} alt="shop" />
-          </figure>
+          <Link to="/shop/mens/products/:productId">
+            <figure>
+              <img src={`/img/${img}`} alt="shop" />
+            </figure>
+          </Link>
           <h4>Netela Dress</h4>
           <span>250$</span>
         </div>
       ))}
+      {/*  */}
       {/* <div className={Styles.shoping_card}>
         <figure>
           <img src="/img/Shop1(1).jpg" alt="shop" />
