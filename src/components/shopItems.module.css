@@ -12,7 +12,8 @@
   /* font-family: monospace; */
 }
 .shoping_card figure::before {
-  content: "Shop Now";
+  /* content: "Shop Now"; */
+  content: "DETAILS";
   color: var(--secondary-font-color);
   /* width: 5rem; */
   font-size: 2rem;
