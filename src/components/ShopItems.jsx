@@ -1,4 +1,5 @@
 import Styles from "./shopItems.module.css";
+//
 function ShopItems({ type, images }) {
   if (!images) {
     if (type === "for_her")
