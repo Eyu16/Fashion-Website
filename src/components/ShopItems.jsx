@@ -7,15 +7,15 @@ function ShopItems({ type, images }) {
       images = [
         "Shop1(1).jpg",
         "Shop2(1).jpg",
-        "Shop4(1).jpg",
+        "Shop4(2).jpg",
         "Shop3(1).jpg",
         "Shop1(1).jpg",
         "Shop2(1).jpg",
-        "Shop4(1).jpg",
+        "Shop4(2).jpg",
         "Shop3(1).jpg",
         "Shop1(1).jpg",
         "Shop2(1).jpg",
-        "Shop4(1).jpg",
+        "Shop4(2).jpg",
         "Shop3(1).jpg",
       ];
     else

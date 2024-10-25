@@ -45,9 +45,14 @@
   font-weight: 500;
 }
 .shop_for {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  max-width: 134rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* justify-content: space-between; */
+  gap: 1rem;
+  /* flex-wrap: wrap; */
   color: var(--secondary-font-color);
 }
 .description_cotainer {
@@ -71,4 +76,36 @@
 .cart:active {
   transform: scale(0.9);
   /* opacity: 1; */
+}
+
+/* MEDIA QURIES */
+
+@media (max-width: 81.25em) {
+  .shoping_card figure {
+    /* object-position: ; */
+    /* object-position: cover; */
+    /* object-fit: fill; */
+    /* object-position: left; */
+    /* overflow: hidden;
+    position: relative; */
+  }
+  .shoping_card {
+    max-width: 20rem;
+    /* max-height: 35rem; */
+  }
+
+  .shoping_card figure img {
+    max-width: 20rem;
+    max-height: 35rem;
+  }
+  .shop_for {
+    max-width: 100rem;
+  }
+  .shoping_card figure::before {
+    font-size: 1.4rem;
+    left: 0%;
+    top: 100%;
+    padding: 0.8rem 1.6rem;
+    transform: translate(-100%, -100%);
+  }
 }

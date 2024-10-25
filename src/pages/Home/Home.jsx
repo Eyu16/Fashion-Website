@@ -2,8 +2,12 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import Styles from "./home.module.css";
 import ShopItems from "../../components/ShopItems";
+
+// const getImagePath = (name) => `/img/${name}`;
+
 function Home() {
   const [overview, setOverview] = useState("Square4(1).jpg");
+  // console.log(getImagePath("Portrait10(1).jpg"));
 
   const handleClick = () => {
     setOverview((overview) =>
@@ -180,42 +184,12 @@ function Home() {
           <div>
             <h3 className={Styles.Shoping_second_heading}>For her</h3>
           </div>
-          {/* <div className={`${Styles.shop_for} ${Styles.for_her}`}>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop1(1).jpg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop2(1).jpg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop4(1).jpg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop3(1).jpg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-          </div> */}
           <ShopItems
             type="for_her"
             images={[
               "Shop1(1).jpg",
               "Shop2(1).jpg",
-              "Shop4(1).jpg",
+              "Shop4(2).jpg",
               "Shop3(1).jpg",
             ]}
           />
@@ -231,36 +205,6 @@ function Home() {
               "Shop11(1).jpeg",
             ]}
           />
-          {/* <div className={`${Styles.shop_for} ${Styles.for_him}`}>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop8(1).jpg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop12(1).jpeg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop10(1).jpeg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-            <div className={Styles.shoping_card}>
-              <figure>
-                <img src="/img/Shop11(1).jpeg" alt="shop" />
-              </figure>
-              <h4>Netela Dress</h4>
-              <span>250$</span>
-            </div>
-          </div> */}
         </div>
       </section>
     </main>

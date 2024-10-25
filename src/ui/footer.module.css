@@ -72,3 +72,11 @@
 .svg:hover {
   transform: scale(1.1);
 }
+@media (max-width: 81.25em) {
+  .footer_lower_div ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    font-size: 2.5rem;
+  }
+}
