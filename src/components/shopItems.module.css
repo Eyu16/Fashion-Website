@@ -78,7 +78,7 @@
   /* opacity: 1; */
 }
 
-/* MEDIA QURIES */
+/* MEDIA QUERIES */
 
 @media (max-width: 81.25em) {
   .shoping_card figure {
@@ -108,4 +108,28 @@
     padding: 0.8rem 1.6rem;
     transform: translate(-100%, -100%);
   }
+}
+
+@media (max-width: 58.2em) {
+  .shoping_card .product_name {
+    font-size: 1.8rem;
+  }
+  .shoping_card .product_price {
+    font-size: 1.6rem;
+  }
+  .shop_for {
+    max-width: 60rem;
+    gap: 3rem;
+    /* margin-left: -2.5rem; */
+  }
+  .shoping_card {
+    max-width: 15rem;
+    /* max-height: 35rem; */
+  }
+  .shoping_card figure img {
+    max-width: 15rem;
+    max-height: 30rem;
+  }
+}
+@media (max-width: 43.75em) {
 }

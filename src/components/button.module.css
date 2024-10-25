@@ -31,3 +31,15 @@
   background-color: var(--secondary-bg-lighter);
   color: var(--secondary-font-color);
 }
+
+/*  */
+/*  */
+/*  MEDIA QUERIES */
+@media (max-width: 68.75em) {
+  .button_primary,
+  .button_secondary {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    letter-spacing: 2.5px;
+  }
+}

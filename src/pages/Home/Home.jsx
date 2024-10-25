@@ -15,7 +15,7 @@ function Home() {
     );
   };
   return (
-    <main>
+    <main className={Styles.home_main}>
       <section className={Styles.section_hero}>
         <div className={`${Styles.hero_slider} ${Styles.hero_slider_1}`}>
           <h2 className={Styles.seconday_heading}>
@@ -192,6 +192,7 @@ function Home() {
               "Shop4(2).jpg",
               "Shop3(1).jpg",
             ]}
+            custome_class={"home_shope_grid"}
           />
           <div>
             <h3 className={Styles.Shoping_second_heading}>For him</h3>
@@ -204,6 +205,7 @@ function Home() {
               "Shop10(1).jpeg",
               "Shop11(1).jpeg",
             ]}
+            custome_class={"home_shope_grid"}
           />
         </div>
       </section>

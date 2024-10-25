@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Styles from "./shopItems.module.css";
 //
-function ShopItems({ type, images }) {
+function ShopItems({ type, images, custome_class }) {
   if (!images) {
     if (type === "for_her")
       images = [
@@ -35,7 +35,7 @@ function ShopItems({ type, images }) {
       ];
   }
   return (
-    <div className={`${Styles.shop_for} ${Styles[type]}`}>
+    <div className={`${Styles.shop_for} ${Styles[type]} ${custome_class}`}>
       {images?.map((img, i) => (
         <div className={Styles.shoping_card} key={i}>
           <Link to="/shop/mens/products/:productId">
