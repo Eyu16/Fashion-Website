@@ -23,18 +23,18 @@ function Product() {
               <div className={Styles.count_buttons}>
                 <button
                   className={Styles.count_button}
-                  onClick={() => setCount((count) => count + 1)}
-                >
-                  Inc
-                </button>
-                <span className={Styles.count}>{count}</span>
-                <button
-                  className={Styles.count_button}
                   onClick={() =>
                     setCount((count) => (count > 1 ? count - 1 : count))
                   }
                 >
                   Dec
+                </button>
+                <span className={Styles.count}>{count}</span>
+                <button
+                  className={Styles.count_button}
+                  onClick={() => setCount((count) => count + 1)}
+                >
+                  Inc
                 </button>
               </div>
               <button className={Styles.add_cart}>Add To Cart</button>

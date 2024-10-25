@@ -58,9 +58,25 @@ a {
 } */
 .cart_container {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cart {
-  width: 3rem;
-  /* width: 100%; */
+  width: 4rem;
+  padding: 0.5rem;
   object-position: center;
+}
+.account_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.account {
+  width: 4rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.account:active {
 }

@@ -55,10 +55,10 @@
   font-size: 3rem;
   font-family: Dancing Script;
   background: rgba(255, 255, 255, 0); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Creates the frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  border-radius: 10px; /* Rounded corners (optional) */
-  padding: 10px 20px; /* Spacing inside the navigation */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: var(--second-brand-bg);
   font-weight: 600;

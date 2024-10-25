@@ -7,7 +7,7 @@ function Home() {
 
   const handleClick = () => {
     setOverview((overview) =>
-      overview === "Square4(1).jpg" ? "Hero3(1).jpeg" : "Square4(1).jpg"
+      overview === "Square5(2).jpg" ? "Square7(2).jpg" : "Square5(2).jpg"
     );
   };
   return (
@@ -132,7 +132,7 @@ function Home() {
                 <div className={Styles.figure_container} onClick={handleClick}>
                   <figure className={Styles.filmstrip_image_container}>
                     <img
-                      src="/img/Square9(1).jpeg"
+                      src="/img/Square4(2).jpg"
                       alt="Stylish person in checkered jacket"
                     />
                   </figure>
@@ -144,7 +144,7 @@ function Home() {
                   </figure>
                   <figure className={Styles.filmstrip_image_container}>
                     <img
-                      src="/img/Portrait11(1).jpeg"
+                      src="/img/Hero3(2).jpg"
                       alt="Stylish person in checkered jacket"
                     />
                   </figure>

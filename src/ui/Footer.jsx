@@ -8,6 +8,8 @@ function Footer() {
           <li>Brands</li>
           <li>Media</li>
           <li>Pr agencies</li>
+          <li>Fashion</li>
+          <li>Designer</li>
         </ul>
       </div>
       <div className={Styles.footer_lower_div}>

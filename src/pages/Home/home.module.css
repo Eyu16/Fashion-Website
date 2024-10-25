@@ -72,6 +72,7 @@
   background-attachment: fixed;
   /* background-image: url("/img/Hero5(1).jpg"); */
   background: linear-gradient(to bottom right, #e0e0e0, #8f8787);
+  background: linear-gradient(to bottom right, #917a7a, #e0e0e0);
 
   /* background-color: rgba(153, 150, 150, 0.8); */
 }
@@ -223,7 +224,7 @@
   /* color: rgb(148, 116, 108);
   color: rgb(250, 218, 210); */
   /* background: linear-gradient(to bottom right, #807c7c, #7e7575); */
-  background: linear-gradient(to bottom right, #e0e0e0, #917a7a);
+  background: linear-gradient(to bottom right, #917a7f, #917a7a);
   /* background-image: url("/img/Hero6.jpg"); */
   background-size: cover;
   background-position: center;
@@ -363,11 +364,12 @@
 .shop_overview {
   padding: 5rem 10rem;
   color: var(--secondary-font-color);
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom right,
     rgb(241, 225, 222),
     rgb(234, 229, 228)
-  );
+  ); */
+  background: linear-gradient(to bottom right, #917a7a, #e0e0e0);
 }
 .shop_heading {
   color: var(--secondary-font-color);

@@ -1,4 +1,5 @@
 .footer {
+  /* height: ; */
   color: var(--secondary-font-color);
   padding: 10rem;
   background-color: #222323;
@@ -11,6 +12,7 @@
   padding-bottom: 5rem;
   padding-top: 20rem;
   background: linear-gradient(to bottom right, #e0e0e0, #8f8787);
+  background: linear-gradient(to bottom right, #8f8787, #e0e0e0);
   font-family: Dancing Script;
   font-weight: 600;
   overflow: hidden;
@@ -18,8 +20,8 @@
 .footer_heading {
   /* text-align: center; */
   font-family: Dancing Script;
-  padding-bottom: 5rem;
-  font-size: 5rem;
+  padding-bottom: 4rem;
+  font-size: 6rem;
   font-weight: 400;
 }
 .footer_description {

@@ -14,6 +14,7 @@ function Header() {
             { name: "Shop", to: "/shop" },
             { name: "About", to: "/about" },
             { name: "Contact", to: "/contact" },
+            // { name: "Login", to: "/login" },
           ]}
         />
         {/* <nav>

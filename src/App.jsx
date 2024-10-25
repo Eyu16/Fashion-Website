@@ -4,6 +4,9 @@ import Shop from "./pages/Shop/Shop";
 import AppLayout from "./ui/AppLayout";
 import ShopItems from "./components/ShopItems";
 import Product from "./pages/Product/Product";
+import Contact from "./pages/Contact/Contact";
+import Login from "./pages/Login/Login";
+import Cart from "./pages/Cart/Cart";
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -33,6 +36,22 @@ const router = createBrowserRouter([
             element: <Product />,
           },
         ],
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/login",
+        element: <Login type="login" />,
+      },
+      {
+        path: "/signup",
+        element: <Login type="signup" />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

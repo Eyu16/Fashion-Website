@@ -10,21 +10,34 @@ function Navigation({ items, customeStyle, type }) {
       >
         {items.map((item, i) => (
           <Link to={item.to} key={i}>
-            <li className={Styles.nav_list}>
-              {item.name === "cart" ? "" : item.name}
-            </li>
+            <li className={Styles.nav_list}>{item.name}</li>
           </Link>
         ))}
         {type === "main_nav" && (
-          <li className={Styles.nav_list}>
-            <figure className={Styles.cart_container}>
-              <img
-                src="/img/cart.png"
-                className={`${Styles.cart}`}
-                alt="cart"
-              />
-            </figure>
-          </li>
+          <Link to="/login">
+            <li className={Styles.nav_list}>
+              <figure className={Styles.account_container}>
+                <img
+                  src="/img/account.svg"
+                  className={`${Styles.account}`}
+                  alt="account"
+                />
+              </figure>
+            </li>
+          </Link>
+        )}
+        {type === "main_nav" && (
+          <Link to="/cart">
+            <li className={Styles.nav_list}>
+              <figure className={Styles.cart_container}>
+                <img
+                  src="/img/cart.png"
+                  className={`${Styles.cart}`}
+                  alt="cart"
+                />
+              </figure>
+            </li>
+          </Link>
         )}
       </ul>
     </nav>
