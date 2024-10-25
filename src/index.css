@@ -15,6 +15,10 @@
   --second-brand-darker: #d76a4f;
   --second-brand-bg: #f8cdc3;
   --second-brand-bg-darker: #624d48;
+  --black: #000;
+  --black-light: #444;
+  --black-lighter: #888;
+  --white: #fff;
 
   /* Your primary color */
 }

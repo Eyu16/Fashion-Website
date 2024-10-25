@@ -40,7 +40,7 @@ input {
   font-family: inherit;
   padding: 1rem 2rem;
   font-size: 1.8rem;
-  border: 2px solid #000;
+  border: 2px solid var(--black);
 }
 textarea {
   width: 50rem;
@@ -51,7 +51,7 @@ textarea {
   font-family: inherit;
   padding: 1rem 2rem;
   font-size: 2rem;
-  border: 2px solid #000;
+  border: 2px solid var(--black);
 }
 input:focus,
 textarea:focus {
@@ -62,7 +62,7 @@ textarea:focus {
 .button {
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 2px solid #e6e6e6;
+  border: 2px solid var(--primary-font-color);
   color: var(--primary-font-color);
   background-color: var(--second-brand-bg-darker);
   padding: 1rem 2rem;

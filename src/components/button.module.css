@@ -14,7 +14,7 @@
 .button_secondary {
   text-transform: uppercase;
   letter-spacing: 5px;
-  border: 2px solid #e6e6e6;
+  border: 2px solid var(--primary-font-color);
   color: var(--primary-font-color);
   background-color: var(--second-brand-bg-darker);
   padding: 2rem 4rem;
@@ -24,10 +24,8 @@
   transition: all 0.5s;
 }
 .button_primary:hover {
-  /* background-color: var(--secondary-bg-darker); */
   background-color: var(--second-brand-bg);
   color: var(--secondary-font-color);
-  /* color: var(--secondary-font-color); */
 }
 .button_secondary:hover {
   background-color: var(--secondary-bg-lighter);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Styles from "./login.module.css";
-import { formatDate } from "tough-cookie";
+// import { formatDate } from "tough-cookie";
 import { Link } from "react-router-dom";
 function Login({ type }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +45,7 @@ function Login({ type }) {
 
             <img
               className={`${Styles.eye_icon} ${
-                Styles[formatDate.password ? "visible" : ""]
+                Styles[formData.password ? "visible" : ""]
               }`}
               src={`/img/${showPassword ? "off" : "on"}.svg`}
               alt="eye"
