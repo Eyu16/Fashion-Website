@@ -53,8 +53,13 @@ function Login({ type }) {
             />
           </div>
           <p className={Styles.suggestion}>
-            If you do not have an account, please{" "}
-            <Link to={`/${type === "login" ? "signup" : "login"}`}>Signup</Link>
+            If you {type === "login" ? "do not" : "already"} have an account,
+            please
+            <Link to={`/${type === "login" ? "signup" : "login"}`}>
+              {" "}
+              {type === "login" ? "signup" : "login"}
+            </Link>{" "}
+            here
           </p>
         </div>
         <div className={Styles.button_center}>
