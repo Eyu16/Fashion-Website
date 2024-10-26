@@ -462,10 +462,10 @@
   /* SECTION hERO */
   .primary_heading {
     /* max-width: 100%; */
-    font-size: 2.2rem;
+    font-size: 4.8rem;
   }
   .seconday_heading {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     /* color: var(--second-brand-color);
     font-family: Raleway;
     letter-spacing: 1px; */
@@ -491,7 +491,15 @@
     width: 100%;
   }
 }
-@media (max-width: 58.2em) {
+@media (max-width: 58.4em) {
+  /* SECTION hERO */
+  .hero_slider {
+    padding: 10rem 5rem 5rem 5rem;
+  }
+  .primary_heading {
+    /* max-width: 100%; */
+    font-size: 3.5rem;
+  }
   /* SECTION SHOP*/
   .shop_overview {
     padding: 1rem 5rem;
@@ -577,14 +585,49 @@
 @media (max-width: 43.75em) {
   /* SECTION hERO */
   .primary_heading {
-    /* max-width: 100%; */
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   .hero_slider_1 {
     background-image: url("/img/Hero7(5).jpg");
   }
   .seconday_heading {
-    font-size: 1rem;
+    font-size: 1.6rem;
+  }
+
+  /*SECTION FASHION */
+
+  .fashion h1 {
+    font-size: 5rem;
+    padding-bottom: 0rem;
+  } /*
+  .gallary {
+    gap: 1rem;
+  } */
+  .gallary figure:nth-of-type(3) img {
+    max-height: 35.6rem;
+  }
+  .gallary figure:nth-of-type(3) {
+    transform: translate(50%, -5%);
+  }
+  .gallary figure:nth-of-type(2) img {
+    max-height: 32.5rem;
+  }
+  .gallary figure:nth-of-type(2) {
+    transform: scale(1.1) translate(5%, 20%);
+  }
+  .gallary figure:nth-of-type(1) img {
+    max-height: 37.5rem;
+  }
+  .gallary figure:nth-of-type(1) {
+    transform: scale(0.9) translate(50%, 0%);
+  }
+  .gallary figure:nth-of-type(4) img {
+    max-height: 40.6rem;
+  }
+  .gallary figure:nth-of-type(4) {
+    transform: scale(0.8) translate(-5%, 0%);
+
+    /* max-height: 40.6rem; */
   }
 
   /* SECTION NEWEST COLLECTION */
@@ -602,5 +645,101 @@
   }
   .collection_heading {
     font-size: 3.5rem;
+  }
+  /* SECTION OUR FASHION */
+  .our_fashion {
+    /* padding: 5rem 2.5rem; */
+    max-width: 70rem;
+    /* overflow-x: scroll; */
+  }
+  .our_fashion_box {
+    width: 30rem;
+    /* max-height: 60rem; */
+    /* background-color: red; */
+    /* padding: 2rem;
+    color: var(--primary-bg-darker);
+    background-color: var(--grey-color); */
+  }
+  .our_fashion_container {
+    /* width: 5rem; */
+    max-height: 45rem;
+    flex-direction: column;
+    overflow: scroll;
+  }
+  /* SECTION SHOPING */
+  .shop_heading {
+    /* color: var(--secondary-font-color); */
+    font-size: 2.7rem;
+    /* width: 100%; */
+    padding: 2rem 2rem;
+    /* font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 5rem; */
+  }
+}
+@media (max-width: 34.4em) {
+  /* SECTION hERO */
+  .primary_heading {
+    font-size: 1.8rem;
+  }
+  .hero_slider_1 {
+    background-image: url("/img/Hero7(5).jpg");
+  }
+  .seconday_heading {
+    font-size: 1rem;
+  }
+  .hero_slider {
+    padding: 10rem 2rem 2rem 2rem;
+  }
+  /*SECTION FASHION */
+
+  /* .fashion h1 {
+    font-size: 5rem;
+    padding-bottom: 0rem;
+  }  */
+  /*
+  .gallary {
+    gap: 1rem;
+  } */
+  .gallary figure:nth-of-type(3) img {
+    max-height: 25.6rem;
+  }
+  .gallary figure:nth-of-type(3) {
+    transform: translate(70%, 0%);
+  }
+  .gallary figure:nth-of-type(2) img {
+    max-height: 22.5rem;
+  }
+  .gallary figure:nth-of-type(2) {
+    transform: scale(1.1) translate(3%, 20%);
+  }
+  .gallary figure:nth-of-type(1) img {
+    max-height: 27.5rem;
+  }
+  .gallary figure:nth-of-type(1) {
+    transform: scale(0.9) translate(70%, 0%);
+  }
+  .gallary figure:nth-of-type(4) img {
+    max-height: 30.6rem;
+  }
+  .gallary figure:nth-of-type(4) {
+    transform: scale(0.8) translate(-15%, 0%);
+
+    /* max-height: 40.6rem; */
+  }
+
+  /* SECTION SHOP */
+  .shop_heading {
+    /* color: var(--secondary-font-color); */
+    font-size: 2rem;
+    /* width: 100%; */
+    padding: 2rem 1rem;
+    /* font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 5rem; */
   }
 }

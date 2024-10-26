@@ -38,8 +38,32 @@
 @media (max-width: 68.75em) {
   .button_primary,
   .button_secondary {
-    padding: 1rem 2rem;
+    /* padding: 2rem 4rem; */
+    font-size: 2rem;
+    /* letter-spacing: 5px; */
+  }
+}
+@media (max-width: 58.4em) {
+  .button_primary,
+  .button_secondary {
+    font-size: 1.8rem;
+    padding: 1.5rem 3rem;
+  }
+}
+
+@media (max-width: 43.75em) {
+  .button_primary,
+  .button_secondary {
+    font-size: 1.5rem;
+    padding: 1.25rem 2.5rem;
+    letter-spacing: 4px;
+  }
+}
+@media (max-width: 34.4em) {
+  .button_primary,
+  .button_secondary {
     font-size: 1rem;
-    letter-spacing: 2.5px;
+    padding: 1rem 2rem;
+    letter-spacing: 2px;
   }
 }

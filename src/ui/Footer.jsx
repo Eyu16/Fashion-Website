@@ -22,7 +22,8 @@ function Footer() {
               width="50"
               height="50"
               viewBox="0 0 50 50"
-              className={Styles.svg}
+              className={`${Styles.svg} socialmedia_sizes`}
+              // style={}
 
               // fill="white"
             >
@@ -37,7 +38,7 @@ function Footer() {
               width="50"
               height="50"
               viewBox="0 0 50 50"
-              className={Styles.svg}
+              className={`${Styles.svg} socialmedia_sizes`}
 
               // fill="white"
             >
@@ -52,7 +53,7 @@ function Footer() {
               width="50"
               height="50"
               viewBox="0 0 50 50"
-              className={Styles.svg}
+              className={`${Styles.svg} socialmedia_sizes`}
 
               // fill="white"
               // stroke="black"
@@ -68,7 +69,7 @@ function Footer() {
               width="50"
               height="50"
               viewBox="0 0 50 50"
-              className={Styles.svg}
+              className={`${Styles.svg} socialmedia_sizes`}
 
               // fill="white"
               // stroke="black"
