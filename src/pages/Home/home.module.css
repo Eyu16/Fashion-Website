@@ -695,10 +695,11 @@
   }
   /*SECTION FASHION */
 
-  /* .fashion h1 {
-    font-size: 5rem;
-    padding-bottom: 0rem;
-  }  */
+  .fashion h1 {
+    /* font-size: 5rem;
+    padding-bottom: 0rem; */
+    /* color: red; */
+  }
   /*
   .gallary {
     gap: 1rem;
@@ -741,5 +742,20 @@
     text-align: center;
     letter-spacing: 5px;
     padding: 5rem; */
+  }
+  .Shoping_second_heading {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 26em) {
+  .hero_slider_1 {
+    background-image: url("/img/Hero7(6).jpg");
+  }
+  /* SECTION HERO */
+  /* SECTION  FASHION*/
+  .fashion h1 {
+    /* font-size: 5rem;
+    padding-bottom: 0rem; */
+    /* color: red; */
   }
 }

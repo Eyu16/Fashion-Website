@@ -3,7 +3,7 @@ import Styles from "./navigation.module.css";
 function Navigation({ items, customeStyle, type }) {
   // console.log(items);
   return (
-    <nav>
+    <nav className={`${type === "main_list" ? "main" : "minor"}`}>
       <ul
         className={`${Styles.nav_lists} ${Styles[type]}`}
         style={customeStyle}
@@ -13,7 +13,7 @@ function Navigation({ items, customeStyle, type }) {
             <li className={Styles.nav_list}>{item.name}</li>
           </Link>
         ))}
-        {type === "main_nav" && (
+        {type === "main_list" && (
           <Link to="/login">
             <li className={Styles.nav_list}>
               <figure className={Styles.account_container}>
@@ -26,7 +26,7 @@ function Navigation({ items, customeStyle, type }) {
             </li>
           </Link>
         )}
-        {type === "main_nav" && (
+        {type === "main_list" && (
           <Link to="/cart">
             <li className={Styles.nav_list}>
               <figure className={Styles.cart_container}>

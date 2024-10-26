@@ -8,7 +8,7 @@ function Header() {
           <span className={Styles.logo}>Maraki</span>
         </figure>
         <Navigation
-          type={"main_nav"}
+          type={"main_list"}
           items={[
             { name: "Home", to: "/" },
             { name: "Shop", to: "/shop" },

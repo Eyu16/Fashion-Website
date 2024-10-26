@@ -1,9 +1,9 @@
-.main_nav {
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+.main_list {
   backdrop-filter: blur(40px); /* Creates the frosted glass effect */
+  border-radius: 1rem; /* Rounded corners (optional) */
+  padding: 1rem 2rem; /* Spacing inside the navigation */
   -webkit-backdrop-filter: blur(40px); /* For Safari support */
-  border-radius: 10px; /* Rounded corners (optional) */
-  padding: 10px 20px; /* Spacing inside the navigation */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: var(--black);
   /*  */
@@ -66,4 +66,52 @@ a {
   transition: all 0.5s;
 }
 .account:active {
+}
+/* MEDIA QUERIES */
+@media (max-width: 53.5em) {
+  .main_list {
+    padding: 0.5rem 1rem;
+    gap: 2rem;
+  }
+}
+@media (max-width: 47.2em) {
+  .main_list {
+    font-size: 2rem;
+    gap: 1.8rem;
+  }
+  .cart {
+    width: 3rem;
+    /* padding: 0; */
+  }
+  .account {
+    width: 3rem;
+    /* padding: 0rem; */
+  }
+}
+@media (max-width: 41em) {
+  .main_list {
+    font-size: 1.5rem;
+    gap: 1.2rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none; /* For Safari support */
+    background: none; /* Semi-transparent white background */
+    box-shadow: none;
+    /* color: var(--white); */
+  }
+  .cart {
+    width: 2rem;
+    padding: 0;
+  }
+  .account {
+    width: 2rem;
+    padding: 0rem;
+  }
+}
+@media (max-width: 25em) {
+  .main_list {
+    font-size: 1rem;
+    gap: 1rem;
+
+    /* color: var(--white); */
+  }
 }
