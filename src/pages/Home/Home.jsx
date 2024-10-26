@@ -193,6 +193,7 @@ function Home() {
               "Shop3(1).jpg",
             ]}
             custome_class={"home_shope_grid"}
+            parent="home"
           />
           <div>
             <h3 className={Styles.Shoping_second_heading}>For him</h3>
@@ -206,6 +207,7 @@ function Home() {
               "Shop11(1).jpeg",
             ]}
             custome_class={"home_shope_grid"}
+            parent="home"
           />
         </div>
       </section>

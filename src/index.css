@@ -36,6 +36,10 @@ html {
 section {
   overflow-x: hidden;
 }
+/* .minor_nav {
+  fontsize: "3rem";
+  paddingbottom: "5rem";
+} */
 @media (max-width: 47.2em) {
   .home_shope_grid {
     overflow-x: scroll;
@@ -57,8 +61,30 @@ section {
     transform: scale(0.6);
   }
 }
+@media (max-width: 57.5em) {
+  .shope_shope_grid {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* overflow: scroll; */
+  }
+}
+
+@media (max-width: 47.5em) {
+  .shope_shope_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* .shope_shope_img {
+    width: 15rem;
+  } */
+}
 
 /*
+
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 
 div:first-of-type {

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Styles from "./shopItems.module.css";
 //
-function ShopItems({ type, images, custome_class }) {
+function ShopItems({ type, images, custome_class, parent }) {
   if (!images) {
     if (type === "for_her")
       images = [
@@ -35,12 +35,23 @@ function ShopItems({ type, images, custome_class }) {
       ];
   }
   return (
-    <div className={`${Styles.shop_for} ${Styles[type]} ${custome_class}`}>
+    <div
+      className={`${Styles.shop_for} ${Styles[type]} ${
+        !parent ? "shope_shope_grid" : custome_class
+      }`}
+    >
       {images?.map((img, i) => (
-        <div className={Styles.shoping_card} key={i}>
+        <div
+          className={`${Styles.shoping_card} ${!parent && "shope_shope_card"}`}
+          key={i}
+        >
           <Link to="/shop/mens/products/:productId">
             <figure>
-              <img src={`/img/${img}`} alt="shop" />
+              <img
+                className={`${!parent && "shope_shope_img"}`}
+                src={`/img/${img}`}
+                alt="shop"
+              />
             </figure>
           </Link>
           <div className={Styles.description_cotainer}>

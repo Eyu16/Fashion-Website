@@ -16,14 +16,15 @@ function Shop() {
     <main className={Styles.shop}>
       {!isProductPage && (
         <Navigation
+          type={"minor_list"}
           items={[
             { name: "MENS", to: "mens" },
-            { name: "WOMEN", to: "womens" },
+            { name: "WOMENS", to: "womens" },
           ]}
-          customeStyle={{ fontSize: "3rem", paddingBottom: "5rem" }}
+          // customeStyle={{ fontSize: "3rem", paddingBottom: "5rem" }}
         />
       )}
-      <Outlet />
+      <Outlet custome_class={"shope_shope_grid"} />
     </main>
   );
 }

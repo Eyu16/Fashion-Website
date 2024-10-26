@@ -10,7 +10,7 @@ function Navigation({ items, customeStyle, type }) {
       >
         {items.map((item, i) => (
           <Link to={item.to} key={i}>
-            <li className={Styles.nav_list}>{item.name}</li>
+            <li className={`${Styles.nav_list}`}>{item.name}</li>
           </Link>
         ))}
         {type === "main_list" && (
