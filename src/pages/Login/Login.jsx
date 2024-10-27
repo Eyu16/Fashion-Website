@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Styles from "./login.module.css";
-// import { formatDate } from "tough-cookie";
 import { Link } from "react-router-dom";
 function Login({ type }) {
   const [showPassword, setShowPassword] = useState(false);

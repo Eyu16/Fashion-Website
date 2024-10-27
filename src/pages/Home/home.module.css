@@ -2,7 +2,6 @@
 .section_hero {
   width: 100%;
   height: 100dvh;
-  /* position: relative; */
   overflow-y: scroll;
 }
 .section_hero::-webkit-scrollbar {
@@ -67,15 +66,11 @@
   justify-content: center;
   align-items: center;
   padding: 10rem;
-  /* background: linear-gradient(to bottom right, #e0e0e0, #505050); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* background-image: url("/img/Hero5(1).jpg"); */
   background: linear-gradient(to bottom right, #e0e0e0, #8f8787);
   background: linear-gradient(to bottom right, #917a7a, #e0e0e0);
-
-  /* background-color: rgba(153, 150, 150, 0.8); */
 }
 .fashion_container {
   position: relative;
@@ -87,14 +82,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-image: url("/img/Hero5(1).jpg"); */
   background: linear-gradient(
     to bottom right,
     rgba(224, 224, 224),
     rgba(80, 80, 80, 0)
   );
-  /* ;
-  /* z-index: -1; */
 }
 .fashion h1 {
   font-size: 10rem;
@@ -102,8 +94,6 @@
   padding-bottom: 5rem;
   font-weight: 400;
   color: var(--secondary-font-color);
-  /* background: red; */
-  /* z-index: 10; */
 }
 .gallary {
   display: grid;
@@ -154,7 +144,6 @@
   background-size: cover;
   background-position: center;
   background-image: url("/img/Hero5(1).jpg");
-  /* background-attachment: fixed; */
 }
 .our_fashion_container {
   display: flex;
@@ -166,8 +155,6 @@
 }
 .our_fashion_box {
   max-width: 45rem;
-  /* max-height: 60rem; */
-  /* background-color: red; */
   padding: 2rem;
   color: var(--primary-bg-darker);
   background-color: var(--grey-color);
@@ -197,7 +184,6 @@
   font-weight: 400;
   text-align: left;
   color: var(--second-brand-darker);
-  /* width: 100%; */
 }
 
 .our_fashion_description {
@@ -224,28 +210,16 @@
   justify-content: center;
   align-items: center;
   padding: 10rem 0;
-  /* background: linear-gradient(
-    to bottom right,
-    rgba(208, 181, 175, 0.8),
-    rgba(205, 189, 185, 0.8)
-  ); */
-  /* color: rgb(148, 116, 108);
-  color: rgb(250, 218, 210); */
-  /* background: linear-gradient(to bottom right, #807c7c, #7e7575); */
   background: linear-gradient(to bottom right, #917a7f, #917a7a);
-  /* background-image: url("/img/Hero6.jpg"); */
   background-size: cover;
   background-position: center;
   opacity: 0.8;
-  /* background-attachment: fixed; */
 }
 .collection_container {
   display: flex;
-  /* gap: 5rem; */
   align-items: center;
   justify-content: center;
   max-width: 150rem;
-  /* background-color: red; */
 }
 .collection_grid {
   padding: 1rem;
@@ -255,9 +229,6 @@
   max-height: 100%;
   overflow: hidden;
   align-items: center;
-  /* background-color: var(--second-brand-color); */
-
-  /* height: ; */
 }
 .collection_heading {
   writing-mode: vertical-rl;

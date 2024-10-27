@@ -17,14 +17,6 @@ function Header() {
             // { name: "Login", to: "/login" },
           ]}
         />
-        {/* <nav>
-          <ul className={Styles.nav_lists}>
-            <li className={Styles.nav_list}>Home</li>
-            <li className={Styles.nav_list}>Shop</li>
-            <li className={Styles.nav_list}>About</li>
-            <li className={Styles.nav_list}>Contact</li>
-          </ul>
-        </nav> */}
       </div>
     </header>
   );

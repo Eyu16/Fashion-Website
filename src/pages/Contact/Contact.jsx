@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Styles from "./contact.module.css";
-// import './ContactForm.css'; // Assuming you have a CSS file for styling
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,40 +7,12 @@ function Contact() {
     email: "",
     message: "",
   });
-  // const [successMessage, setSuccessMessage] = useState("");
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const response = await fetch("/contact", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(formData),
-  //     });
-
-  //     if (response.ok) {
-  //       setSuccessMessage(
-  //         "Thank you for contacting us! We will get back to you soon."
-  //       );
-  //       setFormData({ name: "", email: "", message: "" });
-  //     } else {
-  //       setSuccessMessage("Something went wrong. Please try again later.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //     setSuccessMessage("There was an error sending your message.");
-  //   }
-  // };
-
   return (
     <div className={Styles.contact_container}>
       <form className={Styles.form}>
@@ -84,7 +55,6 @@ function Contact() {
           </button>
         </div>
       </form>
-      {/* {successMessage && <p className="success-message">{successMessage}</p>} */}
     </div>
   );
 }

@@ -38,9 +38,7 @@
 @media (max-width: 68.75em) {
   .button_primary,
   .button_secondary {
-    /* padding: 2rem 4rem; */
     font-size: 2rem;
-    /* letter-spacing: 5px; */
   }
 }
 @media (max-width: 58.4em) {

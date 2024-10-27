@@ -36,15 +36,7 @@
 }
 @media (max-width: 62.5em) {
   .header {
-    /* font-size: 2.4rem; */
     padding: 2rem 6rem;
-    /* position: fixed;
-    background: transparent;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10; */
-    /* padding: 1.5rem; */
   }
 }
 @media (max-width: 53.5em) {
@@ -56,7 +48,6 @@
 @media (max-width: 47.2em) {
   .header {
     padding: 2rem 4rem;
-    /* font-size: 2rem; */
   }
   .log_container {
     font-size: 2.4rem;
@@ -67,14 +58,9 @@
   .header {
     padding: 1rem 2rem;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    background: rgba(255, 255, 255, 0); /* Semi-transparent white background */
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .header_container {
-    /* -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: var(--second-brand-bg); */
   }
   .log_container {
     font-size: 2rem;

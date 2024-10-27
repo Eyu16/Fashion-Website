@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Styles from "./shopItems.module.css";
-//
 function ShopItems({ type, images, custome_class, parent }) {
   if (!images) {
     if (type === "for_her")
@@ -80,35 +79,6 @@ function ShopItems({ type, images, custome_class, parent }) {
           </div>
         </div>
       ))}
-      {/*  */}
-      {/* <div className={Styles.shoping_card}>
-        <figure>
-          <img src="/img/Shop1(1).jpg" alt="shop" />
-        </figure>
-        <h4>Netela Dress</h4>
-        <span>250$</span>
-      </div>
-      <div className={Styles.shoping_card}>
-        <figure>
-          <img src="/img/Shop2(1).jpg" alt="shop" />
-        </figure>
-        <h4>Netela Dress</h4>
-        <span>250$</span>
-      </div>
-      <div className={Styles.shoping_card}>
-        <figure>
-          <img src="/img/Shop4(1).jpg" alt="shop" />
-        </figure>
-        <h4>Netela Dress</h4>
-        <span>250$</span>
-      </div>
-      <div className={Styles.shoping_card}>
-        <figure>
-          <img src="/img/Shop3(1).jpg" alt="shop" />
-        </figure>
-        <h4>Netela Dress</h4>
-        <span>250$</span>
-      </div> */}
     </div>
   );
 }

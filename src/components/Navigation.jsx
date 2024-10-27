@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Styles from "./navigation.module.css";
 function Navigation({ items, customeStyle, type }) {
-  // console.log(items);
   return (
     <nav className={`${type === "main_list" ? "main" : "minor"}`}>
       <ul

@@ -40,11 +40,24 @@ section {
   fontsize: "3rem";
   paddingbottom: "5rem";
 } */
+@media (max-width: 81.25em) {
+  .socialmedia_sizes {
+    /* width: 40;
+    height: 40; */
+    transform: scale(0.8);
+  }
+}
+
 @media (max-width: 47.2em) {
   .home_shope_grid {
     overflow-x: scroll;
     /* grid-template-columns: 1fr 1fr; */
     margin-left: 0rem;
+  }
+  .socialmedia_sizes {
+    /* width: 40;
+    height: 40; */
+    /* transform: scale(0.5); */
   }
 }
 @media (max-width: 56.25em) {

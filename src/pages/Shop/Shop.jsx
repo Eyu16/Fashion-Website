@@ -1,6 +1,5 @@
 import { matchPath, Navigate, Outlet, useLocation } from "react-router-dom";
 import Navigation from "../../components/Navigation";
-// import ShopItems from "../../components/ShopItems";
 import Styles from "./shop.module.css";
 
 function Shop() {
@@ -9,7 +8,7 @@ function Shop() {
     matchPath("/shop/mens/products/:productId", location.pathname) ||
     matchPath("/shop/womens/products/:productId", location.pathname);
   if (location.pathname === "/shop") {
-    return <Navigate to="mens" replace />; // Redirect to "/shop/mens"
+    return <Navigate to="mens" replace />;
   }
 
   return (
@@ -21,7 +20,6 @@ function Shop() {
             { name: "MENS", to: "mens" },
             { name: "WOMENS", to: "womens" },
           ]}
-          // customeStyle={{ fontSize: "3rem", paddingBottom: "5rem" }}
         />
       )}
       <Outlet custome_class={"shope_shope_grid"} />
