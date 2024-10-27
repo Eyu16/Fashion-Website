@@ -1,31 +1,29 @@
 .login_container {
-  padding: 5rem 0;
-  /* padding: 5rem auto; */
-  height: 100dvh;
+  padding: 10rem 0;
+  min-height: calc(100vh - 0rem);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   color: var(--secondary-font-color);
-  /* background-color: var(--second-brand-bg); */
-  /* background: linear-gradient(to bottom right, #e0e0e0, #8f8787); */
   background: linear-gradient(to bottom right, #917a7a, #e0e0e0);
   font-weight: 400;
 }
 .form {
-  border-radius: 5rem;
-  padding: 0 5rem;
-  /* padding-bottom: 1rem; */
+  width: 50rem;
+  padding: 1rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 .login_heading {
-  /* text-align: center; */
-  width: 20rem;
-  margin: 5rem auto;
+  width: 15rem;
+  margin: 3rem auto;
   padding: 0.5rem 0;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 400;
   text-align: center;
   border-bottom: 2px solid var(--black);
@@ -33,21 +31,23 @@
 label {
   display: block;
   font-size: 3rem;
-  padding-top: 1rem;
 }
 input {
-  width: 50rem;
-  height: 5rem;
+  margin-bottom: 2rem;
+  border: none;
+  width: 35rem;
+  height: 2rem;
   background-color: inherit;
-  border-radius: 1rem;
+  border-radius: 0rem;
   color: inherit;
   font-family: inherit;
   padding: 1rem 2rem;
-  font-size: 1.8rem;
-  border: 2px solid var(--black);
+  font-size: 2.4rem;
+  border-bottom: 2px solid var(--black);
 }
 textarea {
-  width: 50rem;
+  margin-top: 2rem;
+  width: 35rem;
   height: 15rem;
   background-color: inherit;
   border-radius: 1rem;
@@ -61,9 +61,8 @@ input:focus,
 textarea:focus {
   outline: none;
 }
-/* .button {
-} */
 .button {
+  width: 100%;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 2px solid var(--primary-font-color);
@@ -105,9 +104,124 @@ textarea:focus {
   gap: 2rem;
 }
 .suggestion {
+  width: 35rem;
   padding: 1rem 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 .suggestion a {
   text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 81.25em) {
+  .form {
+    width: 45rem;
+    padding: 1rem 4rem;
+  }
+
+  .login_heading {
+    width: 13rem;
+    font-size: 3.5rem;
+  }
+
+  input,
+  textarea {
+    width: 32rem;
+  }
+
+  .suggestion {
+    width: 32rem;
+  }
+}
+@media (max-width: 62.5em) {
+  .form {
+    width: 40rem;
+    padding: 1rem 3rem;
+  }
+
+  .login_heading {
+    width: 11rem;
+    font-size: 3rem;
+  }
+
+  label {
+    font-size: 2.5rem;
+  }
+
+  input {
+    font-size: 2rem;
+    width: 28rem;
+  }
+
+  textarea {
+    width: 28rem;
+    font-size: 1.8rem;
+  }
+
+  .suggestion {
+    width: 28rem;
+  }
+}
+
+@media (max-width: 43.5em) {
+  .form {
+    width: 30rem;
+    padding: 1rem 2rem;
+  }
+
+  .login_heading {
+    width: 10rem;
+    font-size: 2.5rem;
+  }
+
+  label {
+    font-size: 2rem;
+  }
+
+  input,
+  textarea {
+    width: 20rem;
+    font-size: 1.6rem;
+  }
+
+  .button {
+    font-size: 1.4rem;
+  }
+
+  .suggestion {
+    width: 25rem;
+    font-size: 1.6rem;
+  }
+}
+/* 29em (464px) and below */
+@media (max-width: 29em) {
+  .form {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .login_heading {
+    width: 30%;
+    font-size: 2rem;
+  }
+
+  label {
+    font-size: 1.8rem;
+  }
+
+  input,
+  textarea {
+    width: 85%;
+    font-size: 1.4rem;
+  }
+
+  .button {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .suggestion {
+    width: 100%;
+    font-size: 1.4rem;
+  }
 }

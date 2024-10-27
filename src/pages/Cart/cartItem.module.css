@@ -67,3 +67,117 @@
 .delete:active {
   transform: scale(0.8);
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 81.25em) {
+  /* Up to 1300px */
+  .cart_item {
+    justify-content: space-between; /* Maintain spacing */
+    gap: 5rem; /* Default gap */
+  }
+
+  .product_img {
+    width: 12rem; /* Default size */
+    height: 12rem; /* Default size */
+  }
+
+  .product_name {
+    font-size: 3rem; /* Default font size */
+  }
+
+  .product_price {
+    font-size: 2rem; /* Default font size */
+  }
+
+  .count {
+    font-size: 3rem; /* Default count size */
+  }
+}
+
+@media (max-width: 62.5em) {
+  /* Up to 1000px */
+  .cart_item {
+    gap: 4rem; /* Adjust gap */
+  }
+
+  .product_img {
+    width: 10rem; /* Adjust image size */
+    height: 10rem; /* Adjust image size */
+  }
+
+  .product_name {
+    font-size: 2.5rem; /* Slightly smaller */
+  }
+
+  .product_price {
+    font-size: 1.8rem; /* Slightly smaller */
+  }
+
+  .count {
+    font-size: 2.5rem; /* Slightly smaller */
+  }
+}
+
+@media (max-width: 43.75em) {
+  /* Up to 700px */
+  .cart_heading {
+    padding-top: 3rem;
+  }
+  .cart_item {
+    padding-bottom: 1rem; /* Reduce padding */
+    gap: 2rem; /* Adjust gap */
+    align-items: center; /* Keep items aligned */
+    justify-content: space-between; /* Keep items side by side */
+    text-align: left; /* Align text left */
+  }
+
+  .product_img {
+    width: 9rem; /* Reduce size */
+    height: 9rem; /* Reduce size */
+  }
+
+  .product_name {
+    font-size: 2rem; /* Slightly reduce font size */
+  }
+
+  .product_price {
+    font-size: 1.5rem; /* Slightly reduce font size */
+  }
+
+  .count_button {
+    padding: 0.5rem 1rem; /* Adjust padding for buttons */
+    font-size: 1.4rem; /* Reduce font size */
+  }
+
+  .count {
+    font-size: 2rem; /* Adjust count size */
+  }
+}
+
+@media (max-width: 29em) {
+  /* Up to 464px */
+  .cart_item {
+    padding-bottom: 1rem; /* Reduce padding */
+    gap: 2rem; /* Adjust gap */
+    align-items: center; /* Keep items aligned */
+    justify-content: space-between; /* Keep items side by side */
+    text-align: left; /* Align text left */
+  }
+
+  .product_img {
+    width: 8rem; /* Further reduce image size */
+    height: 8rem; /* Further reduce image size */
+  }
+
+  .product_name {
+    font-size: 1.8rem; /* Further reduce font size */
+  }
+
+  .product_price {
+    font-size: 1.3rem; /* Further reduce font size */
+  }
+
+  .count {
+    font-size: 1.8rem; /* Reduce font size */
+  }
+}

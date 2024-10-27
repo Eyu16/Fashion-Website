@@ -45,3 +45,74 @@
   background-color: var(--secondary-bg-lighter);
   color: var(--secondary-font-color);
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 81.25em) {
+  /* Up to 1300px */
+  .cart_container {
+    padding: 10rem; /* Regular padding for large screens */
+  }
+
+  .cart_heading {
+    font-size: 4rem; /* Default heading size */
+  }
+}
+
+@media (max-width: 62.5em) {
+  /* Up to 1000px */
+  .cart_item_lists {
+    gap: 4rem; /* Adjust gap */
+  }
+
+  .checkout_container {
+    flex-direction: row; /* Default row layout */
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 43.75em) {
+  /* Up to 700px */
+  .cart_item {
+    align-items: center; /* Keep horizontal alignment */
+    justify-content: space-between; /* Keep items side by side */
+    text-align: left; /* Align text left */
+    gap: 2rem; /* Maintain spacing */
+  }
+
+  .cart_container {
+    padding: 5rem 2rem; /* Decrease padding for better fit */
+  }
+
+  .cart_heading {
+    font-size: 2.5rem; /* Adjust heading size */
+    padding-bottom: 3rem; /* Adjust padding */
+  }
+
+  .total_price {
+    font-size: 1.8rem; /* Adjust price font size */
+    padding-bottom: 1rem; /* Space below price */
+  }
+
+  .button_checkout {
+    width: 100%; /* Full width button */
+    padding: 0.5rem; /* Adjust padding */
+  }
+}
+
+@media (max-width: 29em) {
+  /* Up to 464px */
+  .cart_container {
+    padding: 5rem; /* Less padding for small screens */
+  }
+
+  .cart_item_lists {
+    gap: 3rem; /* Reduce gap */
+  }
+
+  .checkout_container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+    padding: 3rem; /* Adjust padding */
+  }
+}

@@ -34,7 +34,7 @@
 }
 .seconday_heading {
   font-size: 2rem;
-  color: var(--second-brand-color);
+  color: var(--white);
   font-family: Raleway;
   letter-spacing: 1px;
 }
@@ -48,7 +48,7 @@
 }
 .hero_slider_2 h1 {
   width: 120rem;
-  color: var(--primary-bg-color);
+  color: var(--black);
 }
 .buttons {
   display: flex;
