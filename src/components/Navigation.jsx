@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Styles from "./navigation.module.css";
 function Navigation({ items, customeStyle, type }) {
   return (
@@ -8,12 +8,12 @@ function Navigation({ items, customeStyle, type }) {
         style={customeStyle}
       >
         {items.map((item, i) => (
-          <Link to={item.to} key={i}>
+          <NavLink to={item.to} key={i}>
             <li className={`${Styles.nav_list}`}>{item.name}</li>
-          </Link>
+          </NavLink>
         ))}
         {type === "main_list" && (
-          <Link to="/login">
+          <NavLink to="/login">
             <li className={Styles.nav_list}>
               <figure className={Styles.account_container}>
                 <img
@@ -23,10 +23,10 @@ function Navigation({ items, customeStyle, type }) {
                 />
               </figure>
             </li>
-          </Link>
+          </NavLink>
         )}
         {type === "main_list" && (
-          <Link to="/cart">
+          <NavLink to="/cart">
             <li className={Styles.nav_list}>
               <figure className={Styles.cart_container}>
                 <img
@@ -36,7 +36,7 @@ function Navigation({ items, customeStyle, type }) {
                 />
               </figure>
             </li>
-          </Link>
+          </NavLink>
         )}
       </ul>
     </nav>

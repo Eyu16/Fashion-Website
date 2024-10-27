@@ -36,6 +36,16 @@ html {
 section {
   overflow-x: hidden;
 }
+.active li:active {
+  color: var(--second-brand-darker);
+  position: relative; /* Needed for positioning the ::before pseudo-element */
+}
+
+/* When active, expand the line */
+.active li:active::before {
+  width: 100%;
+  left: 0;
+}
 /* .minor_nav {
   fontsize: "3rem";
   paddingbottom: "5rem";

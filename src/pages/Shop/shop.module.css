@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to bottom right, #917a7a, #e0e0e0);
 }
 .shop > * {
   margin-top: 5rem;

@@ -1,0 +1,6 @@
+/* styles.css */
+.chart_container {
+  width: 100%; /* Full width */
+  max-width: 800px; /* Max width to avoid getting too large */
+  margin: 0 auto; /* Center the chart */
+}
