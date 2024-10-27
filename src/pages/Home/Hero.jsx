@@ -18,8 +18,8 @@ function Hero() {
       <div className={`${Styles.hero_slider} ${Styles.hero_slider_2}`}>
         <h2 className={Styles.seconday_heading}>Your Style, Your Story</h2>
         <h1 className={Styles.primary_heading}>
-          Shop our latest arrivals and discover unique pieces that elevate your
-          style.
+          Shop Our Latest Arrivals And Discover Unique Pieces That Elevate Your
+          Style.
         </h1>
         <div className={Styles.buttons}>
           <Button type="button_primary">Shop Now</Button>
