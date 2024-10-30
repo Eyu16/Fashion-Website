@@ -1,0 +1,184 @@
+{
+  "collections": [
+    {
+      "id": 1,
+      "name": "Ethereal Dream",
+      "description": "Inspired by the beauty of nature, this collection features flowing silhouettes and delicate fabrics that evoke a sense of serenity and dreaminess.",
+      "season": "Spring/Summer 2024",
+      "designerName": "Ava Sinclair",
+      "categories": ["Evening Wear", "Bridal"],
+      "releaseDate": "2024-02-15",
+      "priceRange": "$200 - $800",
+      "tags": ["luxury", "romantic", "sustainable"],
+      "materials": ["silk", "organza", "lace"],
+      "ratings": {
+        "average": 4.8,
+        "reviewsCount": 150
+      }
+    },
+    {
+      "id": 2,
+      "name": "Urban Edge",
+      "description": "A bold collection that fuses street style with high fashion, featuring oversized silhouettes, graphic prints, and edgy accessories.",
+      "season": "Fall/Winter 2024",
+      "designerName": "Liam Torres",
+      "categories": ["Casual", "Streetwear"],
+      "releaseDate": "2024-08-30",
+      "priceRange": "$100 - $500",
+      "tags": ["streetwear", "edgy", "unisex"],
+      "materials": ["denim", "cotton", "neoprene"],
+      "ratings": {
+        "average": 4.6,
+        "reviewsCount": 75
+      }
+    },
+    {
+      "id": 3,
+      "name": "Timeless Elegance",
+      "description": "Classic designs with a modern twist, this collection features tailored pieces that are perfect for the sophisticated wardrobe.",
+      "season": "Fall/Winter 2023",
+      "designerName": "Isabella Reed",
+      "categories": ["Formal Wear", "Office Wear"],
+      "releaseDate": "2023-09-20",
+      "priceRange": "$300 - $1200",
+      "tags": ["classic", "elegant", "tailored"],
+      "materials": ["wool", "cashmere", "cotton blend"],
+      "ratings": {
+        "average": 4.9,
+        "reviewsCount": 100
+      }
+    },
+    {
+      "id": 4,
+      "name": "Bohemian Spirit",
+      "description": "A vibrant and eclectic collection that embraces individuality and freedom with colorful patterns and relaxed fits.",
+      "season": "Spring/Summer 2023",
+      "designerName": "Mia Lawson",
+      "categories": ["Casual", "Festival Wear"],
+      "releaseDate": "2023-05-10",
+      "priceRange": "$80 - $400",
+      "tags": ["boho", "colorful", "free-spirited"],
+      "materials": ["cotton", "linen", "jute"],
+      "ratings": {
+        "average": 4.5,
+        "reviewsCount": 65
+      }
+    },
+    {
+      "id": 5,
+      "name": "Futuristic Visions",
+      "description": "This avant-garde collection pushes the boundaries of fashion with innovative designs and futuristic materials.",
+      "season": "Spring/Summer 2025",
+      "designerName": "Ethan Chase",
+      "categories": ["Avant-Garde", "Conceptual"],
+      "releaseDate": "2025-01-25",
+      "priceRange": "$500 - $1500",
+      "tags": ["futuristic", "innovative", "experimental"],
+      "materials": [
+        "metallic fabrics",
+        "3D-printed elements",
+        "technical textiles"
+      ],
+      "ratings": {
+        "average": 4.7,
+        "reviewsCount": 40
+      }
+    },
+    {
+      "id": 6,
+      "name": "Timeless Classics",
+      "description": "A refined collection of wardrobe staples that never go out of style, featuring versatile pieces for everyday wear.",
+      "season": "All Seasons",
+      "designerName": "Sophia Klein",
+      "categories": ["Casual", "Workwear"],
+      "releaseDate": "2024-04-01",
+      "priceRange": "$60 - $300",
+      "tags": ["classic", "versatile", "everyday"],
+      "materials": ["cotton", "jersey", "twill"],
+      "ratings": {
+        "average": 4.8,
+        "reviewsCount": 120
+      }
+    },
+    {
+      "id": 7,
+      "name": "Sport Luxe",
+      "description": "A stylish blend of comfort and elegance, this collection redefines athleisure with chic designs suitable for both gym and casual outings.",
+      "season": "Spring/Summer 2024",
+      "designerName": "Jaden Park",
+      "categories": ["Athleisure", "Casual"],
+      "releaseDate": "2024-03-15",
+      "priceRange": "$90 - $350",
+      "tags": ["athleisure", "comfortable", "stylish"],
+      "materials": ["spandex", "nylon", "bamboo"],
+      "ratings": {
+        "average": 4.6,
+        "reviewsCount": 80
+      }
+    },
+    {
+      "id": 8,
+      "name": "Ethnic Essence",
+      "description": "A celebration of traditional craftsmanship, this collection features intricate hand-embroidered pieces inspired by various cultures.",
+      "season": "Fall/Winter 2024",
+      "designerName": "Ayesha Khan",
+      "categories": ["Ethnic Wear", "Festive"],
+      "releaseDate": "2024-10-05",
+      "priceRange": "$150 - $600",
+      "tags": ["traditional", "handcrafted", "cultural"],
+      "materials": ["silk", "cotton", "embroidery thread"],
+      "ratings": {
+        "average": 4.9,
+        "reviewsCount": 90
+      }
+    },
+    {
+      "id": 9,
+      "name": "Minimalist Chic",
+      "description": "This collection focuses on simplicity and functionality, featuring clean lines and neutral colors for a modern aesthetic.",
+      "season": "Spring/Summer 2025",
+      "designerName": "Noah Reed",
+      "categories": ["Casual", "Office Wear"],
+      "releaseDate": "2025-02-14",
+      "priceRange": "$120 - $500",
+      "tags": ["minimalist", "functional", "modern"],
+      "materials": ["cotton", "modal", "polyester"],
+      "ratings": {
+        "average": 4.7,
+        "reviewsCount": 75
+      }
+    },
+    {
+      "id": 10,
+      "name": "Glamour Nights",
+      "description": "A stunning collection of evening gowns and cocktail dresses that bring out the inner diva with bold colors and luxurious fabrics.",
+      "season": "Fall/Winter 2023",
+      "designerName": "Olivia Garcia",
+      "categories": ["Evening Wear", "Cocktail Dresses"],
+      "releaseDate": "2023-11-20",
+      "priceRange": "$250 - $900",
+      "tags": ["glamorous", "luxurious", "bold"],
+      "materials": ["velvet", "silk chiffon", "sequins"],
+      "ratings": {
+        "average": 4.8,
+        "reviewsCount": 110
+      }
+    },
+    {
+      "id": 11,
+      "name": "Nature's Palette",
+      "description": "A collection inspired by the colors and textures of nature, featuring earthy tones and sustainable materials.",
+      "season": "Spring/Summer 2024",
+      "designerName": "Lucas Meyer",
+      "categories": ["Casual", "Sustainable Fashion"],
+      "releaseDate": "2024-04-10",
+      "priceRange": "$100 - $400",
+      "tags": ["sustainable", "earthy", "nature-inspired"],
+      "materials": ["organic cotton", "recycled fabrics", "bamboo"],
+      "ratings": {
+        "average": 4.5,
+        "reviewsCount": 55
+      }
+    }
+  ]
+}

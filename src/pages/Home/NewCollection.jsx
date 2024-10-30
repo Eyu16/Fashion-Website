@@ -2,8 +2,6 @@ import { useState } from "react";
 import Styles from "./home.module.css";
 function NewCollection() {
   const [overview, setOverview] = useState("Square4(1).jpg");
-  // console.log(getImagePath("Portrait10(1).jpg"));
-
   const handleClick = () => {
     setOverview((overview) =>
       overview === "Square5(2).jpg" ? "Square7(2).jpg" : "Square5(2).jpg"
