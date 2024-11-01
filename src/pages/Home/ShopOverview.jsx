@@ -1,7 +1,14 @@
-import ShopItems from "../../components/ShopItems";
-import Styles from "./home.module.css";
+import ShopItems from '../../components/ShopItems';
+import Styles from './home.module.css';
+import { getProductsByGender } from '../../utils/helpers';
 
-function ShopOverview() {
+function ShopOverview({ products }) {
+  const mens = getProductsByGender(products, 'men').filter(
+    (product) => product.overview
+  );
+  const womens = getProductsByGender(products, 'women').filter(
+    (product) => product.overview
+  );
   return (
     <section className={Styles.shop_overview}>
       <h2 className={Styles.shop_heading}>
@@ -13,13 +20,8 @@ function ShopOverview() {
         </div>
         <ShopItems
           type="for_her"
-          images={[
-            "Shop1(1).jpg",
-            "Shop2(1).jpg",
-            "Shop4(2).jpg",
-            "Shop3(1).jpg",
-          ]}
-          custome_class={"home_shope_grid"}
+          products={womens}
+          custome_class={'home_shope_grid'}
           parent="home"
         />
         <div>
@@ -27,13 +29,8 @@ function ShopOverview() {
         </div>
         <ShopItems
           type="for_him"
-          images={[
-            "Shop8(1).jpg",
-            "Shop12(1).jpeg",
-            "Shop10(1).jpeg",
-            "Shop11(1).jpeg",
-          ]}
-          custome_class={"home_shope_grid"}
+          products={mens}
+          custome_class={'home_shope_grid'}
           parent="home"
         />
       </div>

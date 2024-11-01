@@ -1,11 +1,13 @@
-import { useState } from "react";
-import Styles from "./home.module.css";
-function NewCollection() {
-  const [overview, setOverview] = useState("Square4(1).jpg");
-  const handleClick = () => {
-    setOverview((overview) =>
-      overview === "Square5(2).jpg" ? "Square7(2).jpg" : "Square5(2).jpg"
-    );
+import { useState } from 'react';
+import Styles from './home.module.css';
+import CollectionItem from './CollectionItems';
+// import { getCollection } from '../../services/apiFashion';
+function NewCollection({ collection }) {
+  const [overviewImg, setOverviewImg] = useState(collection?.images?.[0]);
+  const { filmImages } = collection;
+  // const [overview, setOverview] = useState('Square4(1).jpg');
+  const ChangeOverviewImage = (index) => {
+    setOverviewImg(collection?.images[index]);
   };
   return (
     <section className={Styles.newest_collection}>
@@ -18,8 +20,17 @@ function NewCollection() {
         <div className={Styles.collection_grid}>
           <div className={Styles.filmstrip_container}>
             <div className={Styles.filmstrip}>
-              <div className={Styles.figure_container} onClick={handleClick}>
-                <figure className={Styles.filmstrip_image_container}>
+              <div className={Styles.figure_container}>
+                {filmImages.map((img, i) => (
+                  <CollectionItem
+                    img={img}
+                    key={img}
+                    name={collection.name}
+                    photo_no={i}
+                    ChangeOverviewImage={ChangeOverviewImage}
+                  />
+                ))}
+                {/* <figure className={Styles.filmstrip_image_container}>
                   <img
                     src="/img/Square4(2).jpg"
                     alt="Stylish person in checkered jacket"
@@ -48,13 +59,13 @@ function NewCollection() {
                     src="/img/Square7(1).jpeg"
                     alt="Stylish person in checkered jacket"
                   />
-                </figure>
+                </figure> */}
               </div>
             </div>
           </div>
           <figure className={Styles.collection_view}>
             <img
-              src={`/img/${overview}`}
+              src={`/img/${overviewImg}`}
               alt="Stylish person in checkered jacket 2"
             />
           </figure>
@@ -63,5 +74,10 @@ function NewCollection() {
     </section>
   );
 }
+
+// export async function loader() {
+//   const collections = await getCollections();
+//   return collections;
+// }
 
 export default NewCollection;

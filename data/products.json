@@ -14,7 +14,19 @@
       "ratings": {
         "average": 4.8,
         "reviewsCount": 150
-      }
+      },
+      "images": [
+        "Square4(1).jpg",
+        "Square6(2).jpg",
+        "Square5(2).jpg",
+        "Square7(2).jpg"
+      ],
+      "filmImages": [
+        "Square4(2).jpg",
+        "Square6(1).jpeg",
+        "Square5(1).jpeg",
+        "Square7(1).jpeg"
+      ]
     },
     {
       "id": 2,
@@ -30,7 +42,9 @@
       "ratings": {
         "average": 4.6,
         "reviewsCount": 75
-      }
+      },
+      "images": ["urban_edge_1.jpg", "urban_edge_2.jpg", "urban_edge_3.jpg"],
+      "filmImages": []
     },
     {
       "id": 3,
@@ -46,7 +60,13 @@
       "ratings": {
         "average": 4.9,
         "reviewsCount": 100
-      }
+      },
+      "images": [
+        "timeless_elegance_1.jpg",
+        "timeless_elegance_2.jpg",
+        "timeless_elegance_3.jpg"
+      ],
+      "filmImages": []
     },
     {
       "id": 4,
@@ -62,7 +82,13 @@
       "ratings": {
         "average": 4.5,
         "reviewsCount": 65
-      }
+      },
+      "images": [
+        "bohemian_spirit_1.jpg",
+        "bohemian_spirit_2.jpg",
+        "bohemian_spirit_3.jpg"
+      ],
+      "filmImages": []
     },
     {
       "id": 5,
@@ -82,7 +108,13 @@
       "ratings": {
         "average": 4.7,
         "reviewsCount": 40
-      }
+      },
+      "images": [
+        "futuristic_visions_1.jpg",
+        "futuristic_visions_2.jpg",
+        "futuristic_visions_3.jpg"
+      ],
+      "filmImages": []
     },
     {
       "id": 6,
@@ -98,7 +130,13 @@
       "ratings": {
         "average": 4.8,
         "reviewsCount": 120
-      }
+      },
+      "images": [
+        "timeless_classics_1.jpg",
+        "timeless_classics_2.jpg",
+        "timeless_classics_3.jpg"
+      ],
+      "filmImages": []
     },
     {
       "id": 7,
@@ -114,7 +152,9 @@
       "ratings": {
         "average": 4.6,
         "reviewsCount": 80
-      }
+      },
+      "images": ["sport_luxe_1.jpg", "sport_luxe_2.jpg", "sport_luxe_3.jpg"],
+      "filmImages": []
     },
     {
       "id": 8,
@@ -130,7 +170,13 @@
       "ratings": {
         "average": 4.9,
         "reviewsCount": 90
-      }
+      },
+      "images": [
+        "ethnic_essence_1.jpg",
+        "ethnic_essence_2.jpg",
+        "ethnic_essence_3.jpg"
+      ],
+      "filmImages": []
     },
     {
       "id": 9,
@@ -146,7 +192,13 @@
       "ratings": {
         "average": 4.7,
         "reviewsCount": 75
-      }
+      },
+      "images": [
+        "minimalist_chic_1.jpg",
+        "minimalist_chic_2.jpg",
+        "minimalist_chic_3.jpg"
+      ],
+      "filmImages": []
     },
     {
       "id": 10,
@@ -161,24 +213,327 @@
       "materials": ["velvet", "silk chiffon", "sequins"],
       "ratings": {
         "average": 4.8,
-        "reviewsCount": 110
-      }
+        "reviewsCount": 60
+      },
+      "images": [
+        "glamour_nights_1.jpg",
+        "glamour_nights_2.jpg",
+        "glamour_nights_3.jpg"
+      ],
+      "filmImages": []
+    }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "name": "Classic Leather Jacket",
+      "description": "A timeless leather jacket that pairs well with any outfit.",
+      "price": 250.0,
+      "category": "Outerwear",
+      "collection": "Classic Collection",
+      "image": "Shop8(1).jpg",
+      "detailImage": "classic_leather_jacket_detail.jpg",
+      "ratings": { "average": 4.7, "reviewsCount": 85 },
+      "gender": "Men",
+      "overview": true
+    },
+    {
+      "id": 2,
+      "name": "Casual Chinos",
+      "description": "Comfortable and stylish chinos for a casual look.",
+      "price": 55.0,
+      "category": "Pants",
+      "collection": "Everyday Wear",
+      "image": "Shop12(1).jpeg",
+      "detailImage": "casual_chinos_detail.jpg",
+      "ratings": { "average": 4.5, "reviewsCount": 40 },
+      "gender": "Men",
+      "overview": true
+    },
+    {
+      "id": 3,
+      "name": "Slim Fit Jeans",
+      "description": "A pair of trendy slim-fit jeans.",
+      "price": 60.0,
+      "category": "Denim",
+      "collection": "Urban Style",
+      "image": "Shop10(1).jpeg",
+      "detailImage": "slim_fit_jeans_detail.jpg",
+      "ratings": { "average": 4.6, "reviewsCount": 55 },
+      "gender": "Men",
+      "overview": true
+    },
+    {
+      "id": 4,
+      "name": "Sports Polo Shirt",
+      "description": "A breathable polo shirt for active wear.",
+      "price": 45.0,
+      "category": "Shirts",
+      "collection": "Sportswear",
+      "image": "Shop11(1).jpeg",
+      "detailImage": "sports_polo_shirt_detail.jpg",
+      "ratings": { "average": 4.4, "reviewsCount": 25 },
+      "gender": "Men",
+      "overview": true
+    },
+    {
+      "id": 5,
+      "name": "Elegant Wool Sweater",
+      "description": "A warm sweater made from premium wool.",
+      "price": 75.0,
+      "category": "Knitwear",
+      "collection": "Winter Collection",
+      "image": "Shop8(1).jpg",
+      "detailImage": "elegant_wool_sweater_detail.jpg",
+      "ratings": { "average": 4.8, "reviewsCount": 65 },
+      "gender": "Men",
+      "overview": false
+    },
+    {
+      "id": 6,
+      "name": "Classic Watch",
+      "description": "A refined watch with a leather strap.",
+      "price": 120.0,
+      "category": "Accessories",
+      "collection": "Timeless Pieces",
+      "image": "Shop12(1).jpeg",
+      "detailImage": "classic_watch_detail.jpg",
+      "ratings": { "average": 4.7, "reviewsCount": 70 },
+      "gender": "Men",
+      "overview": false
+    },
+    {
+      "id": 7,
+      "name": "Elegant Dress Shoes",
+      "description": "Leather dress shoes for formal occasions.",
+      "price": 95.0,
+      "category": "Footwear",
+      "collection": "Formal Attire",
+      "image": "Shop10(1).jpeg",
+      "detailImage": "elegant_dress_shoes_detail.jpg",
+      "ratings": { "average": 4.8, "reviewsCount": 40 },
+      "gender": "Men"
+    },
+    {
+      "id": 8,
+      "name": "Stylish Backpack",
+      "description": "A durable backpack with ample storage.",
+      "price": 70.0,
+      "category": "Bags",
+      "collection": "Travel Essentials",
+      "image": "Shop11(1).jpeg",
+      "detailImage": "stylish_backpack_detail.jpg",
+      "ratings": { "average": 4.5, "reviewsCount": 50 },
+      "gender": "Men",
+      "overview": false
+    },
+    {
+      "id": 9,
+      "name": "Sporty Track Jacket",
+      "description": "A lightweight jacket for sports activities.",
+      "price": 80.0,
+      "category": "Athleisure",
+      "collection": "Sport Essentials",
+      "image": "Shop8(1).jpg",
+      "detailImage": "sporty_track_jacket_detail.jpg",
+      "ratings": { "average": 4.7, "reviewsCount": 30 },
+      "gender": "Men",
+      "overview": false
+    },
+    {
+      "id": 10,
+      "name": "Formal Blazer",
+      "description": "A sleek blazer for formal events.",
+      "price": 150.0,
+      "category": "Outerwear",
+      "collection": "Formal Attire",
+      "image": "Shop12(1).jpeg",
+      "detailImage": "formal_blazer_detail.jpg",
+      "ratings": { "average": 4.6, "reviewsCount": 48 },
+      "gender": "Men",
+      "overview": false
     },
     {
       "id": 11,
-      "name": "Nature's Palette",
-      "description": "A collection inspired by the colors and textures of nature, featuring earthy tones and sustainable materials.",
-      "season": "Spring/Summer 2024",
-      "designerName": "Lucas Meyer",
-      "categories": ["Casual", "Sustainable Fashion"],
-      "releaseDate": "2024-04-10",
-      "priceRange": "$100 - $400",
-      "tags": ["sustainable", "earthy", "nature-inspired"],
-      "materials": ["organic cotton", "recycled fabrics", "bamboo"],
-      "ratings": {
-        "average": 4.5,
-        "reviewsCount": 55
-      }
+      "name": "Beach Flip Flops",
+      "description": "Comfortable flip-flops for beach days.",
+      "price": 20.0,
+      "category": "Footwear",
+      "collection": "Summer Vibes",
+      "image": "Shop10(1).jpeg",
+      "detailImage": "beach_flip_flops_detail.jpg",
+      "ratings": { "average": 4.3, "reviewsCount": 35 },
+      "gender": "Men",
+      "overview": false
+    },
+    {
+      "id": 12,
+      "name": "Modern Sunglasses",
+      "description": "Sleek sunglasses with UV protection.",
+      "price": 40.0,
+      "category": "Accessories",
+      "collection": "Summer Vibes",
+      "image": "Shop11(1).jpeg",
+      "detailImage": "modern_sunglasses_detail.jpg",
+      "ratings": { "average": 4.6, "reviewsCount": 90 },
+      "gender": "Men",
+      "overview": false
+    },
+    {
+      "id": 13,
+      "name": "Elegant Evening Dress",
+      "description": "A floor-length gown for formal occasions.",
+      "price": 300.0,
+      "category": "Evening Wear",
+      "collection": "Ethereal Dream",
+      "image": "Shop1(1).jpg",
+      "detailImage": "elegant_evening_dress_detail.jpg",
+      "ratings": { "average": 4.9, "reviewsCount": 35 },
+      "gender": "Women",
+      "overview": true
+    },
+    {
+      "id": 14,
+      "name": "Floral Sundress",
+      "description": "A vibrant sundress with floral patterns.",
+      "price": 70.0,
+      "category": "Casual",
+      "collection": "Spring Blossoms",
+      "image": "Shop2(1).jpg",
+      "detailImage": "floral_sundress_detail.jpg",
+      "ratings": { "average": 4.7, "reviewsCount": 25 },
+      "gender": "Women",
+      "overview": true
+    },
+    {
+      "id": 15,
+      "name": "Denim Jacket",
+      "description": "A classic denim jacket for a casual look.",
+      "price": 90.0,
+      "category": "Outerwear",
+      "collection": "Casual Chic",
+      "image": "Shop4(2).jpg",
+      "detailImage": "denim_jacket_detail.jpg",
+      "ratings": { "average": 4.6, "reviewsCount": 30 },
+      "gender": "Women"
+    },
+    {
+      "id": 16,
+      "name": "Leather Handbag",
+      "description": "A luxurious leather handbag with a timeless design.",
+      "price": 180.0,
+      "category": "Accessories",
+      "collection": "Luxury Essentials",
+      "image": "Shop3(1).jpg",
+      "detailImage": "leather_handbag_detail.jpg",
+      "ratings": { "average": 4.8, "reviewsCount": 55 },
+      "gender": "Women",
+      "overview": true
+    },
+    {
+      "id": 17,
+      "name": "High-Waisted Jeans",
+      "description": "Comfortable and trendy high-waisted jeans.",
+      "price": 50.0,
+      "category": "Denim",
+      "collection": "Urban Style",
+      "image": "Shop1(1).jpg",
+      "detailImage": "high_waisted_jeans_detail.jpg",
+      "ratings": { "average": 4.5, "reviewsCount": 45 },
+      "gender": "Women",
+      "overview": true
+    },
+    {
+      "id": 18,
+      "name": "Athletic Leggings",
+      "description": "Form-fitting leggings perfect for workouts.",
+      "price": 40.0,
+      "category": "Athleisure",
+      "collection": "Fitness Wear",
+      "image": "Shop2(1).jpg",
+      "detailImage": "athletic_leggings_detail.jpg",
+      "ratings": { "average": 4.6, "reviewsCount": 60 },
+      "gender": "Women",
+      "overview": false
+    },
+    {
+      "id": 19,
+      "name": "Cashmere Sweater",
+      "description": "A soft cashmere sweater for cozy days.",
+      "price": 130.0,
+      "category": "Knitwear",
+      "collection": "Winter Luxe",
+      "image": "Shop4(2).jpg",
+      "detailImage": "cashmere_sweater_detail.jpg",
+      "ratings": { "average": 4.9, "reviewsCount": 20 },
+      "gender": "Women",
+      "overview": false
+    },
+    {
+      "id": 20,
+      "name": "Boho Earrings",
+      "description": "Intricate earrings with a boho vibe.",
+      "price": 20.0,
+      "category": "Jewelry",
+      "collection": "Festival Accessories",
+      "image": "Shop3(1).jpg",
+      "detailImage": "boho_earrings_detail.jpg",
+      "ratings": { "average": 4.7, "reviewsCount": 25 },
+      "gender": "Women",
+      "overview": false
+    },
+    {
+      "id": 21,
+      "name": "Straw Hat",
+      "description": "A wide-brimmed straw hat for sunny days.",
+      "price": 35.0,
+      "category": "Accessories",
+      "collection": "Summer Vibes",
+      "image": "Shop1(1).jpg",
+      "detailImage": "straw_hat_detail.jpg",
+      "ratings": { "average": 4.5, "reviewsCount": 15 },
+      "gender": "Women",
+      "overview": false
+    },
+    {
+      "id": 22,
+      "name": "Winter Boots",
+      "description": "Stylish and warm boots for cold weather.",
+      "price": 85.0,
+      "category": "Footwear",
+      "collection": "Winter Collection",
+      "image": "Shop2(1).jpg",
+      "detailImage": "winter_boots_detail.jpg",
+      "ratings": { "average": 4.6, "reviewsCount": 35 },
+      "gender": "Women",
+      "overview": false
+    },
+    {
+      "id": 23,
+      "name": "Silk Scarf",
+      "description": "A luxurious silk scarf to elevate any outfit.",
+      "price": 45.0,
+      "category": "Accessories",
+      "collection": "Luxury Essentials",
+      "image": "Shop4(2).jpg",
+      "detailImage": "silk_scarf_detail.jpg",
+      "ratings": { "average": 4.8, "reviewsCount": 40 },
+      "gender": "Women",
+      "overview": false
+    },
+    {
+      "id": 24,
+      "name": "Evening Clutch",
+      "description": "A stylish clutch for evening events.",
+      "price": 55.0,
+      "category": "Accessories",
+      "collection": "Ethereal Dream",
+      "image": "Shop3(1).jpg",
+      "detailImage": "evening_clutch_detail.jpg",
+      "ratings": { "average": 4.9, "reviewsCount": 18 },
+      "gender": "Women",
+      "overview": false
     }
   ]
 }
