@@ -13,14 +13,14 @@
 .about_heading {
   margin: 3rem 0;
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   border-bottom: 2px solid var(--black);
 }
 
 /* Glassy effect container with larger height */
 .about_description_container {
-  background-image: url("/img/Collections10(5).jpg"); /* Replace with your image path */
+  background-image: url('/img/Collections10(5).jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   padding: 5rem;

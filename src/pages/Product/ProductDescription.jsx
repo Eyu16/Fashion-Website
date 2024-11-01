@@ -1,6 +1,6 @@
-import Styles from "./product.module.css";
+import Styles from './product.module.css';
 
-function ProductDescription() {
+function ProductDescription({ product }) {
   return (
     <div className={Styles.minor_details}>
       <h3 className={Styles.minor_heading}>Description</h3>

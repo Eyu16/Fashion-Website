@@ -1,39 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import Styles from './shopItems.module.css';
 import ShopItem from './ShopItem';
-function ShopItems({ type, products, custome_class, parent }) {
-  // if (!images) {
-  //   if (type === 'for_her')
-  //     images = [
-  //       'Shop1(1).jpg',
-  //       'Shop2(1).jpg',
-  //       'Shop4(2).jpg',
-  //       'Shop3(1).jpg',
-  //       'Shop1(1).jpg',
-  //       'Shop2(1).jpg',
-  //       'Shop4(2).jpg',
-  //       'Shop3(1).jpg',
-  //       'Shop1(1).jpg',
-  //       'Shop2(1).jpg',
-  //       'Shop4(2).jpg',
-  //       'Shop3(1).jpg',
-  //     ];
-  //   else
-  //     images = [
-  //       'Shop8(1).jpg',
-  //       'Shop12(1).jpeg',
-  //       'Shop10(1).jpeg',
-  //       'Shop11(1).jpeg',
-  //       'Shop8(1).jpg',
-  //       'Shop12(1).jpeg',
-  //       'Shop10(1).jpeg',
-  //       'Shop11(1).jpeg',
-  //       'Shop8(1).jpg',
-  //       'Shop12(1).jpeg',
-  //       'Shop10(1).jpeg',
-  //       'Shop11(1).jpeg',
-  //     ];
-  // }
+import { getProductsByGender } from '../utils/helpers';
+function ShopItems({ type, overviewProducts, custome_class, parent }) {
+  const { shopProducts = [] } = useOutletContext() || {};
+  const products = getProductsByGender(
+    overviewProducts || shopProducts,
+    type === 'for_her' ? 'women' : 'men'
+  );
   return (
     <div
       className={`${Styles.shop_for} ${Styles[type]} ${

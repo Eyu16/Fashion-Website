@@ -20,7 +20,7 @@ function ShopOverview({ products }) {
         </div>
         <ShopItems
           type="for_her"
-          products={womens}
+          overviewProducts={womens}
           custome_class={'home_shope_grid'}
           parent="home"
         />
@@ -29,7 +29,7 @@ function ShopOverview({ products }) {
         </div>
         <ShopItems
           type="for_him"
-          products={mens}
+          overviewProducts={mens}
           custome_class={'home_shope_grid'}
           parent="home"
         />

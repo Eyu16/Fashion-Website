@@ -31,3 +31,18 @@ export async function getProducts(gender) {
     // throw error;
   }
 }
+
+export async function getProduct(id) {
+  try {
+    const data = await axios({
+      method: 'GET',
+      url: `${API_URL}/products/${id}`,
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    return data.data;
+  } catch (error) {
+    console.log(error);
+    // throw error;
+  }
+}

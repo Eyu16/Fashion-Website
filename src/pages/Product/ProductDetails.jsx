@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Styles from "./product.module.css";
+import { useState } from 'react';
+import Styles from './product.module.css';
 
-function ProductDetails() {
+function ProductDetails({ product }) {
   const [count, setCount] = useState(1);
 
   return (

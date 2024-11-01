@@ -233,7 +233,7 @@
       "category": "Outerwear",
       "collection": "Classic Collection",
       "image": "Shop8(1).jpg",
-      "detailImage": "classic_leather_jacket_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.7, "reviewsCount": 85 },
       "gender": "Men",
       "overview": true
@@ -246,7 +246,7 @@
       "category": "Pants",
       "collection": "Everyday Wear",
       "image": "Shop12(1).jpeg",
-      "detailImage": "casual_chinos_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.5, "reviewsCount": 40 },
       "gender": "Men",
       "overview": true
@@ -259,7 +259,7 @@
       "category": "Denim",
       "collection": "Urban Style",
       "image": "Shop10(1).jpeg",
-      "detailImage": "slim_fit_jeans_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.6, "reviewsCount": 55 },
       "gender": "Men",
       "overview": true
@@ -272,7 +272,7 @@
       "category": "Shirts",
       "collection": "Sportswear",
       "image": "Shop11(1).jpeg",
-      "detailImage": "sports_polo_shirt_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.4, "reviewsCount": 25 },
       "gender": "Men",
       "overview": true
@@ -285,7 +285,7 @@
       "category": "Knitwear",
       "collection": "Winter Collection",
       "image": "Shop8(1).jpg",
-      "detailImage": "elegant_wool_sweater_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.8, "reviewsCount": 65 },
       "gender": "Men",
       "overview": false
@@ -298,7 +298,7 @@
       "category": "Accessories",
       "collection": "Timeless Pieces",
       "image": "Shop12(1).jpeg",
-      "detailImage": "classic_watch_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.7, "reviewsCount": 70 },
       "gender": "Men",
       "overview": false
@@ -311,7 +311,7 @@
       "category": "Footwear",
       "collection": "Formal Attire",
       "image": "Shop10(1).jpeg",
-      "detailImage": "elegant_dress_shoes_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.8, "reviewsCount": 40 },
       "gender": "Men"
     },
@@ -323,7 +323,7 @@
       "category": "Bags",
       "collection": "Travel Essentials",
       "image": "Shop11(1).jpeg",
-      "detailImage": "stylish_backpack_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.5, "reviewsCount": 50 },
       "gender": "Men",
       "overview": false
@@ -336,7 +336,7 @@
       "category": "Athleisure",
       "collection": "Sport Essentials",
       "image": "Shop8(1).jpg",
-      "detailImage": "sporty_track_jacket_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.7, "reviewsCount": 30 },
       "gender": "Men",
       "overview": false
@@ -349,7 +349,7 @@
       "category": "Outerwear",
       "collection": "Formal Attire",
       "image": "Shop12(1).jpeg",
-      "detailImage": "formal_blazer_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.6, "reviewsCount": 48 },
       "gender": "Men",
       "overview": false
@@ -362,7 +362,7 @@
       "category": "Footwear",
       "collection": "Summer Vibes",
       "image": "Shop10(1).jpeg",
-      "detailImage": "beach_flip_flops_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.3, "reviewsCount": 35 },
       "gender": "Men",
       "overview": false
@@ -375,7 +375,7 @@
       "category": "Accessories",
       "collection": "Summer Vibes",
       "image": "Shop11(1).jpeg",
-      "detailImage": "modern_sunglasses_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.6, "reviewsCount": 90 },
       "gender": "Men",
       "overview": false
@@ -388,7 +388,7 @@
       "category": "Evening Wear",
       "collection": "Ethereal Dream",
       "image": "Shop1(1).jpg",
-      "detailImage": "elegant_evening_dress_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.9, "reviewsCount": 35 },
       "gender": "Women",
       "overview": true
@@ -401,7 +401,7 @@
       "category": "Casual",
       "collection": "Spring Blossoms",
       "image": "Shop2(1).jpg",
-      "detailImage": "floral_sundress_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.7, "reviewsCount": 25 },
       "gender": "Women",
       "overview": true
@@ -414,7 +414,7 @@
       "category": "Outerwear",
       "collection": "Casual Chic",
       "image": "Shop4(2).jpg",
-      "detailImage": "denim_jacket_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.6, "reviewsCount": 30 },
       "gender": "Women"
     },
@@ -426,7 +426,7 @@
       "category": "Accessories",
       "collection": "Luxury Essentials",
       "image": "Shop3(1).jpg",
-      "detailImage": "leather_handbag_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.8, "reviewsCount": 55 },
       "gender": "Women",
       "overview": true
@@ -439,7 +439,7 @@
       "category": "Denim",
       "collection": "Urban Style",
       "image": "Shop1(1).jpg",
-      "detailImage": "high_waisted_jeans_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.5, "reviewsCount": 45 },
       "gender": "Women",
       "overview": true
@@ -452,7 +452,7 @@
       "category": "Athleisure",
       "collection": "Fitness Wear",
       "image": "Shop2(1).jpg",
-      "detailImage": "athletic_leggings_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.6, "reviewsCount": 60 },
       "gender": "Women",
       "overview": false
@@ -465,7 +465,7 @@
       "category": "Knitwear",
       "collection": "Winter Luxe",
       "image": "Shop4(2).jpg",
-      "detailImage": "cashmere_sweater_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.9, "reviewsCount": 20 },
       "gender": "Women",
       "overview": false
@@ -478,7 +478,7 @@
       "category": "Jewelry",
       "collection": "Festival Accessories",
       "image": "Shop3(1).jpg",
-      "detailImage": "boho_earrings_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.7, "reviewsCount": 25 },
       "gender": "Women",
       "overview": false
@@ -491,7 +491,7 @@
       "category": "Accessories",
       "collection": "Summer Vibes",
       "image": "Shop1(1).jpg",
-      "detailImage": "straw_hat_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.5, "reviewsCount": 15 },
       "gender": "Women",
       "overview": false
@@ -504,7 +504,7 @@
       "category": "Footwear",
       "collection": "Winter Collection",
       "image": "Shop2(1).jpg",
-      "detailImage": "winter_boots_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.6, "reviewsCount": 35 },
       "gender": "Women",
       "overview": false
@@ -517,7 +517,7 @@
       "category": "Accessories",
       "collection": "Luxury Essentials",
       "image": "Shop4(2).jpg",
-      "detailImage": "silk_scarf_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.8, "reviewsCount": 40 },
       "gender": "Women",
       "overview": false
@@ -530,7 +530,7 @@
       "category": "Accessories",
       "collection": "Ethereal Dream",
       "image": "Shop3(1).jpg",
-      "detailImage": "evening_clutch_detail.jpg",
+      "detailImage": "Shop10(2).jpg",
       "ratings": { "average": 4.9, "reviewsCount": 18 },
       "gender": "Women",
       "overview": false

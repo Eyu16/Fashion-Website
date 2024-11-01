@@ -4,7 +4,7 @@ import Styles from './shopItems.module.css';
 function ShopItem({ product, parent }) {
   return (
     <div className={`${Styles.shoping_card} ${!parent && 'shope_shope_card'}`}>
-      <Link to="/shop/mens/products/:productId">
+      <Link to={`/shop/mens/products/${product.id}`}>
         <figure>
           <img
             className={`${!parent && 'shope_shope_img'}`}
