@@ -5,3 +5,12 @@ export function getProductsByGender(products, gender) {
     (product) => product.gender.toLowerCase() === gender.toLowerCase()
   );
 }
+export function formatedDetails(productDetails) {
+  return Object.entries(productDetails).map(
+    ([key, value]) => `${key}: ${value}`
+  );
+}
+
+export function formatedProductName(productName) {
+  return productName.split(' ').slice(0, 2).join(' ');
+}

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import Styles from './shopItems.module.css';
+import { formatedProductName } from '../utils/helpers';
 
 function ShopItem({ product, parent }) {
   return (
     <div className={`${Styles.shoping_card} ${!parent && 'shope_shope_card'}`}>
-      <Link to={`/shop/mens/products/${product.id}`}>
+      <Link to={`/shop/mens/products/${product._id}`}>
         <figure>
           <img
             className={`${!parent && 'shope_shope_img'}`}
@@ -15,8 +16,10 @@ function ShopItem({ product, parent }) {
       </Link>
       <div className={Styles.description_cotainer}>
         <div>
-          <h4 className={Styles.product_name}>Netela Dress</h4>
-          <span className={Styles.product_price}>250$</span>
+          <h4 className={Styles.product_name}>
+            {formatedProductName(product.name)}
+          </h4>
+          <span className={Styles.product_price}>{product.price}$</span>
         </div>
         <div className={Styles.cart_container}>
           <svg

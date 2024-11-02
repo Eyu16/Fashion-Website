@@ -3,6 +3,7 @@ import Styles from './home.module.css';
 import CollectionItem from './CollectionItems';
 // import { getCollection } from '../../services/apiFashion';
 function NewCollection({ collection }) {
+  console.log(collection);
   const [overviewImg, setOverviewImg] = useState(collection?.images?.[0]);
   const { filmImages } = collection;
   // const [overview, setOverview] = useState('Square4(1).jpg');

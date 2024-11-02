@@ -1,31 +1,19 @@
-import { useState } from 'react';
+import { formatedDetails } from '../../utils/helpers';
 import Styles from './product.module.css';
 
 function ProductDetails({ product }) {
-  const [count, setCount] = useState(1);
-
   return (
-    <div className={Styles.details_text}>
-      <h2 className={Styles.product_name}>Netela Dress</h2>
-      <p className={Styles.product_price}>250$</p>
-      <div className={Styles.buttons}>
-        <div className={Styles.count_buttons}>
-          <button
-            className={Styles.count_button}
-            onClick={() => setCount((count) => (count > 1 ? count - 1 : count))}
-          >
-            Dec
-          </button>
-          <span className={Styles.count}>{count}</span>
-          <button
-            className={Styles.count_button}
-            onClick={() => setCount((count) => count + 1)}
-          >
-            Inc
-          </button>
-        </div>
-        <button className={Styles.add_cart}>Add To Cart</button>
-      </div>
+    <div className={Styles.minor_details}>
+      <h3 className={Styles.minor_heading}>Description</h3>
+      <p className={Styles.product_description}>{product.description}</p>
+      <h4 className={Styles.minor_list_heading}>Product Details</h4>
+      <ul className={Styles.lists}>
+        {formatedDetails(product.productDetails).map((detail, index) => (
+          <li key={index} className={Styles.list}>
+            {detail}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

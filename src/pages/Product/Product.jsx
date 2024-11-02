@@ -1,9 +1,9 @@
 import Styles from './product.module.css';
 import ProductImage from './ProductImage';
-import ProductDetails from './ProductDetails';
-import ProductDescription from './ProductDescription';
 import { getProduct } from '../../services/apiFashion';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import ProductInfo from './ProductInfo';
+import ProductDetails from './ProductDetails';
 function Product() {
   // const { productId } = useParams();
   const product = useLoaderData();
@@ -13,9 +13,9 @@ function Product() {
       <div className={Styles.product_container}>
         <div className={Styles.main_details}>
           <ProductImage product={product} />
-          <ProductDetails product={product} />
+          <ProductInfo product={product} />
         </div>
-        <ProductDescription product={product} />
+        <ProductDetails product={product} />
       </div>
     </main>
   );
