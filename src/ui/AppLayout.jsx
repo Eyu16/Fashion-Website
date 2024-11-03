@@ -10,7 +10,7 @@ function AppLayout() {
   console.log(isLoading);
   return (
     <div>
-      {isLoading && <Center element={<PuffLoader size={500} />} />}
+      {isLoading && <Center element={<PuffLoader size={300} />} />}
       <Header />
       <Outlet />
       <Footer />
