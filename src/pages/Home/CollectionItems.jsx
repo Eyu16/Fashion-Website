@@ -5,9 +5,13 @@ function CollectionItem({ img, name, photo_no, ChangeOverviewImage }) {
   return (
     <figure
       className={Styles.filmstrip_image_container}
-      onClick={() => ChangeOverviewImage(photo_no)}
+      onClick={() => {
+        const end = img.split('-').at(-1);
+        console.log(end);
+        ChangeOverviewImage(end);
+      }}
     >
-      <img src={`/img/${img}`} alt={`${name}-${photo_no + 1}`} />
+      <img src={img} alt={`${name}-${photo_no + 1}`} />
     </figure>
   );
 }

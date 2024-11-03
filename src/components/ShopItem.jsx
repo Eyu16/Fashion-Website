@@ -2,15 +2,23 @@ import { Link } from 'react-router-dom';
 import Styles from './shopItems.module.css';
 import { formatedProductName } from '../utils/helpers';
 
-function ShopItem({ product, parent }) {
+function ShopItem({ product, parent, type }) {
+  console.log(product.resourceUrl);
+  const image = product?.hasBackendImage
+    ? `${product.resourceUrl}/${product.image}`
+    : `/img/${product.image}`;
   return (
     <div className={`${Styles.shoping_card} ${!parent && 'shope_shope_card'}`}>
-      <Link to={`/shop/mens/products/${product._id}`}>
+      <Link
+        to={`/shop/${type === 'for_him' ? 'mens' : 'womens'}/products/${
+          product.slug
+        }`}
+      >
         <figure>
           <img
             className={`${!parent && 'shope_shope_img'}`}
-            src={`/img/${product.image}`}
-            alt="shop"
+            src={image}
+            alt={product.name}
           />
         </figure>
       </Link>

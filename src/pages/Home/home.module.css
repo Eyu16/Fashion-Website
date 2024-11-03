@@ -650,6 +650,24 @@
     padding: 5rem; */
   }
 }
+
+@media (max-width: 38.75em) {
+  .newest_collection {
+    padding: 3rem 5rem;
+  }
+  .collection_view img {
+    max-height: 40rem;
+  }
+  .collection_grid {
+    max-width: 50rem;
+  }
+  .figure_container {
+    max-width: 50rem;
+  }
+  .collection_heading {
+    font-size: 3.5rem;
+  }
+}
 @media (max-width: 34.4em) {
   /* SECTION hERO */
   .primary_heading {
@@ -718,7 +736,27 @@
     font-size: 1.8rem;
   }
 }
-@media (max-width: 26em) {
+
+@media (max-width: 31.25em) {
+  /* Applies up to 500px */
+  .newest_collection {
+    padding: 2rem 3rem;
+  }
+  .collection_view img {
+    max-height: 30rem;
+  }
+  .collection_grid {
+    max-width: 40rem;
+  }
+  .figure_container {
+    /* padding: 0 1.5rem; */
+    max-width: 38rem;
+  }
+  .collection_heading {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 26.25em) {
   .hero_slider_1 {
     background-image: url('/img/Hero7(6).jpg');
   }
@@ -728,5 +766,46 @@
     /* font-size: 5rem;
     padding-bottom: 0rem; */
     /* color: red; */
+  }
+  /* SECTION COLLECTION */
+  .newest_collection {
+    padding: 1.5rem 2rem;
+  }
+  .collection_view img {
+    max-height: 25rem;
+  }
+  .collection_grid {
+    max-width: 35rem;
+  }
+  .figure_container {
+    padding: 0 1rem;
+    max-width: 32rem;
+  }
+  .collection_heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 21.25em) {
+  /* Applies up to 340px */
+  .newest_collection {
+    padding: 0.1rem 1rem;
+  }
+  .collection_view img {
+    max-height: 35rem;
+  }
+  .collection_grid {
+    max-width: 100rem;
+  }
+  .figure_container {
+    padding: 0 0.5rem;
+    max-width: 30rem;
+    max-height: 300rem;
+  }
+  .collection_heading {
+    font-size: 2.7rem;
+  }
+  .collection_container {
+    width: 100rem;
   }
 }

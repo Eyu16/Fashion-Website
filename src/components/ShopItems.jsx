@@ -15,7 +15,7 @@ function ShopItems({ type, overviewProducts, custome_class, parent }) {
       }`}
     >
       {products?.map((product) => (
-        <ShopItem product={product} key={product._id} />
+        <ShopItem product={product} key={product._id} type={type} />
       ))}
     </div>
   );

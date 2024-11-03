@@ -3,12 +3,26 @@ import Styles from './home.module.css';
 import CollectionItem from './CollectionItems';
 // import { getCollection } from '../../services/apiFashion';
 function NewCollection({ collection }) {
-  console.log(collection);
-  const [overviewImg, setOverviewImg] = useState(collection?.images?.[0]);
+  const [overviewImg, setOverviewImg] = useState(() => {
+    const path = collection?.hasBackendImage
+      ? `${collection.resourceUrl}/`
+      : `/img/`;
+    console.log(`${path}${collection?.images?.[0]}`);
+    return `${path}${collection?.images?.[0]}`;
+    // return collection?.images?.[0];
+  });
   const { filmImages } = collection;
+
+  console.log(collection);
+
+  const path = collection?.hasBackendImage
+    ? `${collection.resourceUrl}/`
+    : `/img/`;
+
   // const [overview, setOverview] = useState('Square4(1).jpg');
-  const ChangeOverviewImage = (index) => {
-    setOverviewImg(collection?.images[index]);
+  const ChangeOverviewImage = (end) => {
+    const img = collection.images.find((img) => img.endsWith(end));
+    setOverviewImg(`${path}${img}`);
   };
   return (
     <section className={Styles.newest_collection}>
@@ -24,7 +38,7 @@ function NewCollection({ collection }) {
               <div className={Styles.figure_container}>
                 {filmImages.map((img, i) => (
                   <CollectionItem
-                    img={img}
+                    img={`${path}${img}`}
                     key={img}
                     name={collection.name}
                     photo_no={i}
@@ -66,7 +80,7 @@ function NewCollection({ collection }) {
           </div>
           <figure className={Styles.collection_view}>
             <img
-              src={`/img/${overviewImg}`}
+              src={`${overviewImg}`}
               alt="Stylish person in checkered jacket 2"
             />
           </figure>
