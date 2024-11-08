@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { singupLogin } from '../../services/apiFashion';
 import toast from 'react-hot-toast';
+import { formatDuplicateFieldError } from '../../utils/helpers';
 function Login({ type }) {
   const { register, handleSubmit, reset, getValues, formState, watch } =
     useForm();
@@ -27,7 +28,7 @@ function Login({ type }) {
       navigate('/shop', { replace: true });
     } catch (error) {
       console.log(error.message);
-      toast.error(error.message);
+      toast.error(formatDuplicateFieldError(error.message));
     }
   };
   return (

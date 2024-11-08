@@ -14,3 +14,10 @@ export function formatedDetails(productDetails) {
 export function formatedProductName(productName) {
   return productName.split(' ').slice(0, 2).join(' ');
 }
+
+export function formatDuplicateFieldError(message) {
+  if (message.includes('duplicate field value')) {
+    return 'This email has been registered already!';
+  }
+  return message;
+}

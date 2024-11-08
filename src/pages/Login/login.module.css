@@ -110,6 +110,8 @@ textarea:focus {
 }
 .suggestion a {
   text-decoration: underline;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 /* MEDIA QUERIES */
