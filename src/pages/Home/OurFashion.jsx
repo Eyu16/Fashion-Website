@@ -1,5 +1,6 @@
-import Button from "../../components/Button";
-import Styles from "./home.module.css";
+import { Link } from 'react-router-dom';
+import Button from '../../components/Button';
+import Styles from './home.module.css';
 
 function OurFashion() {
   return (
@@ -47,7 +48,9 @@ function OurFashion() {
         </div>
       </div>
       <div className={Styles.button_center}>
-        <Button type="button_secondary">Order Us</Button>
+        <Link to="/contact">
+          <Button type="button_secondary">Order Us</Button>
+        </Link>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import { PuffLoader } from 'react-spinners';
 import Footer from './Footer';
 import Header from './Header';
 import Center from './Center';
+import ScrollToTop from './ScrollToTop';
 
 function AppLayout() {
   const navigation = useNavigation();
@@ -10,6 +11,7 @@ function AppLayout() {
   console.log(isLoading);
   return (
     <div>
+      <ScrollToTop />
       {isLoading && <Center element={<PuffLoader size={300} />} />}
       <Header />
       <Outlet />

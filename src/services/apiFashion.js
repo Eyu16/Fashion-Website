@@ -21,7 +21,7 @@ export async function getCollection() {
     // throw error;
   }
 }
-export async function getProducts(gender) {
+export async function getProducts() {
   try {
     const data = await axios({
       method: 'GET',

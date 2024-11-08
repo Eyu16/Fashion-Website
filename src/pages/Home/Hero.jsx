@@ -1,5 +1,6 @@
-import Button from "../../components/Button";
-import Styles from "./home.module.css";
+import { Link } from 'react-router-dom';
+import Button from '../../components/Button';
+import Styles from './home.module.css';
 function Hero() {
   return (
     <section className={Styles.section_hero}>
@@ -11,8 +12,12 @@ function Hero() {
           Maraki Fashion – Discover the Finest Collection for Every Occasion
         </h1>
         <div className={Styles.buttons}>
-          <Button type="button_primary">Shop Now</Button>
-          <Button type="button_secondary">About Us</Button>
+          <Link to="/shop">
+            <Button type="button_primary">Shop Now</Button>
+          </Link>
+          <Link to="/about">
+            <Button type="button_secondary">About Us</Button>
+          </Link>
         </div>
       </div>
       <div className={`${Styles.hero_slider} ${Styles.hero_slider_2}`}>
@@ -22,8 +27,12 @@ function Hero() {
           Style.
         </h1>
         <div className={Styles.buttons}>
-          <Button type="button_primary">Shop Now</Button>
-          <Button type="button_secondary">About Us</Button>
+          <Link to="/shop">
+            <Button type="button_primary">Shop Now</Button>
+          </Link>
+          <Link to="/about">
+            <Button type="button_secondary">About Us</Button>
+          </Link>
         </div>
       </div>
     </section>
