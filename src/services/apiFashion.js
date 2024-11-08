@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getProductsByGender } from '../utils/helpers';
 const API_URL = 'http://localhost:3000';
-const API_URL2 = 'http://192.168.137.189:3001/api/v1';
+const API_URL2 = 'http://192.168.43.241:3001/api/v1';
 const API_URL3 = 'http://localhost:3001/api/v1';
 const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 
@@ -50,5 +50,20 @@ export async function getProduct(id) {
   } catch (error) {
     console.log(error);
     // throw error;
+  }
+}
+
+export async function singupLogin(data, type) {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${API_URL4}/users/${type}`,
+      headers: { 'Content-Type': 'application/json' },
+      data,
+    });
+    return res.data.data.user;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error.response.data.message);
   }
 }
