@@ -5,7 +5,7 @@ import { IoStatsChart } from 'react-icons/io5';
 import { GiClothes } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import styles from './account.module.css';
-import ProductItem from './productItem';
+import ProductItem from './ProductItem';
 function Account() {
   // const products = Array.from({ length: 10 }, (_, index) => index + 1);
   const products = [];

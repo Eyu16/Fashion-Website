@@ -56,6 +56,32 @@
   gap: 1rem;
   /* justify-content: center; */
   align-items: center;
+  position: relative;
+  transition: all 0.4s;
+}
+.list:hover {
+  color: var(--second-brand-darker);
+}
+.list::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: var(--second-brand-darker);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+.list:hover::before {
+  width: 100%;
+  left: 0;
+}
+.active {
+  color: var(--second-brand-darker);
+}
+.active::before {
+  width: 100%;
+  left: 0;
 }
 .display {
   height: 60rem;
