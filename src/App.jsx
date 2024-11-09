@@ -9,9 +9,11 @@ import Login from './pages/Login/Login';
 import Cart from './pages/Cart/Cart';
 import About from './pages/About/About';
 import { Toaster } from 'react-hot-toast';
+import Error from './ui/Error';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
