@@ -10,6 +10,7 @@ import Cart from './pages/Cart/Cart';
 import About from './pages/About/About';
 import { Toaster } from 'react-hot-toast';
 import Error from './ui/Error';
+import Account from './pages/Admin/Account';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -54,8 +55,10 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
+        // path: '/login',
+        // element: <Login type="login" />,
         path: '/login',
-        element: <Login type="login" />,
+        element: <Account />,
       },
       {
         path: '/signup',

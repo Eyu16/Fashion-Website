@@ -109,12 +109,12 @@ textarea:focus {
   border-bottom: 2px solid var(--black);
 }
 
-label {
+.label {
   display: block;
   font-size: 3rem; /* Match label font size */
 }
 
-input {
+.input {
   margin-bottom: 2rem; /* Match margin */
   border: none;
   width: 35rem; /* Match input width */
@@ -128,7 +128,7 @@ input {
   border-bottom: 2px solid var(--black);
 }
 
-textarea {
+.textarea {
   width: 35rem; /* Match textarea width */
   height: 15rem; /* Match height */
   background-color: inherit;
@@ -140,8 +140,8 @@ textarea {
   border: 2px solid var(--black);
 }
 
-input:focus,
-textarea:focus {
+.input:focus,
+.textarea:focus {
   outline: none; /* Match focus styles */
 }
 
@@ -193,8 +193,8 @@ textarea:focus {
     font-size: 3.5rem; /* Adjust heading font size */
   }
 
-  input,
-  textarea {
+  .input,
+  .textarea {
     width: 32rem; /* Match input and textarea widths */
   }
 
@@ -214,16 +214,16 @@ textarea:focus {
     font-size: 3rem; /* Adjust heading font size */
   }
 
-  label {
+  .label {
     font-size: 2.5rem; /* Adjust label font size */
   }
 
-  input {
+  .input {
     font-size: 2rem; /* Adjust input font size */
     width: 28rem; /* Adjust input width */
   }
 
-  textarea {
+  .textarea {
     width: 28rem; /* Adjust textarea width */
     font-size: 1.8rem; /* Adjust textarea font size */
   }
@@ -244,12 +244,12 @@ textarea:focus {
     font-size: 2.5rem; /* Adjust heading font size */
   }
 
-  label {
+  .label {
     font-size: 2rem; /* Adjust label font size */
   }
 
-  input,
-  textarea {
+  .input,
+  .textarea {
     width: 20rem; /* Adjust input and textarea widths */
     font-size: 1.6rem; /* Adjust font size */
   }
@@ -276,12 +276,12 @@ textarea:focus {
     font-size: 2rem; /* Adjust heading font size */
   }
 
-  label {
+  .label {
     font-size: 1.8rem; /* Adjust label font size */
   }
 
-  input,
-  textarea {
+  .input,
+  .textarea {
     width: 85%; /* Adjust input and textarea widths */
     font-size: 1.4rem; /* Adjust font size */
   }

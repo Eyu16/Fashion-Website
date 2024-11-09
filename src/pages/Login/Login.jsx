@@ -38,23 +38,29 @@ function Login({ type }) {
           {type === 'login' ? 'Log in' : 'Sign up'}
         </h2>
         <div className="form-group">
-          <label htmlFor="email">Email</label>
+          <label className={Styles.label} htmlFor="email">
+            Email
+          </label>
           <input
             type="email"
             id="email"
             name="email"
+            className={Styles.input}
             {...register('email', {
               required: 'This field is required',
             })}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label className={Styles.label} htmlFor="password">
+            Password
+          </label>
           <div className={Styles.eye_center}>
             <input
               type={showPassword ? 'text' : 'password'}
               id="password"
               name="password"
+              className={Styles.input}
               {...register('password', {
                 required: 'This field is required',
               })}
