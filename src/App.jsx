@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from 'react-router-dom';
 import Home, { loader as homeLoader } from './pages/Home/Home';
 import Shop, { loader as shopLoader } from './pages/Shop/Shop';
 import AppLayout from './ui/AppLayout';
@@ -11,6 +15,7 @@ import About from './pages/About/About';
 import { Toaster } from 'react-hot-toast';
 import Error from './ui/Error';
 import Account from './pages/Admin/Account';
+import ProductAdmin from './pages/Admin/ProductAdmin';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -57,8 +62,18 @@ const router = createBrowserRouter([
       {
         // path: '/login',
         // element: <Login type="login" />,
-        path: '/login',
+        path: '/account',
         element: <Account />,
+        children: [
+          {
+            path: '', // This matches the base /account path
+            element: <Navigate to="product-admin" replace />, // Redirects to /account/product-admin
+          },
+          {
+            path: 'product-admin',
+            element: <ProductAdmin />,
+          },
+        ],
       },
       {
         path: '/signup',

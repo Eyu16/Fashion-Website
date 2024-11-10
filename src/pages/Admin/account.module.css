@@ -23,12 +23,20 @@
   justify-content: flex-end;
   align-items: center;
   gap: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+  backdrop-filter: blur(400px);
+  background: linear-gradient(to bottom right, #917a7a, #e0e0e0);
+  background: linear-gradient(to bottom right, #e0e0e0, #917a7a);
+  padding: 0.5rem 1.5rem;
+  margin-top: 2rem;
 }
 .name {
   font-size: 2rem;
+  z-index: 1000;
 }
 .notification {
   font-size: 2rem;
+  z-index: 1000;
 }
 .main_containt {
   display: grid;
@@ -154,6 +162,7 @@
 }
 .addProduct {
   margin-bottom: 5rem;
+  z-index: 100;
 }
 .items {
   /* padding-top: 30rem;
@@ -484,6 +493,9 @@
 }
 
 @media (max-width: 34.4rem) {
+  .account {
+    padding-top: 10rem;
+  }
   .main_containt {
     grid-template-columns: 1fr;
   }
@@ -499,9 +511,9 @@
 }
 
 @media (max-width: 29em) {
-  .account {
+  /* .account {
     padding: 2rem 2rem;
-  }
+  } */
 
   .container {
     padding: 1rem;

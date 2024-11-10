@@ -3,7 +3,7 @@ import { BiSolidPurchaseTagAlt } from 'react-icons/bi';
 import { MdOutlineCollectionsBookmark } from 'react-icons/md';
 import { IoStatsChart } from 'react-icons/io5';
 import { GiClothes } from 'react-icons/gi';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './account.module.css';
 import ProductItem from './ProductItem';
 import ProductForm from './ProductForm';
@@ -52,7 +52,7 @@ function Account() {
             </div>
             <div className={styles.display_content}>
               {/* <ProductForm /> */}
-              <div className={styles.scroll_div}>
+              {/* <div className={styles.scroll_div}>
                 <div className={styles.items}>
                   {showForm ? (
                     <ProductForm toggleForm={toggleForm} type={session} />
@@ -73,7 +73,8 @@ function Account() {
                 >
                   Add Product
                 </button>
-              )}
+              )} */}
+              <Outlet context={{ products, showForm, toggleForm, session }} />
             </div>
           </div>
           <div className={styles.header_container}>
