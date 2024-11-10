@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import Styles from './ProductForm.module.css';
+import Styles from './productForm.module.css';
 import toast from 'react-hot-toast';
 import { convertToFormData, formatToJSON } from '../../utils/helpers';
 import { creatProduct } from '../../services/apiFashion';
