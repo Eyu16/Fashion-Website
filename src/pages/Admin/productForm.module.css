@@ -1,0 +1,97 @@
+.productFormContainer {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--secondary-font-color);
+  /* background: linear-gradient(to bottom right, #917a7a, #e0e0e0); */
+}
+
+.form {
+  width: 50rem;
+  padding: 1rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.formHeading {
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--black);
+}
+
+.label {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.input,
+.fileInput,
+.textarea {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  border: 2px solid var(--black);
+  border-radius: 0.5rem;
+  background-color: inherit;
+}
+
+.textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.radioLabel {
+  font-size: 1.8rem;
+}
+
+.error {
+  font-size: 1.4rem;
+  color: red;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.buttonCenter {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.buttonCenter button {
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-font-color);
+  background-color: var(--second-brand-bg-darker);
+  border: 2px solid var(--primary-font-color);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonCenter button:hover {
+  background-color: var(--secondary-bg-lighter);
+  color: var(--secondary-font-color);
+}
+
+.buttonCenter .cancel {
+  background-color: rgb(212, 76, 76);
+}
+.buttonCenter .cancel:hover {
+  color: var(--secondary-font-color);
+  background-color: rgb(198, 140, 140);
+}

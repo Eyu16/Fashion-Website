@@ -11,9 +11,9 @@ function Error() {
     <div className={styles.errorContainer}>
       <h1 className={styles.errorHeading}>Oops! Something went wrong</h1>
       <HiMiniExclamationTriangle className={styles.errorIcon} />
-      <Link to="/" className={styles.homeLink}>
+      <a href="/" className={styles.homeLink}>
         Go back to Home
-      </Link>
+      </a>
     </div>
   );
 }

@@ -21,3 +21,41 @@ export function formatDuplicateFieldError(message) {
   }
   return message;
 }
+
+export function formatToJSON(input) {
+  // Remove the escaped quotes and newlines from the input string
+  const cleanedInput = input.replace(/\\"/g, '').replace(/\n/g, ',');
+
+  // Wrap the cleaned string with curly braces to form a valid object literal
+  const formattedInput = `{${cleanedInput}}`;
+
+  // Parse the string into a JSON object
+  const formattedObject = JSON.parse(formattedInput);
+
+  return formattedObject;
+}
+export function convertToFormData(data) {
+  const formData = new FormData();
+
+  // Append text fields
+  formData.append('name', data.name);
+  formData.append('price', data.price);
+  formData.append('description', data.description);
+  formData.append('summary', data.summary);
+  formData.append('gender', data.gender);
+
+  // Append the productDetails object as a stringified JSON
+  formData.append('productDetails', JSON.stringify(data.productDetails));
+
+  // Handle the image file input (assuming data.image is a FileList)
+  if (data.image) {
+    formData.append('image', data.image[0]);
+  }
+
+  // Handle the detailImage file input (assuming data.detailImage is a FileList)
+  if (data.detailImage) {
+    formData.append('detailImage', data.detailImage[0]);
+  }
+
+  return formData;
+}

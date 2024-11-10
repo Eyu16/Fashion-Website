@@ -32,7 +32,6 @@ export async function getProducts() {
     return data.data.data.documents;
   } catch (error) {
     console.log(error);
-    // throw error;
   }
 }
 
@@ -50,6 +49,21 @@ export async function getProduct(id) {
   } catch (error) {
     console.log(error);
     // throw error;
+  }
+}
+
+export async function creatProduct(data) {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${API_URL4}/products`,
+      data,
+    });
+    console.log(res.data);
+    return res.data.data.document;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error.response.data.message);
   }
 }
 

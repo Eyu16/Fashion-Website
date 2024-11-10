@@ -1,5 +1,5 @@
 import styles from './account.module.css';
-function ProductItem() {
+function ProductItem({ toggleForm }) {
   return (
     <div className={styles.item}>
       <figure className={styles.item_img_container}>
@@ -10,7 +10,12 @@ function ProductItem() {
         <span className={styles.item_price}>$250</span>
       </div>
       <div className={styles.edit_buttons}>
-        <button className={styles.edit_button}>Edit</button>
+        <button
+          onClick={() => toggleForm('edit')}
+          className={styles.edit_button}
+        >
+          Edit
+        </button>
         <button className={styles.remove_button}>Remove</button>
       </div>
     </div>

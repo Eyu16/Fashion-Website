@@ -6,9 +6,17 @@ import { GiClothes } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import styles from './account.module.css';
 import ProductItem from './ProductItem';
+import ProductForm from './ProductForm';
+import { useState } from 'react';
 function Account() {
-  // const products = Array.from({ length: 10 }, (_, index) => index + 1);
-  const products = [];
+  const [showForm, setShowForm] = useState(false);
+  const [session, setSession] = useState('add');
+  const products = Array.from({ length: 10 }, (_, index) => index + 1);
+  const toggleForm = function (type = 'add') {
+    setShowForm((showForm) => !showForm);
+    setSession(type);
+  };
+  // const products = [];
   return (
     <div className={styles.account}>
       <div className={styles.container}>
@@ -43,17 +51,29 @@ function Account() {
               />
             </div>
             <div className={styles.display_content}>
+              {/* <ProductForm /> */}
               <div className={styles.scroll_div}>
                 <div className={styles.items}>
-                  {products?.map((product, i) => (
-                    <ProductItem key={i} />
-                  ))}
+                  {showForm ? (
+                    <ProductForm toggleForm={toggleForm} type={session} />
+                  ) : (
+                    products?.map((product, i) => (
+                      <ProductItem key={i} toggleForm={toggleForm} />
+                    ))
+                  )}
                 </div>
               </div>
               {!products?.length && (
                 <p className={styles.paragraph}>Search for product to edit</p>
               )}
-              <button className={styles.button}>Add Product</button>
+              {!showForm && (
+                <button
+                  className={`${styles.button} ${styles.addProduct}`}
+                  onClick={() => toggleForm('add')}
+                >
+                  Add Product
+                </button>
+              )}
             </div>
           </div>
           <div className={styles.header_container}>
