@@ -1,17 +1,19 @@
-import {
-  matchPath,
-  Navigate,
-  Outlet,
-  useLoaderData,
-  useLocation,
-} from 'react-router-dom';
+import { matchPath, Navigate, Outlet, useLocation } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 import Styles from './shop.module.css';
 import { getProducts } from '../../services/apiFashion';
+import { useQuery } from '@tanstack/react-query';
+import Center from '../../ui/Center';
+import { PuffLoader } from 'react-spinners';
 
 function Shop() {
   const location = useLocation();
-  const shopProducts = useLoaderData();
+  const { data: shopProducts, isLoading: isShopProductsLoading } = useQuery({
+    queryKey: ['products'],
+    queryFn: getProducts,
+  });
+  if (isShopProductsLoading)
+    return <Center element={<PuffLoader size={300} />} />;
 
   const isProductPage =
     matchPath('/shop/mens/products/:productId', location.pathname) ||
@@ -31,12 +33,10 @@ function Shop() {
           ]}
         />
       )}
+
       <Outlet context={{ shopProducts }} />
     </main>
   );
 }
-export async function loader() {
-  const shopProducts = await getProducts();
-  return shopProducts;
-}
+
 export default Shop;

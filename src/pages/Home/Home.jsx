@@ -5,10 +5,31 @@ import OurFashion from './OurFashion';
 import NewCollection from './NewCollection';
 import ShopOverview from './ShopOverview';
 import { getCollection, getProducts } from '../../services/apiFashion';
-import { useLoaderData } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import Center from '../../ui/Center';
+import { PuffLoader } from 'react-spinners';
 
 function Home() {
-  const { collection, products } = useLoaderData();
+  const {
+    isLoading: isLoadingCollections,
+    data: collection,
+    // error: cError,
+  } = useQuery({
+    queryKey: ['collections'],
+    queryFn: getCollection,
+  });
+  const {
+    isLoading: isLoadingProducts,
+    data: products,
+    // error: pError,
+  } = useQuery({
+    queryKey: ['products'],
+    queryFn: getProducts,
+  });
+
+  if (isLoadingCollections || isLoadingProducts)
+    return <Center element={<PuffLoader size={300} />} />;
+
   return (
     <main className={Styles.home_main}>
       <Hero />
@@ -18,11 +39,6 @@ function Home() {
       <ShopOverview products={products} />
     </main>
   );
-}
-export async function loader() {
-  const collection = await getCollection();
-  const products = await getProducts();
-  return { collection, products };
 }
 
 export default Home;

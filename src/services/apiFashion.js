@@ -8,13 +8,14 @@ const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 // json-server --watch db.json --host 0.0.0.0 --port 3000
 
 export async function getCollection() {
+  console.log('what is happeni');
   try {
     const data = await axios({
       method: 'GET',
       url: `${API_URL4}/collections/6726e4fce719f198c1304f6b`,
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log(data.data.data.collection);
+    // console.log(data.data.data.collection);
     return data.data.data.document;
   } catch (error) {
     console.log(error);
@@ -28,7 +29,7 @@ export async function getProducts() {
       url: `${API_URL4}/products`,
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log(data.data.data);
+    // console.log(data.data.data);
     return data.data.data.documents;
   } catch (error) {
     console.log(error);

@@ -4,13 +4,19 @@ import Footer from './Footer';
 import Header from './Header';
 import Center from './Center';
 import ScrollToTop from './ScrollToTop';
+import { createContext, useState } from 'react';
+import { useLoaderContext } from '../context/LoaderProvider';
+
+const LoaderContext = createContext();
 
 function AppLayout() {
+  // const { isLoading } = useLoaderContext();
   const navigation = useNavigation();
   const isLoading = navigation.state === 'loading';
-  console.log(isLoading);
+  // const [isLoading, setIsLoading] = useState(false);
+  // console.log(isLoading);
   return (
-    <div>
+    <div className="appLayout">
       <ScrollToTop />
       {isLoading && <Center element={<PuffLoader size={300} />} />}
       <Header />

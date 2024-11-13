@@ -3,13 +3,13 @@ import Styles from './home.module.css';
 import CollectionItem from './CollectionItems';
 // import { getCollection } from '../../services/apiFashion';
 function NewCollection({ collection }) {
+  // console.log(collection, 'newCollection');
   const [overviewImg, setOverviewImg] = useState(() => {
     const path = collection?.hasBackendImage
       ? `${collection.resourceUrl}/`
       : `/img/`;
     console.log(`${path}${collection?.images?.[0]}`);
     return `${path}${collection?.images?.[0]}`;
-    // return collection?.images?.[0];
   });
   const { filmImages } = collection;
 
@@ -45,36 +45,6 @@ function NewCollection({ collection }) {
                     ChangeOverviewImage={ChangeOverviewImage}
                   />
                 ))}
-                {/* <figure className={Styles.filmstrip_image_container}>
-                  <img
-                    src="/img/Square4(2).jpg"
-                    alt="Stylish person in checkered jacket"
-                  />
-                </figure>
-                <figure className={Styles.filmstrip_image_container}>
-                  <img
-                    src="/img/Square6(1).jpeg"
-                    alt="Stylish person in checkered jacket"
-                  />
-                </figure>
-                <figure className={Styles.filmstrip_image_container}>
-                  <img
-                    src="/img/Hero3(2).jpg"
-                    alt="Stylish person in checkered jacket"
-                  />
-                </figure>
-                <figure className={Styles.filmstrip_image_container}>
-                  <img
-                    src="/img/Square5(1).jpeg"
-                    alt="Stylish person in checkered jacket"
-                  />
-                </figure>
-                <figure className={Styles.filmstrip_image_container}>
-                  <img
-                    src="/img/Square7(1).jpeg"
-                    alt="Stylish person in checkered jacket"
-                  />
-                </figure> */}
               </div>
             </div>
           </div>
@@ -89,10 +59,4 @@ function NewCollection({ collection }) {
     </section>
   );
 }
-
-// export async function loader() {
-//   const collections = await getCollections();
-//   return collections;
-// }
-
 export default NewCollection;

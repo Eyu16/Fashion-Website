@@ -1,12 +1,22 @@
 import Styles from './product.module.css';
 import ProductImage from './ProductImage';
 import { getProduct } from '../../services/apiFashion';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import ProductInfo from './ProductInfo';
 import ProductDetails from './ProductDetails';
+import { useQuery } from '@tanstack/react-query';
+import Center from '../../ui/Center';
+import { PuffLoader } from 'react-spinners';
 function Product() {
-  // const { productId } = useParams();
-  const product = useLoaderData();
+  const { productId } = useParams();
+  console.log(productId);
+  const { data: product, isLoading: isProductLoading } = useQuery({
+    queryKey: ['product', productId],
+    queryFn: () => getProduct(productId),
+    enabled: !!productId,
+  });
+  if (isProductLoading) return <Center element={<PuffLoader size={300} />} />;
+
   return (
     <main className={Styles.product}>
       <h1 className={Styles.product_heading}>Product Details</h1>
@@ -21,10 +31,10 @@ function Product() {
   );
 }
 
-export async function loader({ params }) {
-  const product = await getProduct(params.productId);
-  console.log(product);
-  return product;
-}
+// export async function loader({ params }) {
+//   const product = await getProduct(params.productId);
+//   console.log(product);
+//   return product;
+// }
 
 export default Product;
