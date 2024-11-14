@@ -1,12 +1,19 @@
 import Styles from './product.module.css';
 import ProductImage from './ProductImage';
 import { getProduct } from '../../services/apiFashion';
-import { useLoaderData } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ProductInfo from './ProductInfo';
 import ProductDetails from './ProductDetails';
+import { useQuery } from '@tanstack/react-query';
+import Loader from '../../ui/Loader';
 function Product() {
-  // const { productId } = useParams();
-  const product = useLoaderData();
+  const { productId } = useParams();
+  const { isLoading, data: product } = useQuery({
+    queryKey: ['product', productId],
+    queryFn: () => getProduct(productId),
+    enabled: !!productId,
+  });
+  if (isLoading) return <Loader />;
   return (
     <main className={Styles.product}>
       <h1 className={Styles.product_heading}>Product Details</h1>
@@ -19,12 +26,6 @@ function Product() {
       </div>
     </main>
   );
-}
-
-export async function loader({ params }) {
-  const product = await getProduct(params.productId);
-  console.log(product);
-  return product;
 }
 
 export default Product;

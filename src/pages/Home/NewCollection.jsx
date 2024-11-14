@@ -1,16 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Styles from './home.module.css';
 import CollectionItem from './CollectionItems';
+import { useQuery } from '@tanstack/react-query';
+import { getCollection } from '../../services/apiFashion';
+import Loader from '../../ui/Loader';
 // import { getCollection } from '../../services/apiFashion';
-function NewCollection({ collection }) {
-  const [overviewImg, setOverviewImg] = useState(() => {
-    const path = collection?.hasBackendImage
-      ? `${collection.resourceUrl}/`
-      : `/img/`;
-    console.log(`${path}${collection?.images?.[0]}`);
-    return `${path}${collection?.images?.[0]}`;
-    // return collection?.images?.[0];
+function NewCollection() {
+  const { isLoading, data: collection } = useQuery({
+    queryKey: ['collection'],
+    queryFn: getCollection,
   });
+  const [overviewImg, setOverviewImg] = useState();
+
+  useEffect(
+    function () {
+      const path = collection?.hasBackendImage
+        ? `${collection.resourceUrl}/`
+        : `/img/`;
+      setOverviewImg(`${path}${collection?.images?.[0]}`);
+    },
+    [collection]
+  );
+
+  if (isLoading) return <Loader />;
+
   const { filmImages } = collection;
 
   console.log(collection);

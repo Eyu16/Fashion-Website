@@ -1,8 +1,13 @@
 import axios from 'axios';
-import { getProductsByGender } from '../utils/helpers';
+import {
+  convertToFormData,
+  formatToJSON,
+  getProductsByGender,
+} from '../utils/helpers';
 const API_URL = 'http://localhost:3000';
-const API_URL2 = 'http://192.168.43.241:3001/api/v1';
+const API_URL2 = 'http://192.168.60.241:3001/api/v1';
 const API_URL3 = 'http://localhost:3001/api/v1';
+// const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 
 // json-server --watch db.json --host 0.0.0.0 --port 3000
@@ -11,7 +16,7 @@ export async function getCollection() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/collections/6726e4fce719f198c1304f6b`,
+      url: `${API_URL2}/collections/6726e4fce719f198c1304f6b`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data.data.collection);
@@ -25,7 +30,7 @@ export async function getProducts() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/products`,
+      url: `${API_URL2}/products`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data.data);
@@ -41,7 +46,7 @@ export async function getProduct(id) {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/products/${id}`,
+      url: `${API_URL2}/products/${id}`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data);
@@ -53,10 +58,41 @@ export async function getProduct(id) {
 }
 
 export async function creatProduct(data) {
+  console.log('create');
   try {
+    delete data.rating;
+    delete data.ratingsAverage;
+    delete data.ratingCount;
+    data.productDetails = formatToJSON(data.productDetails);
+    data = convertToFormData(data);
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/products`,
+      url: `${API_URL2}/products`,
+      data,
+    });
+    console.log(res.data);
+    return res.data.data.document;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error.response.data.message);
+  }
+}
+export async function editProduct(data) {
+  try {
+    delete data.rating;
+    delete data.ratingsAverage;
+    delete data.ratingCount;
+    const id = data.id;
+    data.productDetails = JSON.stringify(formatToJSON(data.productDetails));
+    // console.log(data.productDetails);
+    data = convertToFormData(data);
+    data.forEach((value, key) => {
+      console.log(key, value);
+    });
+    delete data.id;
+    const res = await axios({
+      method: 'PATCH',
+      url: `${API_URL2}/products/${id}`,
       data,
     });
     console.log(res.data);
@@ -71,7 +107,7 @@ export async function singupLogin(data, type) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/users/${type}`,
+      url: `${API_URL2}/users/${type}`,
       headers: { 'Content-Type': 'application/json' },
       data,
     });
@@ -86,7 +122,7 @@ export async function sendContactEmail(data) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/sendEmail/contact`,
+      url: `${API_URL2}/sendEmail/contact`,
       headers: { 'Content-Type': 'application/json' },
       data,
     });

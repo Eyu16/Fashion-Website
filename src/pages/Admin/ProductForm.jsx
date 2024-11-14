@@ -2,9 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Styles from './productForm.module.css';
 import toast from 'react-hot-toast';
-import { convertToFormData, formatToJSON } from '../../utils/helpers';
-import { creatProduct } from '../../services/apiFashion';
+import { formatProductDetails } from '../../utils/helpers';
+import { creatProduct, editProduct } from '../../services/apiFashion';
 import { useNavigate } from 'react-router-dom';
+import { useMutation } from '@tanstack/react-query';
 
 function ProductForm({ type, toggleForm, product }) {
   const navigate = useNavigate();
@@ -14,24 +15,33 @@ function ProductForm({ type, toggleForm, product }) {
     reset,
     formState: { errors },
   } = useForm({
-    defaultValues: type === 'edit' ? {} : {},
+    defaultValues:
+      type === 'edit'
+        ? {
+            ...product,
+            productDetails: formatProductDetails(product.productDetails),
+          }
+        : {},
   });
 
-  const onSubmit = async (data) => {
-    try {
-      // console.log(data);
-      // data.image = data.image[0];
-      // data.detailImage = data.detailImage[0];
-      data.productDetails = formatToJSON(data.productDetails);
-      data = convertToFormData(data);
-      const product = await creatProduct(data);
-      console.log(product);
-      toast.success('Product has been submitted successfully!');
-      reset('');
+  const { isLoading, mutate } = useMutation({
+    mutationFn: type === 'edit' ? editProduct : creatProduct,
+    onSuccess: (product) => {
+      type === 'edit'
+        ? toast.success('Product has been submitted successfully!')
+        : toast.success('Product has been updated successfully!');
+      reset();
       navigate(`/shop/${product.gender.toLowerCase()}s/products/${product.id}`);
-    } catch (error) {
+    },
+    onError: (error) => {
+      console.log(error);
       toast.error(error.message);
-    }
+    },
+  });
+
+  const onSubmit = function (data) {
+    console.log(data);
+    mutate(data);
   };
 
   return (
@@ -51,6 +61,7 @@ function ProductForm({ type, toggleForm, product }) {
             id="name"
             name="name"
             className={Styles.input}
+            disabled={isLoading}
             {...register('name', { required: 'Product name is required' })}
           />
           {errors.name && <p className={Styles.error}>{errors.name.message}</p>}
@@ -65,6 +76,7 @@ function ProductForm({ type, toggleForm, product }) {
             id="description"
             name="description"
             className={Styles.textarea}
+            disabled={isLoading}
             {...register('description', {
               required: 'Description is required',
             })}
@@ -84,6 +96,7 @@ function ProductForm({ type, toggleForm, product }) {
             id="summary"
             name="summary"
             className={Styles.input}
+            disabled={isLoading}
             {...register('summary', { required: 'Summary is required' })}
           />
           {errors.summary && (
@@ -101,6 +114,7 @@ function ProductForm({ type, toggleForm, product }) {
             id="price"
             name="price"
             className={Styles.input}
+            disabled={isLoading}
             {...register('price', { required: 'Price is required' })}
           />
           {errors.price && (
@@ -116,16 +130,27 @@ function ProductForm({ type, toggleForm, product }) {
               <input
                 type="radio"
                 value="Men"
+                disabled={isLoading}
                 {...register('gender', { required: 'Gender is required' })}
               />
               Men
             </label>
             <label className={Styles.radioLabel}>
-              <input type="radio" value="Women" {...register('gender')} />
+              <input
+                type="radio"
+                value="Women"
+                disabled={isLoading}
+                {...register('gender')}
+              />
               Women
             </label>
             <label className={Styles.radioLabel}>
-              <input type="radio" value="Unisex" {...register('gender')} />
+              <input
+                type="radio"
+                value="Unisex"
+                disabled={isLoading}
+                {...register('gender')}
+              />
               Unisex
             </label>
           </div>
@@ -144,7 +169,10 @@ function ProductForm({ type, toggleForm, product }) {
             id="image"
             name="image"
             className={Styles.fileInput}
-            {...register('image', { required: 'Product image is required' })}
+            disabled={isLoading}
+            {...register('image', {
+              required: type === 'edit' ? false : 'Product image is required',
+            })}
           />
           {errors.image && (
             <p className={Styles.error}>{errors.image.message}</p>
@@ -161,8 +189,9 @@ function ProductForm({ type, toggleForm, product }) {
             id="detailImage"
             name="detailImage"
             className={Styles.fileInput}
+            disabled={isLoading}
             {...register('detailImage', {
-              required: 'Detail image is required',
+              required: type === 'edit' ? false : 'Detail image is required',
             })}
           />
           {errors.detailImage && (
@@ -179,6 +208,7 @@ function ProductForm({ type, toggleForm, product }) {
             id="productDetails"
             name="productDetails"
             className={Styles.textarea}
+            disabled={isLoading}
             {...register('productDetails', {
               required: 'Product details are required',
             })}
@@ -189,10 +219,15 @@ function ProductForm({ type, toggleForm, product }) {
         </div>
 
         <div className={Styles.buttonCenter}>
-          <button type="submit" className={Styles.add}>
+          <button type="submit" className={Styles.add} disabled={isLoading}>
             {type === 'add' ? 'Add' : 'Edit'}
           </button>
-          <button type="reset" className={Styles.cancel} onClick={toggleForm}>
+          <button
+            type="reset"
+            className={Styles.cancel}
+            onClick={toggleForm}
+            disabled={isLoading}
+          >
             Cancel
           </button>
         </div>

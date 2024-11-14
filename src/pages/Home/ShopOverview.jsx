@@ -1,8 +1,16 @@
 import ShopItems from '../../components/ShopItems';
 import Styles from './home.module.css';
 import { getProductsByGender } from '../../utils/helpers';
+import { useQuery } from '@tanstack/react-query';
+import { getProducts } from '../../services/apiFashion';
+import Loader from '../../ui/Loader';
 
-function ShopOverview({ products }) {
+function ShopOverview() {
+  const { isLoading, data: products } = useQuery({
+    queryKey: ['products'],
+    queryFn: getProducts,
+  });
+  if (isLoading) return <Loader />;
   const mens = getProductsByGender(products, 'men').filter(
     (product) => product.overview
   );

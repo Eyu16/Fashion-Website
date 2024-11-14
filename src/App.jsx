@@ -3,11 +3,11 @@ import {
   Navigate,
   RouterProvider,
 } from 'react-router-dom';
-import Home, { loader as homeLoader } from './pages/Home/Home';
-import Shop, { loader as shopLoader } from './pages/Shop/Shop';
+import Home from './pages/Home/Home';
+import Shop from './pages/Shop/Shop';
 import AppLayout from './ui/AppLayout';
 import ShopItems from './components/ShopItems';
-import Product, { loader as productLoader } from './pages/Product/Product';
+import Product from './pages/Product/Product';
 import Contact from './pages/Contact/Contact';
 import Login from './pages/Login/Login';
 import Cart from './pages/Cart/Cart';
@@ -16,6 +16,8 @@ import { Toaster } from 'react-hot-toast';
 import Error from './ui/Error';
 import Account from './pages/Admin/Account';
 import ProductAdmin from './pages/Admin/ProductAdmin';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -24,12 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: homeLoader,
       },
       {
         path: '/shop',
         element: <Shop />,
-        loader: shopLoader,
         children: [
           {
             path: 'mens',
@@ -42,12 +42,10 @@ const router = createBrowserRouter([
           {
             path: 'mens/products/:productId',
             element: <Product />,
-            loader: productLoader,
           },
           {
             path: 'womens/products/:productId',
             element: <Product />,
-            loader: productLoader,
           },
         ],
       },
@@ -87,10 +85,17 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 function App() {
   return (
-    <div>
-      {/* <Header /> */}
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools />
       <RouterProvider router={router} />
       <Toaster
         position="top-center"
@@ -114,7 +119,7 @@ function App() {
         }}
       />
       {/* <Footer /> */}
-    </div>
+    </QueryClientProvider>
   );
 }
 

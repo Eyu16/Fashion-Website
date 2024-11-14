@@ -34,6 +34,22 @@ export function formatToJSON(input) {
 
   return formattedObject;
 }
+export function formatProductDetails(details) {
+  return Object.entries(details)
+    .map(([key, value]) => {
+      // Capitalize the first letter of each word in the value
+      const formattedValue = value
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+        .replace(/,/g, '\n'); // Replace commas with new lines
+
+      // Format as "Key": "Value"
+      return `"${key}": "${formattedValue}"`;
+    })
+    .join('\n');
+}
+
 export function convertToFormData(data) {
   const formData = new FormData();
 
@@ -45,15 +61,26 @@ export function convertToFormData(data) {
   formData.append('gender', data.gender);
 
   // Append the productDetails object as a stringified JSON
-  formData.append('productDetails', JSON.stringify(data.productDetails));
+  console.log(typeof data.productDetails);
+  if (typeof data.productDetails !== 'string')
+    formData.append('productDetails', JSON.stringify(data.productDetails));
+  else formData.append('productDetails', data.productDetails);
+
+  console.log(
+    typeof formData.get('productDetails'),
+    formData.get('productDetails')
+  );
 
   // Handle the image file input (assuming data.image is a FileList)
-  if (data.image) {
+  if (typeof data.image === 'string') formData.append('image', data.image);
+  else {
     formData.append('image', data.image[0]);
   }
 
   // Handle the detailImage file input (assuming data.detailImage is a FileList)
-  if (data.detailImage) {
+  if (typeof data.detailImage === 'string') {
+    formData.append('detailImage', data.detailImage);
+  } else {
     formData.append('detailImage', data.detailImage[0]);
   }
 
