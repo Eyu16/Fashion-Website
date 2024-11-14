@@ -12,7 +12,7 @@ export async function getCollection() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL2}/collections/6726e4fce719f198c1304f6b`,
+      url: `${API_URL4}/collections/6726e4fce719f198c1304f6b`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data.data.collection);
@@ -26,7 +26,7 @@ export async function getProducts() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL2}/products`,
+      url: `${API_URL4}/products`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data.data);
@@ -42,7 +42,7 @@ export async function getProduct(id) {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL2}/products/${id}`,
+      url: `${API_URL4}/products/${id}`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data);
@@ -63,7 +63,7 @@ export async function creatProduct(data) {
     data = convertToFormData(data);
     const res = await axios({
       method: 'POST',
-      url: `${API_URL2}/products`,
+      url: `${API_URL4}/products`,
       data,
     });
     console.log(res.data);
@@ -88,7 +88,7 @@ export async function editProduct(data) {
     delete data.id;
     const res = await axios({
       method: 'PATCH',
-      url: `${API_URL2}/products/${id}`,
+      url: `${API_URL4}/products/${id}`,
       data,
     });
     console.log(res.data);
@@ -104,7 +104,7 @@ export async function deleteProduct(id) {
   try {
     await axios({
       method: 'DELETE',
-      url: `${API_URL2}/products/${id}`,
+      url: `${API_URL4}/products/${id}`,
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
@@ -116,7 +116,7 @@ export async function singupLogin(data, type) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL2}/users/${type}`,
+      url: `${API_URL4}/users/${type}`,
       headers: { 'Content-Type': 'application/json' },
       data,
     });
@@ -131,7 +131,7 @@ export async function sendContactEmail(data) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL2}/sendEmail/contact`,
+      url: `${API_URL4}/sendEmail/contact`,
       headers: { 'Content-Type': 'application/json' },
       data,
     });
