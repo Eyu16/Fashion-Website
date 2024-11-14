@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import Styles from './home.module.css';
 import CollectionItem from './CollectionItems';
 import { useQuery } from '@tanstack/react-query';
-import { getCollection } from '../../services/apiFashion';
+import { getCollection, getCollections } from '../../services/apiFashion';
 import Loader from '../../ui/Loader';
+import { getSelectedCollection } from '../../utils/helpers';
 // import { getCollection } from '../../services/apiFashion';
 function NewCollection() {
-  const { isLoading, data: collection } = useQuery({
+  const { isLoading, data: collections } = useQuery({
     queryKey: ['collection'],
-    queryFn: getCollection,
+    queryFn: getCollections,
   });
+  const collection = getSelectedCollection(collections);
   const [overviewImg, setOverviewImg] = useState();
 
   useEffect(

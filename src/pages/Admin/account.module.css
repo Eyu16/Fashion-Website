@@ -210,6 +210,10 @@
 .item_img {
   max-width: 20rem;
 }
+.collection_img {
+  max-width: 30rem;
+  max-height: 30rem;
+}
 .item_description {
   display: flex;
   justify-content: space-between;
@@ -328,6 +332,10 @@
   .item_img {
     max-width: 18rem;
   }
+  .collection_img {
+    max-width: 25rem;
+    max-height: 25rem;
+  }
 
   .item_name {
     font-size: 1.8rem;
@@ -412,6 +420,10 @@
   .item_img {
     max-width: 17rem;
   }
+  .collection_img {
+    max-width: 23rem;
+    max-height: 23rem;
+  }
 
   .item_name {
     font-size: 1.6rem;
@@ -495,6 +507,10 @@
 
   .item_img {
     max-width: 15rem;
+  }
+  .collection_img {
+    max-width: 20rem;
+    max-height: 20rem;
   }
 
   .item_name {
@@ -603,6 +619,10 @@
   .item_img {
     max-width: 12rem;
   }
+  /* .collection_img {
+    max-width: 17rem;
+    max-height: 17rem;
+  } */
 
   .item_name {
     font-size: 1.2rem;

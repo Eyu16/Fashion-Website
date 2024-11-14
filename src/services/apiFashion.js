@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { convertToFormData, formatToJSON } from '../utils/helpers';
+import {
+  convertToFormData,
+  formatToJSON,
+  getSelectedCollection,
+} from '../utils/helpers';
 const API_URL = 'http://localhost:3000';
 const API_URL2 = 'http://192.168.137.151:3001/api/v1';
 const API_URL3 = 'http://localhost:3001/api/v1';
@@ -12,7 +16,7 @@ export async function getCollection() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/collections/6726e4fce719f198c1304f6b`,
+      url: `${API_URL2}/collections/6726e4fce719f198c1304f6b`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data.data.collection);
@@ -22,11 +26,67 @@ export async function getCollection() {
     // throw error;
   }
 }
+
+export async function selectCollection(id) {
+  try {
+    const collections = await getCollections();
+    const previousSelected = await getSelectedCollection(collections);
+    const updatePrev = await updateCollection(previousSelected.id, {
+      isSelected: false,
+    });
+    console.log(updatePrev);
+    const newSelected = await updateCollection(id, { isSelected: true });
+  } catch (error) {
+    console.log(error);
+    throw new Error('There was an error while selecting collection!');
+  }
+}
+
+export async function updateCollection(id, data) {
+  try {
+    console.log(data, id);
+    const res = await axios({
+      method: 'PATCH',
+      url: `${API_URL2}/collections/${id}`,
+      headers: { 'Content-Type': 'application/json' },
+      data,
+    });
+    return res.data.data.document;
+  } catch (error) {
+    throw new Error('There was an error while updating collection!');
+  }
+}
+
+export async function deleteCollection(id) {
+  try {
+    await axios({
+      method: 'DELETE',
+      url: `${API_URL2}/collections/${id}`,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    throw new Error('There was an error deleting the collection!');
+  }
+}
+
+export async function getCollections() {
+  try {
+    const data = await axios({
+      method: 'GET',
+      url: `${API_URL2}/collections`,
+      headers: { 'Content-Type': 'application/json' },
+    });
+    return data.data.data.documents;
+  } catch (error) {
+    console.log(error);
+    // throw error;
+  }
+}
 export async function getProducts() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/products`,
+      url: `${API_URL2}/products`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data.data);
@@ -42,7 +102,7 @@ export async function getProduct(id) {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/products/${id}`,
+      url: `${API_URL2}/products/${id}`,
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(data.data);
@@ -63,7 +123,7 @@ export async function creatProduct(data) {
     data = convertToFormData(data);
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/products`,
+      url: `${API_URL2}/products`,
       data,
     });
     console.log(res.data);
@@ -80,7 +140,6 @@ export async function editProduct(data) {
     delete data.ratingCount;
     const id = data.id;
     data.productDetails = JSON.stringify(formatToJSON(data.productDetails));
-    // console.log(data.productDetails);
     data = convertToFormData(data);
     data.forEach((value, key) => {
       console.log(key, value);
@@ -88,7 +147,7 @@ export async function editProduct(data) {
     delete data.id;
     const res = await axios({
       method: 'PATCH',
-      url: `${API_URL4}/products/${id}`,
+      url: `${API_URL2}/products/${id}`,
       data,
     });
     console.log(res.data);
@@ -104,7 +163,7 @@ export async function deleteProduct(id) {
   try {
     await axios({
       method: 'DELETE',
-      url: `${API_URL4}/products/${id}`,
+      url: `${API_URL2}/products/${id}`,
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
@@ -116,7 +175,7 @@ export async function singupLogin(data, type) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/users/${type}`,
+      url: `${API_URL2}/users/${type}`,
       headers: { 'Content-Type': 'application/json' },
       data,
     });
@@ -131,7 +190,7 @@ export async function sendContactEmail(data) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/sendEmail/contact`,
+      url: `${API_URL2}/sendEmail/contact`,
       headers: { 'Content-Type': 'application/json' },
       data,
     });

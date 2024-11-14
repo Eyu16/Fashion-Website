@@ -15,11 +15,11 @@ function AdminNav() {
         </li>
         <li className={styles.list}>
           <GiClothes />
-          <NavLink>Products</NavLink>
+          <NavLink to="product-admin">Products</NavLink>
         </li>
         <li className={styles.list}>
           <MdOutlineCollectionsBookmark />
-          <NavLink>Collections</NavLink>
+          <NavLink to="collection-admin">Collections</NavLink>
         </li>
         <li className={styles.list}>
           <IoStatsChart />

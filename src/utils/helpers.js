@@ -88,8 +88,13 @@ export function convertToFormData(data) {
 }
 
 export function filterProducts(products = [], filterBy) {
+  console.log(products);
   console.log('filtering');
   return products.filter((product) =>
     product.name.toLowerCase().includes(filterBy.toLowerCase())
   );
+}
+
+export function getSelectedCollection(collections = []) {
+  return collections.find((collection) => collection.isSelected);
 }

@@ -19,6 +19,7 @@ import ProductAdmin from './pages/Admin/ProductAdmin';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import DeleteConfirmationModal from './ui/ConfirmationModal';
+import CollectionAdmin from './pages/Admin/CollectionAdmin';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
           {
             path: 'product-admin',
             element: <ProductAdmin />,
+          },
+          {
+            path: 'collection-admin',
+            element: <CollectionAdmin />,
           },
         ],
       },

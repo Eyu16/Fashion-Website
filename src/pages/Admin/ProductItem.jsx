@@ -30,7 +30,6 @@ function ProductItem({ product, toggleForm, onSetProduct }) {
 
   const handleDelete = function () {
     setShowModal(true);
-    // mutate(product.id);
   };
 
   return (
