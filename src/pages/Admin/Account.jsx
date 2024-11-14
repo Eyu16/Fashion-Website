@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SearchQueryProvider from '../../../context/SearchQueryProvider';
+import SearchQueryProvider from '../../context/SearchQueryProvider';
 import SearchBar from './SearchBar';
 import UserInfo from './UserInfo';
 import AdminNav from './AdminNav';

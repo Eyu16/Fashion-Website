@@ -135,11 +135,30 @@
 .scroll_div::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Edge */
 }
+/* .paragraph {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+} */
 .paragraph {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 400;
   text-align: center;
+  overflow: hidden; /* Hides text until it's revealed */
+  white-space: nowrap;
+  width: 0; /* Start hidden */
+  margin: 0 auto; /* Centers the paragraph */
+  animation: typing 3s steps(30, end) forwards; /* Typing effect */
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Expands to full width */
+  }
 }
 
 .button {

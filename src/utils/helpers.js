@@ -86,3 +86,10 @@ export function convertToFormData(data) {
 
   return formData;
 }
+
+export function filterProducts(products = [], filterBy) {
+  console.log('filtering');
+  return products.filter((product) =>
+    product.name.toLowerCase().includes(filterBy.toLowerCase())
+  );
+}

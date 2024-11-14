@@ -1,10 +1,7 @@
-import { useEffect } from 'react';
 import Styles from './center.module.css';
+import useNoUnderneathScroll from '../hooks/useNoUnderneathScroll';
 function Center({ element }) {
-  useEffect(function () {
-    document.body.classList.add('no-scroll');
-    return () => document.body.classList.remove('no-scroll');
-  }, []);
+  useNoUnderneathScroll();
   return <div className={Styles.center}>{element}</div>;
 }
 

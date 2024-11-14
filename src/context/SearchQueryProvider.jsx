@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react';
 const SearchQueryContext = createContext();
 
 function SearchQueryProvider({ children }) {
-  const [query, setQuery] = useState('Hallowen');
+  const [query, setQuery] = useState('');
   console.log(query);
   return (
     <SearchQueryContext.Provider value={{ query, setQuery }}>

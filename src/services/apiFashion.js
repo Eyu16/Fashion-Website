@@ -1,11 +1,7 @@
 import axios from 'axios';
-import {
-  convertToFormData,
-  formatToJSON,
-  getProductsByGender,
-} from '../utils/helpers';
+import { convertToFormData, formatToJSON } from '../utils/helpers';
 const API_URL = 'http://localhost:3000';
-const API_URL2 = 'http://192.168.60.241:3001/api/v1';
+const API_URL2 = 'http://192.168.137.151:3001/api/v1';
 const API_URL3 = 'http://localhost:3001/api/v1';
 // const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
@@ -100,6 +96,19 @@ export async function editProduct(data) {
   } catch (error) {
     console.log(error);
     throw new Error(error.response.data.message);
+  }
+}
+
+export async function deleteProduct(id) {
+  console.log(id);
+  try {
+    await axios({
+      method: 'DELETE',
+      url: `${API_URL2}/products/${id}`,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    throw new Error('There was an error deleting the product!');
   }
 }
 

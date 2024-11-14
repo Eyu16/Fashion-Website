@@ -18,6 +18,7 @@ import Account from './pages/Admin/Account';
 import ProductAdmin from './pages/Admin/ProductAdmin';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import DeleteConfirmationModal from './ui/ConfirmationModal';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,

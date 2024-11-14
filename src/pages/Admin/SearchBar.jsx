@@ -1,4 +1,4 @@
-import { useSearchQueryCustome } from '../../../context/SearchQueryProvider';
+import { useSearchQueryCustome } from '../../context/SearchQueryProvider';
 import styles from './account.module.css';
 
 function SearchBar() {

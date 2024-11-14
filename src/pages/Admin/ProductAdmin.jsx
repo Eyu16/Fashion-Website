@@ -6,7 +6,8 @@ import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '../../services/apiFashion';
 import Loader from '../../ui/Loader';
 import { useState } from 'react';
-import { useSearchQueryCustome } from '../../../context/SearchQueryProvider';
+import { useSearchQueryCustome } from '../../context/SearchQueryProvider';
+import { filterProducts } from '../../utils/helpers';
 function ProductAdmin() {
   const { showForm, toggleForm, session } = useOutletContext();
   const { isLoading, data: products } = useQuery({
@@ -15,7 +16,8 @@ function ProductAdmin() {
   });
   const [selectedProduct, setSelectedProduct] = useState('');
   const { query } = useSearchQueryCustome();
-  const searchedProducts = query.length < 4 ? [] : products;
+  const searchedProducts =
+    query.length < 4 ? [] : filterProducts(products, query);
   console.log(query);
   if (isLoading) return <Loader />;
   return (
@@ -40,8 +42,11 @@ function ProductAdmin() {
           )}
         </div>
       </div>
-      {!searchedProducts?.length && (
-        <p className={styles.paragraph}>Search for product to edit</p>
+      {!searchedProducts?.length && query.length < 4 && (
+        <p className={styles.paragraph}>Search for product to edit!</p>
+      )}
+      {!searchedProducts?.length && query.length > 3 && (
+        <p className={styles.paragraph}>No products has been found!</p>
       )}
       {!searchedProducts?.length && (
         <button
