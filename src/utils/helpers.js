@@ -35,6 +35,7 @@ export function formatToJSON(input) {
   return formattedObject;
 }
 export function formatProductDetails(details) {
+  if (!details) return;
   return Object.entries(details)
     .map(([key, value]) => {
       // Capitalize the first letter of each word in the value

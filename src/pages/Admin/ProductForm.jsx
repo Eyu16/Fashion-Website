@@ -220,7 +220,7 @@ function ProductForm({ type, toggleForm, product }) {
 
         <div className={Styles.buttonCenter}>
           <button type="submit" className={Styles.add} disabled={isLoading}>
-            {type === 'add' ? 'Add' : 'Edit'}
+            {type === 'add' ? 'Add' : 'Update'}
           </button>
           <button
             type="reset"

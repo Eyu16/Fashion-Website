@@ -620,6 +620,10 @@
     column-gap: 1rem;
     row-gap: 1.5rem; */
   }
+  .item {
+    /* padding-bottom: 1rem; */
+    margin-bottom: 1rem;
+  }
 
   .item_img {
     max-width: 12rem;

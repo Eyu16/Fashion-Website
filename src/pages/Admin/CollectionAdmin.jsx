@@ -4,7 +4,7 @@ import styles from './account.module.css';
 import { useQuery } from '@tanstack/react-query';
 import { getCollections } from '../../services/apiFashion';
 import Loader from '../../ui/Loader';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchQueryCustome } from '../../context/SearchQueryProvider';
 import { filterProducts } from '../../utils/helpers';
 import CollectionItem from './CollectionItem';
@@ -18,12 +18,29 @@ function CollectionAdmin() {
   const { query } = useSearchQueryCustome();
   const searchedCollections =
     query.length < 4 ? [] : filterProducts(collections, query);
+  useEffect(
+    function () {
+      return () => {
+        if (showForm) toggleForm();
+      };
+    },
+    [showForm, toggleForm]
+  );
+
   if (isLoading) return <Loader />;
   return (
     <>
       <div className={styles.scroll_div}>
         <div className={styles.items}>
-          {showForm ? (
+          {searchedCollections?.map((collection) => (
+            <CollectionItem
+              collection={collection}
+              key={collection.id}
+              toggleForm={toggleForm}
+              onSetProduct={setSelectedCollection}
+            />
+          ))}
+          {/* {showForm ? (
             <ProductForm
               toggleForm={toggleForm}
               type={session}
@@ -38,7 +55,7 @@ function CollectionAdmin() {
                 onSetProduct={setSelectedCollection}
               />
             ))
-          )}
+          )} */}
         </div>
       </div>
       {!searchedCollections?.length && query.length < 4 && (

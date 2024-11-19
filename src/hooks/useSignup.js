@@ -12,6 +12,7 @@ export function useSignup() {
       toast.success('Sign-up successful! Welcome aboard!');
     },
     onError: (error) => {
+      console.log(error.message);
       toast.error(formatDuplicateFieldError(error.message));
     },
   });
