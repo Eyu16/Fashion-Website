@@ -5,14 +5,21 @@ import UserInfo from './UserInfo';
 import AdminNav from './AdminNav';
 import DisplayContent from './DisplayContent';
 import styles from './account.module.css';
+import { useUser } from '../../hooks/useUser';
+import Loader from '../../ui/Loader';
+import { useNavigate } from 'react-router-dom';
 
 function Account() {
   const [showForm, setShowForm] = useState(false);
   const [session, setSession] = useState('add');
+  const { isLoadind, user } = useUser();
+  const navigate = useNavigate();
   const toggleForm = function (type = 'add') {
     setShowForm((showForm) => !showForm);
     setSession(type);
   };
+  if (isLoadind) return <Loader />;
+  if (!user) navigate('/login');
   // const products = [];
   return (
     <SearchQueryProvider>

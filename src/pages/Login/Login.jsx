@@ -2,34 +2,38 @@ import React, { useState } from 'react';
 import Styles from './login.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { singupLogin } from '../../services/apiFashion';
-import toast from 'react-hot-toast';
 import { formatDuplicateFieldError } from '../../utils/helpers';
+import { useLogin } from '../../hooks/useLogin';
+import { useSignup } from '../../hooks/useSignup';
 function Login({ type }) {
-  const { register, handleSubmit, reset, getValues, formState, watch } =
-    useForm();
-  const { errors } = formState;
+  const { register, handleSubmit, reset, watch } = useForm();
   const password = watch('password');
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const onSubmit = async (data) => {
-    let user;
-    try {
-      if (type === 'signup') {
-        console.log(type);
-        user = await singupLogin(data, type);
-        toast.success('Sign-up successful! Welcome aboard!');
-      }
-      if (type === 'login') {
-        user = await singupLogin(data, type);
-        toast.success('Login successful! Welcome back!');
-      }
-      reset();
-      navigate('/shop', { replace: true });
-    } catch (error) {
-      console.log(error.message);
-      toast.error(formatDuplicateFieldError(error.message));
-    }
+  const { isLoading: isLoggingIn, login } = useLogin();
+  const { isLoading: isSigningUp, signup } = useSignup();
+  console.log(type);
+  const onSubmit = (data) => {
+    if (type === 'signup')
+      signup(
+        { data, type },
+        {
+          onSuccess: (user) => {
+            reset();
+            navigate('/account');
+          },
+        }
+      );
+    if (type === 'login')
+      login(
+        { data, type },
+        {
+          onSuccess: (user) => {
+            reset();
+            navigate('/account');
+          },
+        }
+      );
   };
   return (
     <div className={Styles.login_container}>
@@ -46,6 +50,7 @@ function Login({ type }) {
             id="email"
             name="email"
             className={Styles.input}
+            disabled={isLoggingIn || isSigningUp}
             {...register('email', {
               required: 'This field is required',
             })}
@@ -61,6 +66,7 @@ function Login({ type }) {
               id="password"
               name="password"
               className={Styles.input}
+              disabled={isLoggingIn || isSigningUp}
               {...register('password', {
                 required: 'This field is required',
               })}
@@ -86,7 +92,11 @@ function Login({ type }) {
           </p>
         </div>
         <div className={Styles.button_center}>
-          <button className={Styles.button} type="submit">
+          <button
+            className={Styles.button}
+            type="submit"
+            disabled={isLoggingIn || isSigningUp}
+          >
             {type}
           </button>
         </div>

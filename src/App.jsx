@@ -60,8 +60,6 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        // path: '/login',
-        // element: <Login type="login" />,
         path: '/account',
         element: <Account />,
         children: [
@@ -82,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Login type="signup" />,
+      },
+      {
+        path: '/login',
+        element: <Login type="login" />,
       },
       {
         path: '/cart',

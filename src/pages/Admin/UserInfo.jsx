@@ -1,10 +1,21 @@
 import { HiBellAlert } from 'react-icons/hi2';
+import { RiLogoutCircleLine } from 'react-icons/ri';
 import styles from './account.module.css';
+import { useLogout } from '../../hooks/useLogout';
+import { useNavigate } from 'react-router-dom';
 
 function UserInfo() {
+  const { isLoading, logout } = useLogout();
+  const navigate = useNavigate();
   return (
     <div className={styles.header_container}>
       <div className={styles.header}>
+        <RiLogoutCircleLine
+          className={styles.logout}
+          onClick={() => {
+            logout(null, { onSuccess: navigate('/') });
+          }}
+        />
         <HiBellAlert className={styles.notification} />
         <span className={styles.name}>Eyoba Yihalem</span>
         <figure className={styles.imgContainer}>
