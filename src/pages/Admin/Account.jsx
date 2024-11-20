@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SearchQueryProvider from '../../context/SearchQueryProvider';
 import SearchBar from './SearchBar';
 import UserInfo from './UserInfo';
@@ -8,6 +8,7 @@ import styles from './account.module.css';
 import { useUser } from '../../hooks/useUser';
 import Loader from '../../ui/Loader';
 import { useNavigate } from 'react-router-dom';
+// import { getLoggedInUser } from '../../services/apiFashion';
 
 function Account() {
   const [showForm, setShowForm] = useState(false);
@@ -18,15 +19,27 @@ function Account() {
     setShowForm((showForm) => !showForm);
     setSession(type);
   };
-  // useEffect(
-  //   function () {
-  //     if (!user && !isLoadind) {
-  //       console.log('what is happening');
-  //       navigate('/login');
-  //     }
-  //   },
-  //   [user, navigate, isLoadind]
-  // );
+  // useEffect(() => {
+  //   const getUser = async function () {
+  //     const user = await getLoggedInUser();
+  //     return user;
+  //   };
+  //   const user = getUser();
+
+  //   if (!user) navigate('/login');
+  // }, [navigate]);
+
+  // useEffect(() => {
+  //   console.log('acccount');
+  //   const checkUser = async () => {
+  //     const user = await getLoggedInUser();
+  //     console.log(user);
+  //     if (!user) navigate('/login');
+  //   };
+
+  //   checkUser();
+  // }, [navigate]);
+
   if (isLoadind) return <Loader />;
   if (!user) navigate('/login');
 
