@@ -250,7 +250,7 @@ export async function checkout(data) {
     console.log(formatedData);
     const res = await axios({
       method: 'POST',
-      url: `${API_URL3}/orders`,
+      url: `${API_URL4}/orders`,
       headers: { 'Content-Type': 'application/json' },
       data: formatedData,
       withCredentials: true,
