@@ -4,20 +4,19 @@ import { useForm } from 'react-hook-form';
 import { sendContactEmail } from '../../services/apiFashion';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { useMail } from '../../hooks/useMail';
 
 function Contact() {
   const navigate = useNavigate();
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = async (data) => {
-    try {
-      const res = await sendContactEmail(data);
-      toast.success('Email has been sent successfully!');
-      reset();
-      navigate('/shop', { replace: true });
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
-    }
+  const { isLoading, sendMail } = useMail();
+  const onSubmit = (data) => {
+    sendMail(data, {
+      onSuccess: () => {
+        reset();
+        navigate('/shop', { replace: true });
+      },
+    });
   };
   return (
     <div className={Styles.contact_container}>
@@ -32,6 +31,7 @@ function Contact() {
             id="name"
             name="name"
             className={Styles.input}
+            disabled={isLoading}
             {...register('name', {
               required: 'This field is required',
             })}
@@ -46,6 +46,7 @@ function Contact() {
             id="email"
             name="email"
             className={Styles.input}
+            disabled={isLoading}
             {...register('email', {
               required: 'This field is required',
             })}
@@ -59,13 +60,14 @@ function Contact() {
             id="message"
             name="message"
             className={Styles.textarea}
+            disabled={isLoading}
             {...register('message', {
               required: 'This field is required',
             })}
           ></textarea>
         </div>
         <div className={Styles.button_center}>
-          <button className={Styles.button} type="submit">
+          <button className={Styles.button} type="submit" disabled={isLoading}>
             Send Message
           </button>
         </div>

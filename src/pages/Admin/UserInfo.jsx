@@ -3,9 +3,11 @@ import { RiLogoutCircleLine } from 'react-icons/ri';
 import styles from './account.module.css';
 import { useLogout } from '../../hooks/useLogout';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../hooks/useUser';
 
 function UserInfo() {
-  const { isLoading, logout } = useLogout();
+  const { isLoading: isLoadingUser, user } = useUser();
+  const { isLoading: isLoggingOut, logout } = useLogout();
   const navigate = useNavigate();
   return (
     <div className={styles.header_container}>
@@ -17,7 +19,7 @@ function UserInfo() {
           }}
         />
         <HiBellAlert className={styles.notification} />
-        <span className={styles.name}>Eyoba Yihalem</span>
+        <span className={styles.name}>{user.email}</span>
         <figure className={styles.imgContainer}>
           <img
             src="/img/default.jpg"
