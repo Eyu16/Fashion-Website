@@ -1,11 +1,12 @@
 import axios from 'axios';
 import {
   convertToFormData,
+  formatOrderData,
   formatToJSON,
   getSelectedCollection,
 } from '../utils/helpers';
 const API_URL = 'http://localhost:3000';
-const API_URL2 = 'http://192.168.8.108:3001/api/v1';
+const API_URL2 = 'http://192.168.8.102:3001/api/v1';
 const API_URL3 = 'http://localhost:3001/api/v1';
 // const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
@@ -16,7 +17,7 @@ export async function getCollection() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/collections/6726e4fce719f198c1304f6b`,
+      url: `${API_URL3}/collections/6726e4fce719f198c1304f6b`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -48,7 +49,7 @@ export async function updateCollection(id, data) {
     console.log(data, id);
     const res = await axios({
       method: 'PATCH',
-      url: `${API_URL4}/collections/${id}`,
+      url: `${API_URL3}/collections/${id}`,
       headers: { 'Content-Type': 'application/json' },
       data,
       withCredentials: true,
@@ -63,7 +64,7 @@ export async function deleteCollection(id) {
   try {
     await axios({
       method: 'DELETE',
-      url: `${API_URL4}/collections/${id}`,
+      url: `${API_URL3}/collections/${id}`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -76,7 +77,7 @@ export async function getCollections() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/collections`,
+      url: `${API_URL3}/collections`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -90,7 +91,7 @@ export async function getProducts() {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/products`,
+      url: `${API_URL3}/products`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -107,7 +108,7 @@ export async function getProduct(id) {
   try {
     const data = await axios({
       method: 'GET',
-      url: `${API_URL4}/products/${id}`,
+      url: `${API_URL3}/products/${id}`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -129,7 +130,7 @@ export async function creatProduct(data) {
     data = convertToFormData(data);
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/products`,
+      url: `${API_URL3}/products`,
       data,
       withCredentials: true,
     });
@@ -154,7 +155,7 @@ export async function editProduct(data) {
     delete data.id;
     const res = await axios({
       method: 'PATCH',
-      url: `${API_URL4}/products/${id}`,
+      url: `${API_URL3}/products/${id}`,
       data,
       withCredentials: true,
     });
@@ -171,7 +172,7 @@ export async function deleteProduct(id) {
   try {
     await axios({
       method: 'DELETE',
-      url: `${API_URL4}/products/${id}`,
+      url: `${API_URL3}/products/${id}`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -184,7 +185,7 @@ export async function singupLogin(data, type) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/users/${type}`,
+      url: `${API_URL3}/users/${type}`,
       headers: { 'Content-Type': 'application/json' },
       data,
       withCredentials: true,
@@ -199,7 +200,7 @@ export async function logout() {
   try {
     await axios({
       method: 'POST',
-      url: `${API_URL4}/users/logout`,
+      url: `${API_URL3}/users/logout`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -213,7 +214,7 @@ export async function getLoggedInUser() {
   try {
     const res = await axios({
       method: 'GET',
-      url: `${API_URL4}/users/currentUser`,
+      url: `${API_URL3}/users/currentUser`,
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -230,13 +231,32 @@ export async function sendContactEmail(data) {
   try {
     const res = await axios({
       method: 'POST',
-      url: `${API_URL4}/sendEmail/contact`,
+      url: `${API_URL3}/sendEmail/contact`,
       headers: { 'Content-Type': 'application/json' },
       data,
       withCredentials: true,
     });
     // console.log(res);
     return res.data;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error.response.data.message);
+  }
+}
+
+export async function checkout(data) {
+  try {
+    const formatedData = formatOrderData(data);
+    console.log(formatedData);
+    const res = await axios({
+      method: 'POST',
+      url: `${API_URL3}/orders`,
+      headers: { 'Content-Type': 'application/json' },
+      data: formatedData,
+      withCredentials: true,
+    });
+    // console.log(res.data.data.order.paymentUrl);
+    return res.data.data.order.paymentUrl;
   } catch (error) {
     console.log(error);
     throw new Error(error.response.data.message);

@@ -99,3 +99,13 @@ export function filterProducts(products = [], filterBy) {
 export function getSelectedCollection(collections = []) {
   return collections.find((collection) => collection.isSelected);
 }
+
+export function formatOrderData(data) {
+  const cart = data.map((item) => {
+    const newItem = {};
+    newItem.productId = item.id;
+    newItem.quantity = item.quantity;
+    return newItem;
+  });
+  return { cart };
+}

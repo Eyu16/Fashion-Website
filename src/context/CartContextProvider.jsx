@@ -15,6 +15,8 @@ function reducer(state, action) {
   switch (action.type) {
     case 'setCart':
       return { ...state, cart: action.payload };
+    case 'resetCart':
+      return { ...state, cart: [] };
     case 'addItem':
       return { ...state, cart: [...state.cart, action.payload] };
     case 'removeItem':
@@ -85,6 +87,9 @@ export default function CartContextProvider({ children }) {
   const decreaseQuantity = useCallback((id) => {
     dispatch({ type: 'decreaseQuantity', payload: id });
   }, []);
+  const handleReset = useCallback(() => {
+    dispatch({ type: 'resetCart' });
+  }, []);
 
   return (
     <CartContext.Provider
@@ -94,6 +99,7 @@ export default function CartContextProvider({ children }) {
         handleDeleteCartItem,
         increaseQuantity,
         decreaseQuantity,
+        handleReset,
       }}
     >
       {children}

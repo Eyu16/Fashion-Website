@@ -1,10 +1,11 @@
 import { useCart } from '../../context/CartContextProvider';
+import { useCheckout } from '../../hooks/useCheckout';
 import Styles from './cart.module.css';
 import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
 function Cart() {
   const { cart } = useCart();
-  console.log(cart);
+  const { isLoading, checkout } = useCheckout();
   const totalPrice = cart?.reduce((acc, cur) => acc + cur.totalPrice, 0);
   return (
     <main className={Styles.main}>
@@ -19,7 +20,13 @@ function Cart() {
             </div>
             <div className={Styles.checkout_container}>
               <p className={Styles.total_price}>Total price ${totalPrice}</p>
-              <button className={Styles.button_checkout}>Checkout</button>
+              <button
+                className={Styles.button_checkout}
+                disabled={isLoading}
+                onClick={() => checkout(cart)}
+              >
+                Checkout
+              </button>
             </div>
           </>
         ) : (
