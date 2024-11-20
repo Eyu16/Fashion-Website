@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchQueryProvider from '../../context/SearchQueryProvider';
 import SearchBar from './SearchBar';
 import UserInfo from './UserInfo';
@@ -18,8 +18,14 @@ function Account() {
     setShowForm((showForm) => !showForm);
     setSession(type);
   };
+  useEffect(
+    function () {
+      if (!user) navigate('/login');
+    },
+    [user, navigate]
+  );
   if (isLoadind) return <Loader />;
-  if (!user) navigate('/login');
+
   // const products = [];
   return (
     <SearchQueryProvider>

@@ -19,7 +19,7 @@ function UserInfo() {
           }}
         />
         <HiBellAlert className={styles.notification} />
-        <span className={styles.name}>{user.email}</span>
+        <span className={styles.name}>{user?.email}</span>
         <figure className={styles.imgContainer}>
           <img
             src="/img/default.jpg"
