@@ -3,7 +3,7 @@ function ProductImage({ product }) {
   const image = product?.hasBackendImage
     ? `${product.resourceUrl}/${product.detailImage}`
     : `/img/${product.detailImage}`;
-  console.log(image, product);
+  // console.log(image, product);
   return (
     <figure className={Styles.imgContainer}>
       <img

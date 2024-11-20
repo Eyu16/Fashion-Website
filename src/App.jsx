@@ -20,6 +20,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import DeleteConfirmationModal from './ui/ConfirmationModal';
 import CollectionAdmin from './pages/Admin/CollectionAdmin';
+import CartContextProvider from './context/CartContextProvider';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -104,7 +105,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools />
-      <RouterProvider router={router} />
+      <CartContextProvider>
+        <RouterProvider router={router} />
+      </CartContextProvider>
       <Toaster
         position="top-center"
         gutter={12}
@@ -126,7 +129,6 @@ function App() {
           },
         }}
       />
-      {/* <Footer /> */}
     </QueryClientProvider>
   );
 }

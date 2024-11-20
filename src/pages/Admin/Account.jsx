@@ -18,13 +18,17 @@ function Account() {
     setShowForm((showForm) => !showForm);
     setSession(type);
   };
-  useEffect(
-    function () {
-      if (!user) navigate('/login');
-    },
-    [user, navigate]
-  );
+  // useEffect(
+  //   function () {
+  //     if (!user && !isLoadind) {
+  //       console.log('what is happening');
+  //       navigate('/login');
+  //     }
+  //   },
+  //   [user, navigate, isLoadind]
+  // );
   if (isLoadind) return <Loader />;
+  if (!user) navigate('/login');
 
   // const products = [];
   return (

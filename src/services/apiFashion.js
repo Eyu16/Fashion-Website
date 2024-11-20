@@ -5,7 +5,7 @@ import {
   getSelectedCollection,
 } from '../utils/helpers';
 const API_URL = 'http://localhost:3000';
-const API_URL2 = 'http://192.168.8.102:3001/api/v1';
+const API_URL2 = 'http://192.168.8.109:3001/api/v1';
 const API_URL3 = 'http://localhost:3001/api/v1';
 // const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 const API_URL4 = 'https://marakifashion.onrender.com/api/v1';

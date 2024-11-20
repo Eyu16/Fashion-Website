@@ -4,10 +4,12 @@ import Footer from './Footer';
 import Header from './Header';
 import Center from './Center';
 import ScrollToTop from './ScrollToTop';
+// import { useUser } from '../hooks/useUser';
 
 function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === 'loading';
+  // useUser();
   console.log(isLoading);
   return (
     <div>
