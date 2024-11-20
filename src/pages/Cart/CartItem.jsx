@@ -1,38 +1,40 @@
-import { useState } from "react";
-import Styles from "./cartItem.module.css";
+// import { useState } from 'react';
+import { useCart } from '../../context/CartContextProvider';
+import { formatedProductName } from '../../utils/helpers';
+import Styles from './cartItem.module.css';
+// import { useCart } from '../../context/CartContextProvider';
 
-function CartItem() {
-  const [count, setCount] = useState(1);
+function CartItem({ item }) {
+  const { increaseQuantity, decreaseQuantity, handleDeleteCartItem } =
+    useCart();
 
   return (
     <div className={Styles.cart_item}>
       <div className={Styles.inner_container}>
-        <img
-          className={Styles.product_img}
-          src="/img/Square6(1).jpeg"
-          alt="product-img"
-        />
+        <img className={Styles.product_img} src={item.image} alt={item.name} />
         <div className={Styles.product_description}>
-          <h2 className={Styles.product_name}>Netela Dress</h2>
-          <p className={Styles.product_price}>$250</p>
+          <h2 className={Styles.product_name}>
+            {formatedProductName(item.name)}
+          </h2>
+          <p className={Styles.product_price}>${item.totalPrice}</p>
         </div>
       </div>
       <div className={Styles.count_buttons}>
         <button
           className={Styles.count_button}
-          onClick={() => setCount((count) => (count > 1 ? count - 1 : count))}
+          onClick={() => decreaseQuantity(item.id)}
         >
           Dec
         </button>
-        <span className={Styles.count}>{count}</span>
+        <span className={Styles.count}>{item.quantity}</span>
         <button
           className={Styles.count_button}
-          onClick={() => setCount((count) => count + 1)}
+          onClick={() => increaseQuantity(item.id)}
         >
           Inc
         </button>
       </div>
-      <div>
+      <div onClick={() => handleDeleteCartItem(item.id)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"

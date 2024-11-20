@@ -3,7 +3,6 @@ import Styles from './shopItems.module.css';
 import { formatedProductName } from '../utils/helpers';
 
 function ShopItem({ product, parent, type }) {
-  console.log(product.resourceUrl);
   const image = product?.hasBackendImage
     ? `${product.resourceUrl}/${product.image}`
     : `/img/${product.image}`;

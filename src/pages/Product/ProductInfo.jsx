@@ -1,8 +1,33 @@
 import { useState } from 'react';
 import Styles from './product.module.css';
+import { useCart } from '../../context/CartContextProvider';
 
 function ProductInfo({ product }) {
   const [count, setCount] = useState(1);
+  const { cart, handleAddCartItem, handleDeleteCartItem } = useCart();
+  const isItemInCart = cart?.find((item) => item.id === product.id);
+  const image = product?.hasBackendImage
+    ? `${product.resourceUrl}/${product.detailImage}`
+    : `/img/${product.detailImage}`;
+
+  const onAdd = function () {
+    const newItem = {
+      id: product.id,
+      name: product.name,
+      unitPrice: product.price,
+      quantity: count,
+      totalPrice: count * product.price,
+      image,
+    };
+    console.log(newItem);
+    handleAddCartItem(newItem);
+  };
+  const onRemove = function () {
+    setCount(1);
+    handleDeleteCartItem(product.id);
+  };
+  // console.log(cart);
+  // const cartItem = { ...product, quatity: 1 };
 
   return (
     <div className={Styles.info_text}>
@@ -24,7 +49,12 @@ function ProductInfo({ product }) {
             Inc
           </button>
         </div>
-        <button className={Styles.add_cart}>Add To Cart</button>
+        <button
+          className={Styles.add_cart}
+          onClick={isItemInCart ? onRemove : onAdd}
+        >
+          {isItemInCart ? 'Remove Item' : 'Add To Cart'}
+        </button>
       </div>
     </div>
   );

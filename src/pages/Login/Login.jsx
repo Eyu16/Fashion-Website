@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import { formatDuplicateFieldError } from '../../utils/helpers';
 import { useLogin } from '../../hooks/useLogin';
 import { useSignup } from '../../hooks/useSignup';
+import { useUser } from '../../hooks/useUser';
+import Loader from '../../ui/Loader';
 function Login({ type }) {
   const { register, handleSubmit, reset, watch } = useForm();
   const password = watch('password');
@@ -12,6 +14,11 @@ function Login({ type }) {
   const [showPassword, setShowPassword] = useState(false);
   const { isLoading: isLoggingIn, login } = useLogin();
   const { isLoading: isSigningUp, signup } = useSignup();
+  // const { isLoadind, user } = useUser();
+
+  // if (isLoadind) return <Loader />;
+  // if (!user) navigate('/login');
+
   console.log(type);
   const onSubmit = (data) => {
     if (type === 'signup')
@@ -20,7 +27,7 @@ function Login({ type }) {
         {
           onSuccess: (user) => {
             reset();
-            navigate('/account');
+            navigate('/account', { replace: true });
           },
         }
       );
@@ -30,7 +37,7 @@ function Login({ type }) {
         {
           onSuccess: (user) => {
             reset();
-            navigate('/account');
+            navigate('/account', { replace: true });
           },
         }
       );

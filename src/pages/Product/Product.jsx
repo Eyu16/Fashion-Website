@@ -6,6 +6,7 @@ import ProductInfo from './ProductInfo';
 import ProductDetails from './ProductDetails';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../ui/Loader';
+import { useCart } from '../../context/CartContextProvider';
 function Product() {
   const { productId } = useParams();
   const { isLoading, data: product } = useQuery({
@@ -13,6 +14,7 @@ function Product() {
     queryFn: () => getProduct(productId),
     enabled: !!productId,
   });
+
   if (isLoading) return <Loader />;
   return (
     <main className={Styles.product}>
