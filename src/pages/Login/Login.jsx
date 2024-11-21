@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import Styles from './login.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { formatDuplicateFieldError } from '../../utils/helpers';
 import { useLogin } from '../../hooks/useLogin';
 import { useSignup } from '../../hooks/useSignup';
-import { useUser } from '../../hooks/useUser';
-import Loader from '../../ui/Loader';
+import LoaderMini from '../../ui/LoaderMini';
+
 function Login({ type }) {
   const { register, handleSubmit, reset, watch } = useForm();
   const password = watch('password');
@@ -14,12 +13,8 @@ function Login({ type }) {
   const [showPassword, setShowPassword] = useState(false);
   const { isLoading: isLoggingIn, login } = useLogin();
   const { isLoading: isSigningUp, signup } = useSignup();
-  // const { isLoadind, user } = useUser();
+  const isLoading = isLoggingIn || isSigningUp;
 
-  // if (isLoadind) return <Loader />;
-  // if (!user) navigate('/login');
-
-  console.log(type);
   const onSubmit = (data) => {
     if (type === 'signup')
       signup(
@@ -104,7 +99,7 @@ function Login({ type }) {
             type="submit"
             disabled={isLoggingIn || isSigningUp}
           >
-            {type}
+            {isLoading ? <LoaderMini /> : type}
           </button>
         </div>
       </form>

@@ -42,13 +42,13 @@ function ProductAdmin() {
           )}
         </div>
       </div>
-      {!searchedProducts?.length && query.length < 4 && (
+      {!searchedProducts?.length && query.length < 4 && !showForm && (
         <p className={styles.paragraph}>Search for product to edit!</p>
       )}
-      {!searchedProducts?.length && query.length > 3 && (
+      {!searchedProducts?.length && query.length > 3 && !showForm && (
         <p className={styles.paragraph}>No products has been found!</p>
       )}
-      {!searchedProducts?.length && (
+      {!searchedProducts?.length && !showForm && (
         <button
           className={`${styles.button} ${styles.addProduct}`}
           onClick={() => toggleForm('add')}

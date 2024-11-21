@@ -13,6 +13,7 @@ import toast from 'react-hot-toast';
 import ConfirmationModal from '../../ui/ConfirmationModal';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoaderMini from '../../ui/LoaderMini';
 function CollectionItem({ collection, onSetCollection }) {
   const [showModal, setShowModal] = useState(false);
   const queryClient = useQueryClient();
@@ -73,7 +74,13 @@ function CollectionItem({ collection, onSetCollection }) {
           onClick={handleSelect}
           className={styles.edit_button}
         >
-          Select
+          {isSelecting ? (
+            <span>
+              Select <LoaderMini />
+            </span>
+          ) : (
+            'Select'
+          )}
         </button>
         <button
           disabled={isSelecting || isDeleteing}

@@ -6,6 +6,7 @@ import { formatProductDetails } from '../../utils/helpers';
 import { creatProduct, editProduct } from '../../services/apiFashion';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
+import LoaderMini from '../../ui/LoaderMini';
 
 function ProductForm({ type, toggleForm, product }) {
   const navigate = useNavigate();
@@ -34,13 +35,12 @@ function ProductForm({ type, toggleForm, product }) {
       navigate(`/shop/${product.gender.toLowerCase()}s/products/${product.id}`);
     },
     onError: (error) => {
-      console.log(error);
       toast.error(error.message);
     },
   });
 
   const onSubmit = function (data) {
-    console.log(data);
+    // console.log(data);
     mutate(data);
   };
 
@@ -220,7 +220,15 @@ function ProductForm({ type, toggleForm, product }) {
 
         <div className={Styles.buttonCenter}>
           <button type="submit" className={Styles.add} disabled={isLoading}>
-            {type === 'add' ? 'Add' : 'Update'}
+            {isLoading ? (
+              <span>
+                update <LoaderMini />
+              </span>
+            ) : type === 'add' ? (
+              'Add'
+            ) : (
+              'Update'
+            )}
           </button>
           <button
             type="reset"
