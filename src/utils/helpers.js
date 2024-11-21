@@ -109,3 +109,32 @@ export function formatOrderData(data) {
   });
   return { cart };
 }
+
+export function formatDateToWords(dateString) {
+  const date = new Date(dateString);
+
+  const options = {
+    weekday: 'long', // Day in words
+    year: 'numeric', // Year in number
+    month: 'long', // Month in words
+    day: 'numeric', // Day in number
+    hour: '2-digit', // Hour
+    minute: '2-digit', // Minutes
+  };
+
+  return date.toLocaleString('en-US', options);
+}
+
+export function formatOrderProductNames(cart) {
+  const productNames = cart.map((item) => item.name); // Extract product names
+  if (productNames.length > 3) {
+    return productNames.slice(0, 3).join(', ') + ' ...'; // Take first 3 names and append "..."
+  }
+  return productNames.join(', '); // Join all names without "..." if 3 or fewer
+}
+
+export function filterOrders(orders, filterBy) {
+  return orders.filter(
+    (order) => order.status.toLowerCase() === filterBy.toLowerCase()
+  );
+}

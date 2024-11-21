@@ -57,6 +57,23 @@ function Login({ type }) {
               required: 'This field is required',
             })}
           />
+          {type !== 'login' && (
+            <>
+              <label className={Styles.label} htmlFor="phone">
+                Phone
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                className={Styles.input}
+                disabled={isLoggingIn || isSigningUp}
+                {...register('phone', {
+                  required: 'This field is required',
+                })}
+              />
+            </>
+          )}
         </div>
         <div className="form-group">
           <label className={Styles.label} htmlFor="password">

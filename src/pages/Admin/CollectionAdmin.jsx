@@ -9,7 +9,7 @@ import { useSearchQueryCustome } from '../../context/SearchQueryProvider';
 import { filterProducts } from '../../utils/helpers';
 import CollectionItem from './CollectionItem';
 function CollectionAdmin() {
-  const { showForm, toggleForm, session } = useOutletContext();
+  // const { showForm, toggleForm, session } = useOutletContext();
   const { isLoading, data: collections } = useQuery({
     queryKey: ['collections'],
     queryFn: getCollections,
@@ -18,14 +18,14 @@ function CollectionAdmin() {
   const { query } = useSearchQueryCustome();
   const searchedCollections =
     query.length < 4 ? [] : filterProducts(collections, query);
-  useEffect(
-    function () {
-      return () => {
-        if (showForm) toggleForm();
-      };
-    },
-    [showForm, toggleForm]
-  );
+  // useEffect(
+  //   function () {
+  //     return () => {
+  //       if (showForm) toggleForm();
+  //     };
+  //   },
+  //   [showForm, toggleForm]
+  // );
 
   if (isLoading) return <Loader />;
   return (
@@ -36,7 +36,7 @@ function CollectionAdmin() {
             <CollectionItem
               collection={collection}
               key={collection.id}
-              toggleForm={toggleForm}
+              // toggleForm={toggleForm}
               onSetProduct={setSelectedCollection}
             />
           ))}
@@ -64,14 +64,14 @@ function CollectionAdmin() {
       {!searchedCollections?.length && query.length > 3 && (
         <p className={styles.paragraph}>No collections has been found!</p>
       )}
-      {!searchedCollections?.length && (
+      {/* {!searchedCollections?.length && (
         <button
           className={`${styles.button} ${styles.addProduct}`}
           onClick={() => toggleForm('add')}
         >
           Add Collection
         </button>
-      )}
+      )} */}
     </>
   );
 }

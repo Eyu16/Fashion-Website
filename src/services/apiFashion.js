@@ -266,3 +266,21 @@ export async function checkout(data) {
     throw new Error(error.response.data.message);
   }
 }
+
+export async function getAllOrders() {
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: `${API_URL}/orders`,
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    });
+    console.log(res.data.data.documents);
+    return res.data.data.documents;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error.response.data.message);
+  }
+}
+
+export async function getCurrentUserOrders() {}

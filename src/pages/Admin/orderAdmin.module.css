@@ -1,0 +1,71 @@
+.orderContianer {
+  /* padding: 10rem 0; */
+  /* min-height: calc(100vh - 0rem); */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  width: 100%;
+  overflow: scroll;
+  color: var(--secondary-font-color);
+  font-weight: 400;
+}
+
+.orderFilter {
+  padding: 5rem 0;
+}
+
+.lists {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.list {
+  padding: 0.8rem 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.orders {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items */
+  gap: 2rem; /* Space between orders */
+  justify-content: center;
+  height: 60rem;
+  overflow-y: scroll;
+}
+
+.orders::-webkit-scrollbar,
+.orderContianer::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.orderItem:hover {
+  transform: scale(1.05);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 62.5em) {
+  .lists {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 43.5em) {
+  .lists {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 29em) {
+  .lists {
+    gap: 1rem; /* Add spacing between list items */
+  }
+
+  .orders {
+    gap: 1.5rem; /* Adjust gap for smaller screens */
+  }
+}

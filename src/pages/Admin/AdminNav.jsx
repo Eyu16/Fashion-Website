@@ -11,7 +11,7 @@ function AdminNav() {
       <ul className={styles.lists}>
         <li className={styles.list}>
           <BiSolidPurchaseTagAlt />
-          <NavLink>Orders</NavLink>
+          <NavLink to="order-admin">Orders</NavLink>
         </li>
         <li className={styles.list}>
           <GiClothes />
