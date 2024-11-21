@@ -133,8 +133,12 @@ export function formatOrderProductNames(cart) {
   return productNames.join(', '); // Join all names without "..." if 3 or fewer
 }
 
-export function filterOrders(orders, filterBy) {
+export function filterOrders(orders, filterBy, type) {
+  if (type === 'status')
+    return orders.filter(
+      (order) => order.status.toLowerCase() === filterBy.toLowerCase()
+    );
   return orders.filter(
-    (order) => order.status.toLowerCase() === filterBy.toLowerCase()
+    (order) => order.transactionId.toLowerCase() === filterBy.toLowerCase()
   );
 }

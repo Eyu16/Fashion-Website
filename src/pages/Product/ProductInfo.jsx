@@ -4,8 +4,14 @@ import { useCart } from '../../context/CartContextProvider';
 
 function ProductInfo({ product }) {
   const [count, setCount] = useState(1);
-  const { cart, handleAddCartItem, handleDeleteCartItem } = useCart();
-  const isItemInCart = cart?.find((item) => item.id === product.id);
+  const {
+    cart,
+    handleAddCartItem,
+    handleDeleteCartItem,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useCart();
+  const itemInCart = cart?.find((item) => item.id === product.id);
   const image = product?.hasBackendImage
     ? `${product.resourceUrl}/${product.detailImage}`
     : `/img/${product.detailImage}`;
@@ -37,23 +43,33 @@ function ProductInfo({ product }) {
         <div className={Styles.count_buttons}>
           <button
             className={Styles.count_button}
-            onClick={() => setCount((count) => (count > 1 ? count - 1 : count))}
+            onClick={() =>
+              itemInCart
+                ? decreaseQuantity(itemInCart.id)
+                : setCount((count) => (count > 1 ? count - 1 : count))
+            }
           >
             Dec
           </button>
-          <span className={Styles.count}>{count}</span>
+          <span className={Styles.count}>
+            {itemInCart ? itemInCart.quantity : count}
+          </span>
           <button
             className={Styles.count_button}
-            onClick={() => setCount((count) => count + 1)}
+            onClick={() =>
+              itemInCart
+                ? increaseQuantity(itemInCart.id)
+                : setCount((count) => count + 1)
+            }
           >
             Inc
           </button>
         </div>
         <button
           className={Styles.add_cart}
-          onClick={isItemInCart ? onRemove : onAdd}
+          onClick={itemInCart ? onRemove : onAdd}
         >
-          {isItemInCart ? 'Remove Item' : 'Add To Cart'}
+          {itemInCart ? 'Remove Item' : 'Add To Cart'}
         </button>
       </div>
     </div>

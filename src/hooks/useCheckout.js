@@ -8,9 +8,11 @@ export function useCheckout() {
   const { isLoading, mutate: checkout } = useMutation({
     mutationFn: checkoutApi,
     onSuccess: (url) => {
-      toast.success('Payment has been processed successfull!');
+      toast.success('Payment url has been sent successfully successfull!');
       handleReset();
+      console.log(url);
       window.open(url, '_blank');
+      console.log('done');
     },
     onError: (error) => {
       toast.error('There was an error processing your payment!');

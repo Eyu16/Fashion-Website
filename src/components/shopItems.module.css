@@ -8,7 +8,7 @@
   position: relative;
 }
 .shoping_card figure::before {
-  content: "DETAILS";
+  content: 'DETAILS';
   color: var(--secondary-font-color);
   font-size: 2rem;
   position: absolute;
@@ -69,9 +69,11 @@
 .cart:hover {
   transform: scale(1.1);
   stroke: var(--second-brand-bg-darker);
+  opacity: 1;
 }
 .cart:active {
   transform: scale(0.9);
+  opacity: 1;
 }
 
 /* MEDIA QUERIES */

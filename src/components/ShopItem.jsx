@@ -1,11 +1,28 @@
 import { Link } from 'react-router-dom';
 import Styles from './shopItems.module.css';
 import { formatedProductName } from '../utils/helpers';
+import { useCart } from '../context/CartContextProvider';
+import toast from 'react-hot-toast';
 
 function ShopItem({ product, parent, type }) {
+  const { handleAddCartItem } = useCart();
+
+  const onAdd = function () {
+    const newItem = {
+      id: product.id,
+      name: product.name,
+      unitPrice: product.price,
+      quantity: 1,
+      totalPrice: 1 * product.price,
+      image,
+    };
+    handleAddCartItem(newItem);
+  };
+
   const image = product?.hasBackendImage
     ? `${product.resourceUrl}/${product.image}`
     : `/img/${product.image}`;
+
   return (
     <div className={`${Styles.shoping_card} ${!parent && 'shope_shope_card'}`}>
       <Link
@@ -28,7 +45,7 @@ function ShopItem({ product, parent, type }) {
           </h4>
           <span className={Styles.product_price}>{product.price}$</span>
         </div>
-        <div className={Styles.cart_container}>
+        <div className={Styles.cart_container} onClick={onAdd}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

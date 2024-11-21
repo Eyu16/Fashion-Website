@@ -6,6 +6,7 @@ import {
   useReducer,
 } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
+import toast from 'react-hot-toast';
 
 const initialState = {
   cart: [],
@@ -65,16 +66,25 @@ export default function CartContextProvider({ children }) {
     localStorage.setItem('cart', JSON.stringify({ cart }));
   }, [cart]);
 
-  // useEffect(() => {});
+  const isIncart = useCallback(
+    (id) => {
+      const item = cart?.find((item) => item.id === id);
+      if (item) return true;
+      return false;
+    },
+    [cart]
+  );
 
   const handleAddCartItem = useCallback(
     (newItem) => {
-      console.log(newItem);
-      const item = cart?.find((item) => item.id === newItem.id);
-      if (item) return;
+      if (isIncart(newItem.id)) {
+        toast.success('Item is already in cart!');
+        return;
+      }
       dispatch({ type: 'addItem', payload: newItem });
+      toast.success('Item is added to cart successfully!');
     },
-    [cart]
+    [isIncart]
   );
 
   const handleDeleteCartItem = useCallback((id) => {
@@ -84,9 +94,11 @@ export default function CartContextProvider({ children }) {
   const increaseQuantity = useCallback((id) => {
     dispatch({ type: 'increaseQuantity', payload: id });
   }, []);
+
   const decreaseQuantity = useCallback((id) => {
     dispatch({ type: 'decreaseQuantity', payload: id });
   }, []);
+
   const handleReset = useCallback(() => {
     dispatch({ type: 'resetCart' });
   }, []);
@@ -100,6 +112,7 @@ export default function CartContextProvider({ children }) {
         increaseQuantity,
         decreaseQuantity,
         handleReset,
+        isIncart,
       }}
     >
       {children}

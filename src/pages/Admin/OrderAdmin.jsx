@@ -4,11 +4,20 @@ import OrderItem from './OrderItem';
 import { useOrders } from '../../hooks/useOrders';
 import Loader from '../../ui/Loader';
 import { filterOrders } from '../../utils/helpers';
+import { useSearchQueryCustome } from '../../context/SearchQueryProvider';
 function OrderAdmin() {
   const { isLoading, orders } = useOrders();
   const [filterBy, setFilterBy] = useState('all');
-  const filterdOrder =
-    filterBy === 'all' ? orders : filterOrders(orders, filterBy);
+  const { query } = useSearchQueryCustome();
+
+  let filterdOrders =
+    filterBy === 'all' ? orders : filterOrders(orders, filterBy, 'status');
+  filterdOrders =
+    query.length < 4
+      ? filterdOrders
+      : filterOrders(filterdOrders, query, 'transactionId');
+  // const searchedOrder =
+
   if (isLoading) return <Loader />;
 
   return (
@@ -27,7 +36,7 @@ function OrderAdmin() {
         </ul>
       </div>
       <div className={styles.orders}>
-        {filterdOrder?.map((order) => (
+        {filterdOrders?.map((order) => (
           <OrderItem order={order} />
         ))}
       </div>
