@@ -75,7 +75,7 @@ function CollectionItem({ collection, onSetCollection }) {
           className={styles.edit_button}
         >
           {isSelecting ? (
-            <span>
+            <span className="center_spinner">
               Select <LoaderMini />
             </span>
           ) : (
@@ -102,6 +102,7 @@ function CollectionItem({ collection, onSetCollection }) {
             <ConfirmationModal.Button
               type="confirm_button"
               text="Confirm"
+              isLoading={isDeleteing}
               onClick={() => deleteCollection(collection.id)}
             />
           </ConfirmationModal.Buttons>

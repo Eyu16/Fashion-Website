@@ -89,6 +89,7 @@ export default function CartContextProvider({ children }) {
 
   const handleDeleteCartItem = useCallback((id) => {
     dispatch({ type: 'removeItem', payload: id });
+    toast.success('Item is removed from cart successfully!');
   }, []);
 
   const increaseQuantity = useCallback((id) => {

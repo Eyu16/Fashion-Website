@@ -49,7 +49,7 @@ function ProductInfo({ product }) {
                 : setCount((count) => (count > 1 ? count - 1 : count))
             }
           >
-            Dec
+            -
           </button>
           <span className={Styles.count}>
             {itemInCart ? itemInCart.quantity : count}
@@ -62,7 +62,7 @@ function ProductInfo({ product }) {
                 : setCount((count) => count + 1)
             }
           >
-            Inc
+            +
           </button>
         </div>
         <button

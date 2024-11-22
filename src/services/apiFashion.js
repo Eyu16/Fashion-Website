@@ -11,9 +11,9 @@ import {
 // const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 // const API_URL4 = 'https://marakifashion.onrender.com/api/v1';
 
-// const API_URL = 'http://localhost:3001/api/v1';
+const API_URL = 'http://localhost:3001/api/v1';
 // const API_URL = 'http://192.168.255.210:3001/api/v1';
-const API_URL = 'https://marakifashion.onrender.com/api/v1';
+// const API_URL = 'https://marakifashion.onrender.com/api/v1';
 
 // json-server --watch db.json --host 0.0.0.0 --port 3000
 

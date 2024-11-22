@@ -5,6 +5,7 @@ import { useUser } from '../../hooks/useUser';
 import Styles from './cart.module.css';
 import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
+import LoaderMini from '../../ui/LoaderMini';
 function Cart() {
   const { cart } = useCart();
   const { isLoading, checkout } = useCheckout();
@@ -35,7 +36,9 @@ function Cart() {
                 disabled={isLoading}
                 onClick={handleCheckout}
               >
-                Checkout
+                <span className="center_spinner">
+                  Checkout {isLoading && <LoaderMini />}
+                </span>
               </button>
             </div>
           </>

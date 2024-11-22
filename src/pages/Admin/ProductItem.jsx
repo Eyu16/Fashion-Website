@@ -75,6 +75,7 @@ function ProductItem({ product, toggleForm, onSetProduct }) {
             <ConfirmationModal.Button
               type="confirm_button"
               text="Confirm"
+              isLoading={isLoading}
               onClick={() => mutate(product.id)}
             />
           </ConfirmationModal.Buttons>

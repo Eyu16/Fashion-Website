@@ -221,7 +221,7 @@ function ProductForm({ type, toggleForm, product }) {
         <div className={Styles.buttonCenter}>
           <button type="submit" className={Styles.add} disabled={isLoading}>
             {isLoading ? (
-              <span>
+              <span className="center_spinner">
                 update <LoaderMini />
               </span>
             ) : type === 'add' ? (

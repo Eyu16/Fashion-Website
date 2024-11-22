@@ -1,5 +1,6 @@
 import useNoUnderneathScroll from '../hooks/useNoUnderneathScroll';
 import Styles from './confirmationModal.module.css';
+import LoaderMini from './LoaderMini';
 import ModalOverlay from './ModalOverlay';
 
 function ConfirmationModal({ children }) {
@@ -20,10 +21,16 @@ function Buttons({ children }) {
   return <div className={Styles.modal_buttons}>{children}</div>;
 }
 
-function Button({ text, onClick, type }) {
+function Button({ text, onClick, type, isLoading }) {
   return (
     <button className={`${Styles.button} ${Styles[type]}`} onClick={onClick}>
-      {text}
+      {isLoading ? (
+        <span className="center_spinner">
+          {text} <LoaderMini />
+        </span>
+      ) : (
+        text
+      )}
     </button>
   );
 }

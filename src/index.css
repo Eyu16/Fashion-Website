@@ -63,6 +63,13 @@ li:has(a.active)::before {
   width: 100%;
   left: 0;
 }
+
+.center_spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
 /* .minor_nav {
   fontsize: "3rem";
   paddingbottom: "5rem";
