@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchQueryProvider from '../../context/SearchQueryProvider';
 import SearchBar from './SearchBar';
 import UserInfo from './UserInfo';
@@ -8,42 +8,31 @@ import styles from './account.module.css';
 import { useUser } from '../../hooks/useUser';
 import Loader from '../../ui/Loader';
 import { useNavigate } from 'react-router-dom';
+import { getLoggedInUser } from '../../services/apiFashion';
 // import { getLoggedInUser } from '../../services/apiFashion';
 
 function Account() {
   const [showForm, setShowForm] = useState(false);
   const [session, setSession] = useState('add');
-  const { isLoadind, user } = useUser();
+  const { isLoadind } = useUser();
   const navigate = useNavigate();
   const toggleForm = function (type = 'add') {
     setShowForm((showForm) => !showForm);
     setSession(type);
   };
-  // useEffect(() => {
-  //   const getUser = async function () {
-  //     const user = await getLoggedInUser();
-  //     return user;
-  //   };
-  //   const user = getUser();
 
-  //   if (!user) navigate('/login');
-  // }, [navigate]);
+  useEffect(() => {
+    const getUser = async function () {
+      const user = await getLoggedInUser();
+      return user;
+    };
+    const user = getUser();
 
-  // useEffect(() => {
-  //   console.log('acccount');
-  //   const checkUser = async () => {
-  //     const user = await getLoggedInUser();
-  //     console.log(user);
-  //     if (!user) navigate('/login');
-  //   };
-
-  //   checkUser();
-  // }, [navigate]);
+    if (!user) navigate('/login');
+  }, [navigate]);
 
   if (isLoadind) return <Loader />;
-  if (!user) navigate('/login');
 
-  // const products = [];
   return (
     <SearchQueryProvider>
       <div className={styles.account}>
