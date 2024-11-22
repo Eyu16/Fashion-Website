@@ -21,16 +21,6 @@ function Account() {
     setSession(type);
   };
 
-  // useEffect(() => {
-  //   const getUser = async function () {
-  //     const user = await getLoggedInUser();
-  //     return user;
-  //   };
-  //   const user = getUser();
-
-  //   if (!user) navigate('/login');
-  // }, [navigate]);
-
   useEffect(() => {
     const checkUser = async () => {
       try {
@@ -40,7 +30,6 @@ function Account() {
         }
       } catch (error) {
         console.error('Error fetching user:', error);
-        // navigate('/login');
       }
     };
     checkUser();

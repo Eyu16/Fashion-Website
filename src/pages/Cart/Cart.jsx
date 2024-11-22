@@ -13,9 +13,9 @@ function Cart() {
   const totalPrice = cart?.reduce((acc, cur) => acc + cur.totalPrice, 0);
 
   const handleCheckout = function () {
-    console.log(user);
-    // if (!user) return navigate('/login');
-    // checkout(cart);
+    console.log(!user);
+    if (!user) return navigate('/login');
+    checkout(cart);
   };
   return (
     <main className={Styles.main}>
