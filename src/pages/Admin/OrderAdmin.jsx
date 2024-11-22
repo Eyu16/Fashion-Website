@@ -24,13 +24,24 @@ function OrderAdmin() {
     <div className={styles.orderContianer}>
       <div className={styles.orderFilter}>
         <ul className={styles.lists}>
-          <li onClick={() => setFilterBy('all')} className={styles.list}>
+          <li
+            onClick={() => setFilterBy('all')}
+            className={`${styles.list} ${filterBy === 'all' ? 'active' : ''}`}
+          >
             All
           </li>
-          <li onClick={() => setFilterBy('pending')} className={styles.list}>
+          <li
+            onClick={() => setFilterBy('pending')}
+            className={`${styles.list} ${
+              filterBy === 'pending' ? 'active' : ''
+            }`}
+          >
             Pending
           </li>
-          <li onClick={() => setFilterBy('paid')} className={styles.list}>
+          <li
+            onClick={() => setFilterBy('paid')}
+            className={`${styles.list} ${filterBy === 'paid' ? 'active' : ''}`}
+          >
             Paid
           </li>
         </ul>

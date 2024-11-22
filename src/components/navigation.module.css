@@ -33,8 +33,15 @@ a {
 .nav_list:hover {
   color: var(--second-brand-darker);
 }
+:global(.active) li {
+  color: var(--second-brand-darker);
+}
+:global(.active) li::before {
+  width: 100%;
+  left: 0;
+}
 .nav_list::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;

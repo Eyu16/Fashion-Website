@@ -21,10 +21,10 @@ function AdminNav() {
           <MdOutlineCollectionsBookmark />
           <NavLink to="collection-admin">Collections</NavLink>
         </li>
-        <li className={styles.list}>
+        {/* <li className={styles.list}>
           <IoStatsChart />
           <NavLink>Statistics</NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

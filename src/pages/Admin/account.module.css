@@ -87,6 +87,15 @@
   width: 100%;
   left: 0;
 }
+
+li:has(:global(a.active)) {
+  color: var(--second-brand-darker);
+}
+li:has(:global(a.active))::before {
+  width: 100%;
+  left: 0;
+}
+
 .active {
   color: var(--second-brand-darker);
 }

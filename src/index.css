@@ -47,6 +47,22 @@ section {
   width: 100%;
   left: 0;
 }
+
+/* .active {
+  color: var(--second-brand-darker);
+} */
+/* li:has(a.active) {
+  color: var(--second-brand-darker);
+}
+li:has(a.active)::before {
+  width: 100%;
+  left: 0;
+} */
+
+.active::before {
+  width: 100%;
+  left: 0;
+}
 /* .minor_nav {
   fontsize: "3rem";
   paddingbottom: "5rem";
