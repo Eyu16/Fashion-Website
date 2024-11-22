@@ -14,21 +14,36 @@ import { getLoggedInUser } from '../../services/apiFashion';
 function Account() {
   const [showForm, setShowForm] = useState(false);
   const [session, setSession] = useState('add');
-  const { isLoadind } = useUser();
+  const { isLoadind, user } = useUser();
   const navigate = useNavigate();
   const toggleForm = function (type = 'add') {
     setShowForm((showForm) => !showForm);
     setSession(type);
   };
 
-  useEffect(() => {
-    const getUser = async function () {
-      const user = await getLoggedInUser();
-      return user;
-    };
-    const user = getUser();
+  // useEffect(() => {
+  //   const getUser = async function () {
+  //     const user = await getLoggedInUser();
+  //     return user;
+  //   };
+  //   const user = getUser();
 
-    if (!user) navigate('/login');
+  //   if (!user) navigate('/login');
+  // }, [navigate]);
+
+  useEffect(() => {
+    const checkUser = async () => {
+      try {
+        const user = await getLoggedInUser();
+        if (!user) {
+          navigate('/login');
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+        // navigate('/login');
+      }
+    };
+    checkUser();
   }, [navigate]);
 
   if (isLoadind) return <Loader />;

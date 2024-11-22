@@ -1,12 +1,22 @@
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContextProvider';
 import { useCheckout } from '../../hooks/useCheckout';
+import { useUser } from '../../hooks/useUser';
 import Styles from './cart.module.css';
 import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
 function Cart() {
   const { cart } = useCart();
   const { isLoading, checkout } = useCheckout();
+  const { user } = useUser();
+  const navigate = useNavigate();
   const totalPrice = cart?.reduce((acc, cur) => acc + cur.totalPrice, 0);
+
+  const handleCheckout = function () {
+    console.log(user);
+    // if (!user) return navigate('/login');
+    // checkout(cart);
+  };
   return (
     <main className={Styles.main}>
       <div className={Styles.cart_container}>
@@ -23,7 +33,7 @@ function Cart() {
               <button
                 className={Styles.button_checkout}
                 disabled={isLoading}
-                onClick={() => checkout(cart)}
+                onClick={handleCheckout}
               >
                 Checkout
               </button>
