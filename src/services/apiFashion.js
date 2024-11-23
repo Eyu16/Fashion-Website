@@ -37,11 +37,10 @@ export async function selectCollection(id) {
   try {
     const collections = await getCollections();
     const previousSelected = await getSelectedCollection(collections);
-    const updatePrev = await updateCollection(previousSelected.id, {
+    await updateCollection(previousSelected.id, {
       isSelected: false,
     });
-    console.log(updatePrev);
-    const newSelected = await updateCollection(id, { isSelected: true });
+    await updateCollection(id, { isSelected: true });
   } catch (error) {
     console.log(error);
     throw new Error('There was an error while selecting collection!');
@@ -50,7 +49,6 @@ export async function selectCollection(id) {
 
 export async function updateCollection(id, data) {
   try {
-    console.log(data, id);
     const res = await axios({
       method: 'PATCH',
       url: `${API_URL}/collections/${id}`,
@@ -99,7 +97,6 @@ export async function getProducts() {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
-    console.log(data.data.data);
     return data.data.data.documents;
   } catch (error) {
     console.log(error);
@@ -107,8 +104,6 @@ export async function getProducts() {
 }
 
 export async function getProduct(id) {
-  // id = '6726984ce5ccc0c975643ef5';
-  console.log(id);
   try {
     const data = await axios({
       method: 'GET',
@@ -116,7 +111,6 @@ export async function getProduct(id) {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
-    console.log(data.data);
     return data.data.data.document;
   } catch (error) {
     console.log(error);
@@ -138,7 +132,6 @@ export async function creatProduct(data) {
       data,
       withCredentials: true,
     });
-    console.log(res.data);
     return res.data.data.document;
   } catch (error) {
     console.log(error);
@@ -153,9 +146,6 @@ export async function editProduct(data) {
     const id = data.id;
     data.productDetails = JSON.stringify(formatToJSON(data.productDetails));
     data = convertToFormData(data);
-    data.forEach((value, key) => {
-      console.log(key, value);
-    });
     delete data.id;
     const res = await axios({
       method: 'PATCH',
@@ -163,7 +153,6 @@ export async function editProduct(data) {
       data,
       withCredentials: true,
     });
-    console.log(res.data);
     return res.data.data.document;
   } catch (error) {
     console.log(error);
@@ -222,7 +211,6 @@ export async function getLoggedInUser() {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
-    console.log(res);
     return res?.data?.data?.user;
   } catch (error) {
     console.log(error);
@@ -259,7 +247,6 @@ export async function checkout(data) {
       data: formatedData,
       withCredentials: true,
     });
-    // console.log(res.data.data.order.paymentUrl);
     return res.data.data.order.paymentUrl;
   } catch (error) {
     console.log(error);
@@ -275,7 +262,6 @@ export async function getAllOrders() {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
-    console.log(res.data.data.documents);
     return res.data.data.documents;
   } catch (error) {
     console.log(error);
@@ -283,4 +269,17 @@ export async function getAllOrders() {
   }
 }
 
-export async function getCurrentUserOrders() {}
+export async function getCurrentUserOrders() {
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: `${API_URL}/orders/myOrders`,
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    });
+    return res.data.data.documents;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error.response.data.message);
+  }
+}

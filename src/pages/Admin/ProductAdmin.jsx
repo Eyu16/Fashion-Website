@@ -18,7 +18,6 @@ function ProductAdmin() {
   const { query } = useSearchQueryCustome();
   const searchedProducts =
     query.length < 4 ? [] : filterProducts(products, query);
-  console.log(query);
   if (isLoading) return <Loader />;
   return (
     <>

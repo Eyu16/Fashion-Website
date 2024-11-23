@@ -9,12 +9,12 @@ import { useUser } from '../../hooks/useUser';
 import Loader from '../../ui/Loader';
 import { useNavigate } from 'react-router-dom';
 import { getLoggedInUser } from '../../services/apiFashion';
-// import { getLoggedInUser } from '../../services/apiFashion';
+import toast from 'react-hot-toast';
 
 function Account() {
   const [showForm, setShowForm] = useState(false);
   const [session, setSession] = useState('add');
-  const { isLoadind, user } = useUser();
+  const { isLoadind } = useUser();
   const navigate = useNavigate();
   const toggleForm = function (type = 'add') {
     setShowForm((showForm) => !showForm);
@@ -26,6 +26,7 @@ function Account() {
       try {
         const user = await getLoggedInUser();
         if (!user) {
+          toast.error('You are not logged in please login', { icon: '🔔' });
           navigate('/login');
         }
       } catch (error) {

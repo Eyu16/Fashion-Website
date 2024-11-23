@@ -5,7 +5,6 @@ import {
   useEffect,
   useReducer,
 } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage';
 import toast from 'react-hot-toast';
 
 const initialState = {
@@ -59,8 +58,6 @@ export default function CartContextProvider({ children }) {
     ? JSON.parse(localStorage.getItem('cart'))
     : initialState;
   const [{ cart }, dispatch] = useReducer(reducer, localCart);
-
-  console.log(cart);
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify({ cart }));

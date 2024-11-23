@@ -48,7 +48,7 @@ function OrderAdmin() {
       </div>
       <div className={styles.orders}>
         {filterdOrders?.map((order) => (
-          <OrderItem order={order} />
+          <OrderItem order={order} key={order.id} />
         ))}
       </div>
     </div>

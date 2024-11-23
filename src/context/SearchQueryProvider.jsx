@@ -4,7 +4,6 @@ const SearchQueryContext = createContext();
 
 function SearchQueryProvider({ children }) {
   const [query, setQuery] = useState('');
-  console.log(query);
   return (
     <SearchQueryContext.Provider value={{ query, setQuery }}>
       {children}

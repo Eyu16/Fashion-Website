@@ -4,7 +4,6 @@ import {
 } from '../../utils/helpers';
 import styles from './orderItem.module.css';
 function OrderItem({ order }) {
-  console.log(order);
   return (
     <div className={styles.order}>
       <div className={styles.productsName}>

@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: '', // This matches the base /account path
-            element: <Navigate to="product-admin" replace />, // Redirects to /account/product-admin
+            element: <Navigate to="order-admin" replace />, // Redirects to /account/product-admin
           },
           {
             path: 'product-admin',
