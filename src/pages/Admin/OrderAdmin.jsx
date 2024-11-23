@@ -51,8 +51,8 @@ function OrderAdmin() {
         {filterdOrders?.map((order) => (
           <OrderItem order={order} key={order.id} />
         ))}
-        {!filterdOrders && (
-          <p className={styles2.paragraph}>No products has been found!</p>
+        {!filterdOrders.length && (
+          <p className={styles2.paragraph}>No orders has been found!</p>
         )}
       </div>
     </div>
