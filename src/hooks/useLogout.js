@@ -10,6 +10,7 @@ export function useLogout() {
     mutationFn: logoutApi,
     onSuccess: (data) => {
       queryClient.setQueryData(['user'], data);
+      queryClient.setQueryData(['orders'], []);
       toast.success('You have successfully logged out!');
     },
     onError: (error) => {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './orderAdmin.module.css';
+import styles2 from './account.module.css';
 import OrderItem from './OrderItem';
 import { useOrders } from '../../hooks/useOrders';
 import Loader from '../../ui/Loader';
@@ -50,6 +51,9 @@ function OrderAdmin() {
         {filterdOrders?.map((order) => (
           <OrderItem order={order} key={order.id} />
         ))}
+        {!filterdOrders && (
+          <p className={styles2.paragraph}>No products has been found!</p>
+        )}
       </div>
     </div>
   );
