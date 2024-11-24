@@ -5,6 +5,7 @@ import { sendContactEmail } from '../../services/apiFashion';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useMail } from '../../hooks/useMail';
+import LoaderMini from '../../ui/LoaderMini';
 
 function Contact() {
   const navigate = useNavigate();
@@ -68,7 +69,9 @@ function Contact() {
         </div>
         <div className={Styles.button_center}>
           <button className={Styles.button} type="submit" disabled={isLoading}>
-            Send Message
+            <span className="center_spinner">
+              Send Message {isLoading && <LoaderMini />}
+            </span>
           </button>
         </div>
       </form>
