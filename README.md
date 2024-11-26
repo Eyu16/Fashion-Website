@@ -1,8 +1,21 @@
-# React + Vite
+# Maraki Fashion Website - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend of the Maraki Fashion website is a user-friendly and visually appealing platform where customers can browse and shop for high-quality fashion products. It provides an interactive interface for showcasing collections, managing user accounts, and enhancing the overall shopping experience.
 
-Currently, two official plugins are available:
+## Features
+- Fully responsive design for seamless viewing on all devices.
+- Product browsing with search, filter, and sort options.
+- User authentication (sign-up, login, and profile management).
+- Shopping cart and checkout functionality.
+- Dynamic About and Contact pages.
+- Admin panel for managing collections and products.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React.js**: Core library for building the user interface.
+- **React Router**: For routing and navigation.
+- **React Query**: For managing remote server state efficiently.  
+- **React Hook Form**: For form validation and management.
+- **Context API**: For state management.
+- **Axios**: For making API requests.
+- **CSS Modules**: For styling the components.
+- **Vite**: As the development server and build tool.
